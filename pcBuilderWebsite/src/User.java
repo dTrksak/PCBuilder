@@ -1,5 +1,5 @@
+//User class
 public class User {
-	
 	int user_id = -1;
 	String first_name = null;
 	String last_name = null;
@@ -11,4 +11,5 @@ public class User {
 		this.last_name = last_name;
 		this.email = email;
 	}
+	
 }
