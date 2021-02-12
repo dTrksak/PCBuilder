@@ -1,4 +1,4 @@
-//User class
+//User clas
 public class User {
 	int user_id = -1;
 	String first_name = null;
