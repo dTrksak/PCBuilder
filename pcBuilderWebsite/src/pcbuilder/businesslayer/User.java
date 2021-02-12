@@ -13,19 +13,19 @@ public class User {
 		this.last_name = last_name;
 		this.email = email;
 	}
-
+	
 	public int getUser_id() {
 		return user_id;
 	}
-
+	
 	public String getFirst_name() {
 		return first_name;
 	}
-
+	
 	public String getLast_name() {
 		return last_name;
 	}
-
+	
 	public String getEmail() {
 		return email;
 	}
