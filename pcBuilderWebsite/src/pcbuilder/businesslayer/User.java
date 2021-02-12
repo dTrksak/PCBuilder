@@ -1,3 +1,5 @@
+package pcbuilder.businesslayer;
+
 //User class
 public class User {
 	int user_id = -1;
