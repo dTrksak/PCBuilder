@@ -1,4 +1,5 @@
-package pcbuilder.businesslayer;
+package mysql;
+
 
 //User class
 public class User {
