@@ -15,7 +15,7 @@ public class Cpu implements Serializable {
 
 	@Id
 	@Column(name="cpu_id")
-	private int cpuId;
+	private int cpu_Id; //id for entity
 
 	@Column(name="boost_clock")
 	private String boostClock;
@@ -26,8 +26,8 @@ public class Cpu implements Serializable {
 	@Column(name="core_count")
 	private byte coreCount;
 
-	@Column(name="cpu_id")
-	private int cpuId;
+	@Column(name="cpuid")
+	private int cpuId; //id in mysql
 
 	@Column(name="cpu_name")
 	private String cpuName;
@@ -50,12 +50,12 @@ public class Cpu implements Serializable {
 	public Cpu() {
 	}
 
-	public int getCpuId() {
-		return this.cpuId;
+	public int getCpu_Id() {
+		return this.cpu_Id;
 	}
 
-	public void setCpuId(int cpuId) {
-		this.cpuId = cpuId;
+	public void setCpu_Id(int cpu_Id) {
+		this.cpu_Id = cpu_Id;
 	}
 
 	public String getBoostClock() {
