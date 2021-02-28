@@ -86,7 +86,7 @@ public class Product implements Serializable {
 
 	//bi-directional many-to-one association to O
 	@OneToMany(mappedBy="product")
-	private List<O> os;
+	private List<Os> os;
 
 	//bi-directional many-to-one association to PcCase
 	@OneToMany(mappedBy="product")
@@ -490,26 +490,26 @@ public class Product implements Serializable {
 		return opticalDrive;
 	}
 
-	public List<O> getOs() {
+	public List<Os> getOs() {
 		return this.os;
 	}
 
-	public void setOs(List<O> os) {
+	public void setOs(List<Os> os) {
 		this.os = os;
 	}
 
-	public O addO(O o) {
-		getOs().add(o);
-		o.setProduct(this);
+	public Os addO(Os os) {
+		getOs().add(os);
+		os.setProduct(this);
 
-		return o;
+		return os;
 	}
 
-	public O removeO(O o) {
-		getOs().remove(o);
-		o.setProduct(null);
+	public Os removeO(Os os) {
+		getOs().remove(os);
+		os.setProduct(null);
 
-		return o;
+		return os;
 	}
 
 	public List<PcCase> getPcCases() {

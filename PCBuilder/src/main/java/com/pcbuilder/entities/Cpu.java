@@ -15,7 +15,7 @@ public class Cpu implements Serializable {
 
 	@Id
 	@Column(name="cpu_id")
-	private int cpu_Id;
+	private int cpuId;
 
 	@Column(name="boost_clock")
 	private String boostClock;
@@ -47,12 +47,12 @@ public class Cpu implements Serializable {
 	public Cpu() {
 	}
 
-	public int getCpu_Id() {
-		return this.cpu_Id;
+	public int getCpuId() {
+		return this.cpuId;
 	}
 
-	public void setCpu_Id(int cpu_Id) {
-		this.cpu_Id = cpu_Id;
+	public void setCpuId(int cpuId) {
+		this.cpuId = cpuId;
 	}
 
 	public String getBoostClock() {

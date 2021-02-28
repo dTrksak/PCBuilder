@@ -6,4 +6,7 @@ import com.pcbuilder.entities.User;
 
 public interface UserRepository extends JpaRepository<User, Integer>{
 	
+	User findByFirstName(String firstName);
+	User findByLastName(String lastName);
+	User findByEmail(String email);
 }
