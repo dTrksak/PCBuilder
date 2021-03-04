@@ -8,12 +8,12 @@ import com.pcbuilder.entities.VideoCard;
 
 public interface VideocardRepository extends JpaRepository<VideoCard, Integer> {
 	
-	VideoCard findByID(int videoCardId);
-	VideoCard findByBoostClock(String boostClosk);
-	VideoCard findByChipset(String chipset);
-	VideoCard findByColor(String color);
-	VideoCard findByCoreClock(String coreClock);
-	VideoCard findByInterface(String interface_);
-	VideoCard findByMemory(String memory);
+	VideoCard findByvideoCardId(int videoCardId);
+	VideoCard findByboostClock(String boostClock);
+	VideoCard findBychipset(String chipset);
+	VideoCard findBycolor(String color);
+	VideoCard findBycoreClock(String coreClock);
+	VideoCard findByinterface_(String interface_);
+	VideoCard findBymemory(String memory);
 
 }

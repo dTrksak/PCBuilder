@@ -6,13 +6,13 @@ import com.pcbuilder.entities.Cpu;
 
 public interface CpuRepository extends JpaRepository<Cpu, Integer>{
 	
-	Cpu findById(int cpuId);
+	Cpu findBycpuId(int cpuId);
 	Cpu findByboostClock(String boostClock);
-	Cpu findByCoreClock(String coreClock);
+	Cpu findBycoreClock(String coreClock);
 	Cpu findByCpuName(String CpuName);
-	Cpu findByCpuSpeed(int cpuSpeed);
-	Cpu findByIntegratedGraphics(String integratedGraphics);
-	Cpu findBySmt(String smt);
-	Cpu findByTdp(String tdp);
+	Cpu findBycpuSpeed(int cpuSpeed);
+	Cpu findByintegratedGraphics(String integratedGraphics);
+	Cpu findBysmt(String smt);
+	Cpu findBytdp(String tdp);
 	
 }
