@@ -2,6 +2,7 @@ package com.pcbuilder.controllers;
 
 import java.util.List;
 
+import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,7 +31,9 @@ public class CpuCoolerController {
 	public List<CpuCooler> list() {
 		List<CpuCooler> cpuList = cpuCoolerRepo.findAll();
 		for(CpuCooler cpu: cpuList) {
+			//Hibernate.initialize(cpu.getProduct().getCaseAccessories());
 			//cpu.getProduct().get
+			//Hibernate.initialize(cpu.getProduct());
 		}
 		return cpuList;
 	}

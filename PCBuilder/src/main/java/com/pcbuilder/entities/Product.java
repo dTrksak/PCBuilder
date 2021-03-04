@@ -2,6 +2,9 @@ package com.pcbuilder.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 
@@ -29,107 +32,133 @@ public class Product implements Serializable {
 	//private List<BuildProduct> buildProducts;
 
 	//bi-directional many-to-one association to CaseAccessory
-	@OneToMany(fetch = FetchType.EAGER, mappedBy="product")
+	@JsonIgnore
+	@OneToMany(mappedBy="product")
 	private List<CaseAccessory> caseAccessories;
 
 	//bi-directional many-to-one association to CaseFan
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<CaseFan> caseFans;
 
 	//bi-directional many-to-one association to Cpu
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Cpu> cpus;
 
 	//bi-directional many-to-one association to CpuCooler
-	@OneToMany(mappedBy="product")
+	@JsonIgnore
+	@OneToMany( mappedBy="product")
 	private List<CpuCooler> cpuCoolers;
 
 	//bi-directional many-to-one association to ExternalHarddrive
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<ExternalHarddrive> externalHarddrives;
 
 	//bi-directional many-to-one association to FanController
-	@OneToMany(mappedBy="product")
+	@JsonIgnore
+	@OneToMany( mappedBy="product")
 	private List<FanController> fanControllers;
 
 	//bi-directional many-to-one association to Headphone
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Headphone> headphones;
 
 	//bi-directional many-to-one association to InternalHarddrive
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<InternalHarddrive> internalHarddrives;
 
 	//bi-directional many-to-one association to Keyboard
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Keyboard> keyboards;
 
 	//bi-directional many-to-one association to Memory
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Memory> memories;
 
 	//bi-directional many-to-one association to Monitor
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Monitor> monitors;
 
 	//bi-directional many-to-one association to Motherboard
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Motherboard> motherboards;
 
 	//bi-directional many-to-one association to Mouse
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Mouse> mouses;
 
 	//bi-directional many-to-one association to OpticalDrive
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<OpticalDrive> opticalDrives;
 
 	//bi-directional many-to-one association to O
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Os> os;
 
 	//bi-directional many-to-one association to PcCase
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<PcCase> pcCases;
 
 	//bi-directional many-to-one association to PowerSupply
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<PowerSupply> powerSupplies;
 
 	//bi-directional many-to-one association to Category
+	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="category_id")
 	private Category category;
 
 	//bi-directional many-to-one association to Software
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Software> softwares;
 
 	//bi-directional many-to-one association to SoundCard
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<SoundCard> soundCards;
 
 	//bi-directional many-to-one association to Speaker
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Speaker> speakers;
 
 	//bi-directional many-to-one association to ThermalPaste
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<ThermalPaste> thermalPastes;
 
 	//bi-directional many-to-one association to Up
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<Up> ups;
 
 	//bi-directional many-to-one association to VideoCard
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<VideoCard> videoCards;
 
 	//bi-directional many-to-one association to WiredNetworkCard
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<WiredNetworkCard> wiredNetworkCards;
 
 	//bi-directional many-to-one association to WirelessNetworkCard
+	@JsonIgnore
 	@OneToMany(mappedBy="product")
 	private List<WirelessNetworkCard> wirelessNetworkCards;
 
