@@ -2,7 +2,9 @@ package com.pcbuilder.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface Memory extends JpaRepository<Memory, Integer>{
+import com.pcbuilder.entities.Memory;
+
+public interface MemoryRepository extends JpaRepository<Memory, Integer>{
 	
 	Memory findById(int memoryId);
 	Memory findByCasLatency(byte casLatency);

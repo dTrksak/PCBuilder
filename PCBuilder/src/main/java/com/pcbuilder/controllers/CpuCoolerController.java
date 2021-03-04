@@ -28,6 +28,7 @@ public class CpuCoolerController {
 	@GetMapping("/hi")
 	@ResponseBody
 	public List<CpuCooler> list() {
+		
 		return cpuCoolerRepo.findAll();
 	}
 }
