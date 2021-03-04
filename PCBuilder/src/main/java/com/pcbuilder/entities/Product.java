@@ -29,7 +29,7 @@ public class Product implements Serializable {
 	//private List<BuildProduct> buildProducts;
 
 	//bi-directional many-to-one association to CaseAccessory
-	@OneToMany(mappedBy="product")
+	@OneToMany(fetch = FetchType.EAGER, mappedBy="product")
 	private List<CaseAccessory> caseAccessories;
 
 	//bi-directional many-to-one association to CaseFan

@@ -27,13 +27,11 @@ public class CpuCoolerController {
 	
 	@GetMapping("/hi")
 	@ResponseBody
-<<<<<<< HEAD
-	public CpuCooler list() {
-		System.out.println(cpuCoolerRepo.findAll());
-		return cpuCoolerRepo.findByCpuCoolerId(280102);
-=======
 	public List<CpuCooler> list() {
-		return cpuCoolerRepo.findAll();
->>>>>>> parent of 3a8179b (respositories)
+		List<CpuCooler> cpuList = cpuCoolerRepo.findAll();
+		for(CpuCooler cpu: cpuList) {
+			//cpu.getProduct().get
+		}
+		return cpuList;
 	}
 }
