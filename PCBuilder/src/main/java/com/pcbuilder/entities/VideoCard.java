@@ -29,7 +29,7 @@ public class VideoCard implements Serializable {
 	private String coreClock;
 
 	@Column(name="interface")
-	private String videoInterface;
+	private String interface_;
 
 	private String memory;
 
@@ -81,12 +81,12 @@ public class VideoCard implements Serializable {
 		this.coreClock = coreClock;
 	}
 
-	public String getInterface() {
-		return this.videoInterface;
+	public String getInterface_() {
+		return this.interface_;
 	}
 
-	public void setInterface(String videoInterface) {
-		this.videoInterface = videoInterface;
+	public void setInterface_(String interface_) {
+		this.interface_ = interface_;
 	}
 
 	public String getMemory() {
