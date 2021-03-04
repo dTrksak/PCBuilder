@@ -41,7 +41,7 @@ public class UserController {
 	@GetMapping("/{firstName}+{lastName}")
 	@ResponseBody
 	public String get(@PathVariable String firstName, @PathVariable String lastName) {
-		User user = userRepo.findByFirstName(firstName);
+		User user = userRepo.findByfirstName(firstName);
 		if(user != null && user.getLastName().equals(lastName))
 			return user.toString();
 		else {
