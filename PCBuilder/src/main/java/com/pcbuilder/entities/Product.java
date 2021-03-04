@@ -25,8 +25,8 @@ public class Product implements Serializable {
 	private double productPrice;
 
 	//bi-directional many-to-one association to BuildProduct
-	@OneToMany(mappedBy="product")
-	private List<BuildProduct> buildProducts;
+	//@OneToMany(mappedBy="product")
+	//private List<BuildProduct> buildProducts;
 
 	//bi-directional many-to-one association to CaseAccessory
 	@OneToMany(mappedBy="product")
@@ -160,6 +160,7 @@ public class Product implements Serializable {
 		this.productPrice = productPrice;
 	}
 
+	/*
 	public List<BuildProduct> getBuildProducts() {
 		return this.buildProducts;
 	}
@@ -181,6 +182,7 @@ public class Product implements Serializable {
 
 		return buildProduct;
 	}
+	*/
 
 	public List<CaseAccessory> getCaseAccessories() {
 		return this.caseAccessories;

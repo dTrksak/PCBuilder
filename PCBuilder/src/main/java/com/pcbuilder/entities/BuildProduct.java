@@ -8,6 +8,8 @@ import javax.persistence.*;
  * The persistent class for the build_product database table.
  * 
  */
+
+/*
 @Entity
 @Table(name="build_product")
 @NamedQuery(name="BuildProduct.findAll", query="SELECT b FROM BuildProduct b")
@@ -34,7 +36,7 @@ public class BuildProduct implements Serializable {
 		this.buildProductId = buildProductId;
 	}
 
-	/* Build not yet created, uncomment once Build is created
+	Build not yet created, uncomment once Build is created
 	//bi-directional many-to-one association to Build
 	@ManyToOne
 	@JoinColumn(name="build_id")
@@ -46,7 +48,7 @@ public class BuildProduct implements Serializable {
 
 	public void setBuild(Build build) {
 		this.build = build;
-	}*/
+	}
 
 	public Product getProduct() {
 		return this.product;
@@ -57,3 +59,4 @@ public class BuildProduct implements Serializable {
 	}
 
 }
+*/
