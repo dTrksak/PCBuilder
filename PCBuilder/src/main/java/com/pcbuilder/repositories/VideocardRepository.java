@@ -6,7 +6,7 @@ import com.pcbuilder.entities.VideoCard;
 
 
 
-public interface VideocardRepository extends JpaRepository<VideoCard, Integer> {
+public interface VideoCardRepository extends JpaRepository<VideoCard, Integer> {
 	
 	VideoCard findByVideoCardId(int videoCardId);
 	VideoCard findByBoostClock(String boostClock);
