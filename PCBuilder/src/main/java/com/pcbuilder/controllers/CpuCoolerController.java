@@ -27,8 +27,8 @@ public class CpuCoolerController {
 	
 	@GetMapping("/hi")
 	@ResponseBody
-	public List<CpuCooler> list() {
-		
-		return cpuCoolerRepo.findAll();
+	public CpuCooler list() {
+		System.out.println(cpuCoolerRepo.findAll());
+		return cpuCoolerRepo.findByCpuCoolerId(280102);
 	}
 }

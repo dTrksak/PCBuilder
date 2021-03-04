@@ -27,7 +27,7 @@ public class LoginController {
 	@PostMapping("/login")
   	public String greetingSubmit(@ModelAttribute User input, Model model) {
 		//Find user with email
-		User user = userRepo.findByemail(input.getEmail());
+		User user = userRepo.findByEmail(input.getEmail());
 		
 		//if has user with same email
 		if(user != null) {
