@@ -4,11 +4,11 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface Memory extends JpaRepository<Memory, Integer>{
 	
-	Memory findById(int memoryId);
-	Memory findByCasLatency(byte casLatency);
-	Memory findByColor(String color);
-	Memory findByMemoryType(String memory_type);
-	Memory findByPricePerGb(String pricePerGb);
-	Memory findBySpeed(String speed);
+	Memory findBymemoryId(int memoryId);
+	Memory findBycasLatency(byte casLatency);
+	Memory findBycolor(String color);
+	Memory findBymemory_type(String memory_type);
+	Memory findBypricePerGb(String pricePerGb);
+	Memory findByspeed(String speed);
 	
 }

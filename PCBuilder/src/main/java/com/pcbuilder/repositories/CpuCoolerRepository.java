@@ -8,5 +8,5 @@ import com.pcbuilder.entities.CpuCooler;
 
 public interface CpuCoolerRepository extends JpaRepository<CpuCooler, Integer>{
 	
-	CpuCooler findByCpuCoolerId(int cpuCoolerId);
+	CpuCooler findBycpuCoolerId(int cpuCoolerId);
 }
