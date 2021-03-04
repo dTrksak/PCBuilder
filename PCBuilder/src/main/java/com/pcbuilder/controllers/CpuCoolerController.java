@@ -12,40 +12,22 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.pcbuilder.entities.CpuCooler;
 import com.pcbuilder.entities.User;
 import com.pcbuilder.repositories.CpuCoolerRepository;
-import com.pcbuilder.repositories.UserRepository;
-/**
- * Not Used at this moment
- * 
- * 
- * 
- * 
- */
+
 @Controller
-@RequestMapping("/users")
-public class UserController {
-	
-	@Autowired
-	private UserRepository userRepo;
+@RequestMapping("/cpucoolers")
+public class CpuCoolerController {
 	
 	@RequestMapping("/hello")
 	public String helloWorld() {
 		return "helloWorld.html";
 	}
 	
-	@GetMapping("/all")
+	@Autowired
+	private CpuCoolerRepository cpuCoolerRepo;
+	
+	@GetMapping("/hi")
 	@ResponseBody
-	public List<User> list(){
-		return userRepo.findAll();
-	}
-
-	@GetMapping("/{firstName}+{lastName}")
-	@ResponseBody
-	public String get(@PathVariable String firstName, @PathVariable String lastName) {
-		User user = userRepo.findByFirstName(firstName);
-		if(user != null && user.getLastName().equals(lastName))
-			return user.toString();
-		else {
-			return "\"" + firstName + " " + lastName + "\" was not found.";
-		}
+	public List<CpuCooler> list() {
+		return cpuCoolerRepo.findAll();
 	}
 }

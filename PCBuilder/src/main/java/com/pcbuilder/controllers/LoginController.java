@@ -44,5 +44,4 @@ public class LoginController {
 		}
 		return "loginFail"; //=loginFail.html
   	}
-
 }
