@@ -28,8 +28,9 @@ public class Product implements Serializable {
 	private double productPrice;
 
 	//bi-directional many-to-one association to BuildProduct
-	//@OneToMany(mappedBy="product")
-	//private List<BuildProduct> buildProducts;
+	@JsonIgnore
+	@OneToMany(mappedBy="product")
+	private List<BuildProduct> buildProducts;
 
 	//bi-directional many-to-one association to CaseAccessory
 	@JsonIgnore
@@ -117,7 +118,6 @@ public class Product implements Serializable {
 	private List<PowerSupply> powerSupplies;
 
 	//bi-directional many-to-one association to Category
-	@JsonIgnore
 	@ManyToOne
 	@JoinColumn(name="category_id")
 	private Category category;
@@ -189,7 +189,7 @@ public class Product implements Serializable {
 		this.productPrice = productPrice;
 	}
 
-	/*
+	
 	public List<BuildProduct> getBuildProducts() {
 		return this.buildProducts;
 	}
@@ -211,7 +211,6 @@ public class Product implements Serializable {
 
 		return buildProduct;
 	}
-	*/
 
 	public List<CaseAccessory> getCaseAccessories() {
 		return this.caseAccessories;
