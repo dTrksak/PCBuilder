@@ -1,5 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <persistence version="2.2" xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
-	<persistence-unit name="PCBuilder">
+	<persistence-unit name="PCBuilder" transaction-type="RESOURCE_LOCAL">
+		<class>com.pcbuilder.entities.Build</class>
+		<class>com.pcbuilder.entities.BuildProduct</class>
+		<class>com.pcbuilder.entities.Product</class>
+		<class>com.pcbuilder.entities.CaseAccessory</class>
+		<class>com.pcbuilder.entities.CaseFan</class>
+		<class>com.pcbuilder.entities.Category</class>
+		<class>com.pcbuilder.entities.Cpu</class>
+		<class>com.pcbuilder.entities.CpuCooler</class>
+		<class>com.pcbuilder.entities.ExternalHarddrive</class>
+		<class>com.pcbuilder.entities.FanController</class>
+		<class>com.pcbuilder.entities.Headphone</class>
+		<class>com.pcbuilder.entities.InternalHarddrive</class>
+		<class>com.pcbuilder.entities.Keyboard</class>
+		<class>com.pcbuilder.entities.Memory</class>
+		<class>com.pcbuilder.entities.Monitor</class>
+		<class>com.pcbuilder.entities.Motherboard</class>
+		<class>com.pcbuilder.entities.Mouse</class>
+		<class>com.pcbuilder.entities.OpticalDrive</class>
+		<class>com.pcbuilder.entities.Os</class>
+		<class>com.pcbuilder.entities.PcCase</class>
+		<class>com.pcbuilder.entities.PowerSupply</class>
+		<class>com.pcbuilder.entities.Software</class>
+		<class>com.pcbuilder.entities.SoundCard</class>
+		<class>com.pcbuilder.entities.Speaker</class>
+		<class>com.pcbuilder.entities.ThermalPaste</class>
+		<class>com.pcbuilder.entities.Up</class>
+		<class>com.pcbuilder.entities.User</class>
+		<class>com.pcbuilder.entities.VideoCard</class>
+		<class>com.pcbuilder.entities.WiredNetworkCard</class>
+		<class>com.pcbuilder.entities.WirelessNetworkCard</class>
+		<properties>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pc_build"/>
+			<property name="javax.persistence.jdbc.user" value="root"/>
+			<property name="javax.persistence.jdbc.password" value="admin"/>
+			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
+		</properties>
 	</persistence-unit>
 </persistence>
