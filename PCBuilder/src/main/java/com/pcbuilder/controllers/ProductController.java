@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.pcbuilder.entities.CaseAccessory;
+import com.pcbuilder.entities.CpuCooler;
 import com.pcbuilder.entities.Product;
 import com.pcbuilder.repositories.ProductRepository;
 
@@ -24,10 +26,13 @@ public class ProductController {
 		return productRepo.findAll();
 	}
 	
-	@GetMapping("/cpuCoolers")
+	@GetMapping("/caseAccessories")
 	@ResponseBody
 	public List<Product> caseAccessories(){
 		Product product = productRepo.findByProductId(280101);
+		//System.out.println(product.getCpuCoolers().get(0).getCpuCoolerId());
+		//List<CpuCooler> cpuList = product.getCpuCoolers();
+		//System.out.println(cpuList.get(0));
 		return productRepo.findAll();
 	}
 }

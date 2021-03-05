@@ -9,5 +9,4 @@ public interface ProductRepository extends JpaRepository<Product, Integer>{
 	Product findByProductId(int productId);
 	Product findByProductName(String productName);
 	Product findByProductPrice(double productPrice);
-	Product findByCategoryId(Category category);
 }
