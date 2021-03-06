@@ -26,7 +26,7 @@ public class ExternalHarddrive implements Serializable {
 	private String hardriveType;
 
 	@Column(name="interface")
-	private String interface_;
+	private String harddriveInterface;
 
 	@Column(name="price_per_gb")
 	private double pricePerGb;
@@ -71,12 +71,12 @@ public class ExternalHarddrive implements Serializable {
 		this.hardriveType = hardriveType;
 	}
 
-	public String getInterface_() {
-		return this.interface_;
+	public String getHarddriveInterface() {
+		return this.harddriveInterface;
 	}
 
-	public void setInterface_(String interface_) {
-		this.interface_ = interface_;
+	public void setHarddriveInterface(String harddriveInterface) {
+		this.harddriveInterface = harddriveInterface;
 	}
 
 	public double getPricePerGb() {

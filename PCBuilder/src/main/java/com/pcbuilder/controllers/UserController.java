@@ -41,11 +41,11 @@ public class UserController {
 	@GetMapping("/{firstName}+{lastName}")
 	@ResponseBody
 	public String get(@PathVariable String firstName, @PathVariable String lastName) {
-		User user = userRepo.findByFirstName(firstName);
-		if(user != null && user.getLastName().equals(lastName))
+		
+		//demostration of springboot AND
+		User user = userRepo.findByFirstNameAndLastName(firstName, lastName);
+		if(user != null)
 			return user.toString();
-		else {
-			return "\"" + firstName + " " + lastName + "\" was not found.";
-		}
+		return "\"" + firstName + " " + lastName + "\" was not found.";
 	}
 }

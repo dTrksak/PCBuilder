@@ -26,7 +26,7 @@ public class SoundCard implements Serializable {
 	private String digitalAudio;
 
 	@Column(name="interface")
-	private String interface_;
+	private String soundCardInterface;
 
 	@Column(name="sample_rate")
 	private String sampleRate;
@@ -73,12 +73,12 @@ public class SoundCard implements Serializable {
 		this.digitalAudio = digitalAudio;
 	}
 
-	public String getInterface_() {
-		return this.interface_;
+	public String getSoundCardInterface() {
+		return this.soundCardInterface;
 	}
 
-	public void setInterface_(String interface_) {
-		this.interface_ = interface_;
+	public void setSoundCardInterface(String soundCardInterface) {
+		this.soundCardInterface = soundCardInterface;
 	}
 
 	public String getSampleRate() {

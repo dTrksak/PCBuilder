@@ -21,7 +21,7 @@ public class WirelessNetworkCard implements Serializable {
 	private String color;
 
 	@Column(name="interface")
-	private String interface_;
+	private String wirelessNetworkCardInterface;
 
 	private String protocol;
 
@@ -49,12 +49,12 @@ public class WirelessNetworkCard implements Serializable {
 		this.color = color;
 	}
 
-	public String getInterface_() {
-		return this.interface_;
+	public String getWirelessNetworkCardInterface() {
+		return this.wirelessNetworkCardInterface;
 	}
 
-	public void setInterface_(String interface_) {
-		this.interface_ = interface_;
+	public void setWirelessNetworkCardInterface(String wirelessNetworkCardInterface) {
+		this.wirelessNetworkCardInterface = wirelessNetworkCardInterface;
 	}
 
 	public String getProtocol() {

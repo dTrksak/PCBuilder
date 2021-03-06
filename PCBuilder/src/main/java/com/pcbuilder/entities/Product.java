@@ -145,7 +145,7 @@ public class Product implements Serializable {
 	//bi-directional many-to-one association to Up
 	@JsonIgnore
 	@OneToMany(mappedBy="product")
-	private List<Up> ups;
+	private List<Ups> ups;
 
 	//bi-directional many-to-one association to VideoCard
 	@JsonIgnore
@@ -682,22 +682,22 @@ public class Product implements Serializable {
 		return thermalPaste;
 	}
 
-	public List<Up> getUps() {
+	public List<Ups> getUps() {
 		return this.ups;
 	}
 
-	public void setUps(List<Up> ups) {
+	public void setUps(List<Ups> ups) {
 		this.ups = ups;
 	}
 
-	public Up addUp(Up up) {
+	public Ups addUp(Ups up) {
 		getUps().add(up);
 		up.setProduct(this);
 
 		return up;
 	}
 
-	public Up removeUp(Up up) {
+	public Ups removeUp(Ups up) {
 		getUps().remove(up);
 		up.setProduct(null);
 

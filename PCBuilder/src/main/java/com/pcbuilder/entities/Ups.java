@@ -10,8 +10,8 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="ups")
-@NamedQuery(name="Up.findAll", query="SELECT u FROM Up u")
-public class Up implements Serializable {
+@NamedQuery(name="Ups.findAll", query="SELECT u FROM Ups u")
+public class Ups implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -29,7 +29,7 @@ public class Up implements Serializable {
 	@JoinColumn(name="product_id")
 	private Product product;
 
-	public Up() {
+	public Ups() {
 	}
 
 	public int getUpsId() {

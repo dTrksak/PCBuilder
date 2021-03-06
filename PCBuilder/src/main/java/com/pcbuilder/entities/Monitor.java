@@ -29,7 +29,7 @@ public class Monitor implements Serializable {
 	private String resolution;
 
 	@Column(name="`response_time_(g2g)`")
-	private String responseTime_g2g_;
+	private String responseTimeG2g;
 
 	@Column(name="screen_size")
 	private String screenSize;
@@ -82,12 +82,12 @@ public class Monitor implements Serializable {
 		this.resolution = resolution;
 	}
 
-	public String getResponseTime_g2g_() {
-		return this.responseTime_g2g_;
+	public String getResponseTimeG2g() {
+		return this.responseTimeG2g;
 	}
 
-	public void setResponseTime_g2g_(String responseTime_g2g_) {
-		this.responseTime_g2g_ = responseTime_g2g_;
+	public void setResponseTimeG2g(String responseTimeG2g) {
+		this.responseTimeG2g = responseTimeG2g;
 	}
 
 	public String getScreenSize() {

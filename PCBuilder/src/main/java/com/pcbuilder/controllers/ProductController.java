@@ -1,6 +1,7 @@
 package com.pcbuilder.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -28,11 +29,11 @@ public class ProductController {
 	
 	@GetMapping("/caseAccessories")
 	@ResponseBody
-	public List<Product> caseAccessories(){
+	public Product caseAccessories(){
 		Product product = productRepo.findByProductId(280101);
 		//System.out.println(product.getCpuCoolers().get(0).getCpuCoolerId());
 		//List<CpuCooler> cpuList = product.getCpuCoolers();
 		//System.out.println(cpuList.get(0));
-		return productRepo.findAll();
+		return product;
 	}
 }

@@ -21,7 +21,7 @@ public class WiredNetworkCard implements Serializable {
 	private String color;
 
 	@Column(name="interface")
-	private String interface_;
+	private String wiredNetworkCarInterface;
 
 	private String ports;
 
@@ -49,12 +49,12 @@ public class WiredNetworkCard implements Serializable {
 		this.color = color;
 	}
 
-	public String getInterface_() {
-		return this.interface_;
+	public String getWredNetworkCarInterface() {
+		return this.wiredNetworkCarInterface;
 	}
 
-	public void setInterface_(String interface_) {
-		this.interface_ = interface_;
+	public void setWiredNetworkCarInterface(String wiredNetworkCarInterface) {
+		this.wiredNetworkCarInterface = wiredNetworkCarInterface;
 	}
 
 	public String getPorts() {

@@ -1,5 +1,7 @@
 package com.pcbuilder.repositories;
 
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import com.pcbuilder.entities.Memory;
@@ -7,10 +9,10 @@ import com.pcbuilder.entities.Memory;
 public interface MemoryRepository extends JpaRepository<Memory, Integer>{
 	
 	Memory findByMemoryId(int memoryId);
-	Memory findByCasLatency(byte casLatency);
-	Memory findByColor(String color);
-	Memory findByMemoryType(String memoryType);
-	Memory findByPricePerGb(String pricePerGb);
-	Memory findBySpeed(String speed);
+	List<Memory> findByCasLatency(byte casLatency);
+	List<Memory> findByColor(String color);
+	List<Memory> findByMemoryType(String memoryType);
+	List<Memory> findByPricePerGb(String pricePerGb);
+	List<Memory> findBySpeed(String speed);
 	
 }
