@@ -56,8 +56,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-1575 px</X>
-              <Y>2400 px</Y>
+              <X>-1270 px</X>
+              <Y>2175 px</Y>
             </Location>
             <Size>
               <Width>248 px</Width>
@@ -79,7 +79,7 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-1265 px</X>
+              <X>-1270 px</X>
               <Y>2400 px</Y>
             </Location>
             <Size>
@@ -108,11 +108,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>8.85963336032273 px</X>
-                  <Y>89.4737154493046 px</Y>
+                  <X>126.337993605177 px</X>
+                  <Y>12.6761292541032 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>4</OID>
                   <PortType>FixedAnchor</PortType>
@@ -120,17 +120,27 @@
               </Port>
               <Port>
                 <Location>
-                  <X>241.666649935538 px</X>
-                  <Y>89.4737154493046 px</Y>
+                  <X>126.24996462066 px</X>
+                  <Y>163.491452450885 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Right</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>5</OID>
                   <PortType>FixedAnchor</PortType>
                 </CustomProperties>
               </Port>
             </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-1143.66200639482 px</X>
+                <Y>2380 px</Y>
+              </PointD>
+              <PointD>
+                <X>-1143.75003537934 px</X>
+                <Y>2380 px</Y>
+              </PointD>
+            </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>pc_build.build_product.FK_build_product_build_id</Path>
@@ -189,8 +199,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-1580 px</X>
-              <Y>2625 px</Y>
+              <X>-1575 px</X>
+              <Y>2710 px</Y>
             </Location>
             <Size>
               <Width>248 px</Width>
@@ -304,8 +314,8 @@
               <Parent>0</Parent>
             </CustomProperties>
             <Location>
-              <X>-1260 px</X>
-              <Y>2830 px</Y>
+              <X>-1265 px</X>
+              <Y>2895 px</Y>
             </Location>
             <Size>
               <Width>248 px</Width>
@@ -586,8 +596,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-3.68422650894649 px</X>
-                  <Y>79.4737179589738 px</Y>
+                  <X>0.985877140719822 px</X>
+                  <Y>120.985998029017 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Left</Align>
@@ -611,15 +621,15 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-1275 px</X>
-                <Y>2689.4736328125 px</Y>
+                <X>-1300 px</X>
+                <Y>2730.98599802902 px</Y>
               </PointD>
               <PointD>
-                <X>-1275 px</X>
-                <Y>2689.0908203125 px</Y>
+                <X>-1300 px</X>
+                <Y>2774.09092011284 px</Y>
               </PointD>
             </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
+            <IsManuallyRouted>true</IsManuallyRouted>
             <DbOid>
               <Path>pc_build.product.FK_product_category_id</Path>
               <TypeName>ForeignKey</TypeName>
@@ -637,8 +647,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>114.122792575938 px</X>
-                  <Y>143.859681044039 px</Y>
+                  <X>117.887289124427 px</X>
+                  <Y>163.38035916081 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -662,7 +672,7 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-1150.87720742406 px</X>
+                <X>-1152.11271087557 px</X>
                 <Y>2588 px</Y>
               </PointD>
               <PointD>
@@ -1016,7 +1026,7 @@
             <BendPoints>
               <PointD>
                 <X>-975 px</X>
-                <Y>2939.18915131042 px</Y>
+                <Y>3004.18915131042 px</Y>
               </PointD>
               <PointD>
                 <X>-975 px</X>
@@ -1932,7 +1942,7 @@
             </CustomProperties>
             <Location>
               <X>-1575 px</X>
-              <Y>2165 px</Y>
+              <Y>2175 px</Y>
             </Location>
             <Size>
               <Width>248 px</Width>
@@ -1960,11 +1970,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>121.666666666667 px</X>
-                  <Y>0 px</Y>
+                  <X>15.0430645832867 px</X>
+                  <Y>87.5000707586801 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Top</Align>
+                <Align>Left</Align>
                 <CustomProperties>
                   <OID>104</OID>
                   <PortType>FixedAnchor</PortType>
@@ -1972,11 +1982,11 @@
               </Port>
               <Port>
                 <Location>
-                  <X>120.333333333333 px</X>
-                  <Y>153.666666666667 px</Y>
+                  <X>246.83094577547 px</X>
+                  <Y>86.9718993473962 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Bottom</Align>
+                <Align>Right</Align>
                 <CustomProperties>
                   <OID>105</OID>
                   <PortType>FixedAnchor</PortType>
@@ -1985,12 +1995,12 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-1453.33333333333 px</X>
-                <Y>2380 px</Y>
+                <X>-1290 px</X>
+                <Y>2262.50007075868 px</Y>
               </PointD>
               <PointD>
-                <X>-1454.66666666667 px</X>
-                <Y>2380 px</Y>
+                <X>-1290 px</X>
+                <Y>2261.9718993474 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -2217,14 +2227,125 @@
               <TypeName>ForeignKey</TypeName>
             </DbOid>
           </Model>
+          <Model xsi:type="TableModel">
+            <CustomProperties>
+              <OID>118</OID>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <Location>
+              <X>-1575 px</X>
+              <Y>2395 px</Y>
+            </Location>
+            <Size>
+              <Width>245 px</Width>
+              <Height>195 px</Height>
+            </Size>
+            <DbOid>
+              <Path>pc_build.product_rating</Path>
+              <TypeName>Table</TypeName>
+            </DbOid>
+            <Compartments>
+              <ConstraintsCollapsed>True</ConstraintsCollapsed>
+              <IndexesCollapsed>True</IndexesCollapsed>
+              <TriggersCollapsed>True</TriggersCollapsed>
+            </Compartments>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>119</OID>
+              <OutModel>118</OutModel>
+              <InModel>24</InModel>
+              <OutPort>120</OutPort>
+              <InPort>121</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>122.887280057805 px</X>
+                  <Y>186.549374096644 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>120</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>3.80277863430297 px</X>
+                  <Y>54.7888129298094 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Left</Align>
+                <CustomProperties>
+                  <OID>121</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <BendPoints>
+              <PointD>
+                <X>-1452.11267089844 px</X>
+                <Y>2664.78881835938 px</Y>
+              </PointD>
+            </BendPoints>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>pc_build.product_rating.FK_product_rating_procduct_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
+          <Model xsi:type="RelationLinkModel">
+            <CustomProperties>
+              <OID>122</OID>
+              <OutModel>118</OutModel>
+              <InModel>102</InModel>
+              <OutPort>123</OutPort>
+              <InPort>124</InPort>
+              <Parent>0</Parent>
+            </CustomProperties>
+            <PortAnchors>
+              <Port>
+                <Location>
+                  <X>121.478829311013 px</X>
+                  <Y>-0.774575226646448 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Top</Align>
+                <CustomProperties>
+                  <OID>123</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+              <Port>
+                <Location>
+                  <X>121.478829311013 px</X>
+                  <Y>158.802887433771 px</Y>
+                </Location>
+                <Anchors>None</Anchors>
+                <Align>Bottom</Align>
+                <CustomProperties>
+                  <OID>124</OID>
+                  <PortType>FixedAnchor</PortType>
+                </CustomProperties>
+              </Port>
+            </PortAnchors>
+            <IsManuallyRouted>false</IsManuallyRouted>
+            <DbOid>
+              <Path>pc_build.product_rating.FK_product_rating_user_id</Path>
+              <TypeName>ForeignKey</TypeName>
+            </DbOid>
+          </Model>
         </Children>
         <GridSize>5 px</GridSize>
         <ViewPort>
           <ScaleMode>Free</ScaleMode>
-          <Scale>0.539534867</Scale>
+          <Scale>0.71</Scale>
           <Location>
-            <X>-1603.23280887213 px</X>
-            <Y>2125.90523887677 px</Y>
+            <X>-1619.7183588104 px</X>
+            <Y>2219.71837617253 px</Y>
           </Location>
         </ViewPort>
       </Model>
