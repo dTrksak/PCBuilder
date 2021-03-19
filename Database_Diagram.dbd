@@ -749,11 +749,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-13 px</X>
-                  <Y>124 px</Y>
+                  <X>122.183074328757 px</X>
+                  <Y>0.352195041850337 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Top</Align>
                 <CustomProperties>
                   <OID>35</OID>
                   <PortType>FixedAnchor</PortType>
@@ -774,15 +774,11 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-975 px</X>
-                <Y>2849 px</Y>
-              </PointD>
-              <PointD>
-                <X>-975 px</X>
-                <Y>2691.59205252421 px</Y>
+                <X>-802.816955566406 px</X>
+                <Y>2691.59204101563 px</Y>
               </PointD>
             </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
+            <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>pc_build.case_fan.FK_case_fan_product_id</Path>
               <TypeName>ForeignKey</TypeName>
@@ -855,8 +851,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>116.666666666667 px</X>
-                  <Y>191.333333333333 px</Y>
+                  <X>121.83096995313 px</X>
+                  <Y>190.845150234351 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Bottom</Align>
@@ -880,11 +876,11 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-533.333312988281 px</X>
-                <Y>2691.59204101563 px</Y>
+                <X>-528.16903004687 px</X>
+                <Y>2691.59205252421 px</Y>
               </PointD>
             </BendPoints>
-            <IsManuallyRouted>false</IsManuallyRouted>
+            <IsManuallyRouted>true</IsManuallyRouted>
             <DbOid>
               <Path>pc_build.cpu_cooler.FK_cpu_cooler_product_id</Path>
               <TypeName>ForeignKey</TypeName>
@@ -928,7 +924,7 @@
             <BendPoints>
               <PointD>
                 <X>24 px</X>
-                <Y>2691.59204101563 px</Y>
+                <Y>2691.59205252421 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -949,11 +945,11 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>-8 px</X>
-                  <Y>100 px</Y>
+                  <X>122.183074328757 px</X>
+                  <Y>202.112756208684 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
-                <Align>Left</Align>
+                <Align>Bottom</Align>
                 <CustomProperties>
                   <OID>47</OID>
                   <PortType>FixedAnchor</PortType>
@@ -974,15 +970,11 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-975 px</X>
-                <Y>2550 px</Y>
-              </PointD>
-              <PointD>
-                <X>-975 px</X>
-                <Y>2691.59205252421 px</Y>
+                <X>-802.816955566406 px</X>
+                <Y>2691.59204101563 px</Y>
               </PointD>
             </BendPoints>
-            <IsManuallyRouted>true</IsManuallyRouted>
+            <IsManuallyRouted>false</IsManuallyRouted>
             <DbOid>
               <Path>pc_build.fan_controller.FK_fan_controller_product_id</Path>
               <TypeName>ForeignKey</TypeName>
@@ -1076,7 +1068,7 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>25.3333333333333 px</X>
+                <X>25.333333333333 px</X>
                 <Y>2435 px</Y>
               </PointD>
               <PointD>
@@ -1132,7 +1124,7 @@
             <BendPoints>
               <PointD>
                 <X>300 px</X>
-                <Y>2691.59204101563 px</Y>
+                <Y>2691.59205252421 px</Y>
               </PointD>
             </BendPoints>
             <IsManuallyRouted>false</IsManuallyRouted>
@@ -1502,8 +1494,8 @@
             <PortAnchors>
               <Port>
                 <Location>
-                  <X>122 px</X>
-                  <Y>4.33333333333348 px</Y>
+                  <X>121.83096995313 px</X>
+                  <Y>5.98599802901708 px</Y>
                 </Location>
                 <Anchors>None</Anchors>
                 <Align>Top</Align>
@@ -1527,15 +1519,7 @@
             </PortAnchors>
             <BendPoints>
               <PointD>
-                <X>-528 px</X>
-                <Y>2716.64801025391 px</Y>
-              </PointD>
-              <PointD>
-                <X>-530 px</X>
-                <Y>2716.64801025391 px</Y>
-              </PointD>
-              <PointD>
-                <X>-530 px</X>
+                <X>-528.16903004687 px</X>
                 <Y>2691.59205252421 px</Y>
               </PointD>
             </BendPoints>
@@ -2344,8 +2328,8 @@
           <ScaleMode>Free</ScaleMode>
           <Scale>0.71</Scale>
           <Location>
-            <X>-1619.7183588104 px</X>
-            <Y>2219.71837617253 px</Y>
+            <X>-1588.73244238099 px</X>
+            <Y>2129.57752992009 px</Y>
           </Location>
         </ViewPort>
       </Model>
