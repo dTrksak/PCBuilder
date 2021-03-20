@@ -25,11 +25,6 @@ public class Category implements Serializable {
 	@Column(name="category_name")
 	private String categoryName;
 
-	@Column(name="last_update")
-	private Timestamp lastUpdate;
-
-	private String name;
-
 	//bi-directional many-to-one association to Product
 	@JsonIgnore
 	@OneToMany(mappedBy="category")
@@ -52,22 +47,6 @@ public class Category implements Serializable {
 
 	public void setCategoryName(String categoryName) {
 		this.categoryName = categoryName;
-	}
-
-	public Timestamp getLastUpdate() {
-		return this.lastUpdate;
-	}
-
-	public void setLastUpdate(Timestamp lastUpdate) {
-		this.lastUpdate = lastUpdate;
-	}
-
-	public String getName() {
-		return this.name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
 	}
 
 	public List<Product> getProducts() {
