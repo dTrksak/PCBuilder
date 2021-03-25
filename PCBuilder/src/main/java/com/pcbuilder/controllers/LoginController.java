@@ -15,7 +15,7 @@ public class LoginController {
 
 	@Autowired
 	private UserRepository userRepo;
-	
+
 	@GetMapping("/login")
  	public String loginForm(Model model) {
 	 	 										//adds a th:object="${user}" in login.html

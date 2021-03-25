@@ -1,5 +1,7 @@
 package com.pcbuilder.controllers;
 
+import java.sql.*;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -25,7 +27,7 @@ public class SignupController {
   	}
 
 	@PostMapping("/signup")
-  	public String signupValidation(@ModelAttribute User input, Model model) {
+  	public String signupValidation(@ModelAttribute User input, Model model) throws SQLException {
 		//Find user with email
 		User user = userRepo.findByEmail(input.getEmail());
 		
@@ -34,6 +36,14 @@ public class SignupController {
 			//update user to mysql
 		  	return "signup_fail"; //=signup_fail.html
 		}
+	
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/pc_build", "root", "admin");
+		Statement stmt = conn.createStatement();
+		String sql = "insert into user (user_id, first_name, last_name, email, password) values ("+10+", '"+input.getFirstName()+"', '"+input.getLastName()+"', '"+input.getEmail()+"', '"+input.getPassword()+"');";
+		System.out.println(sql);
+		stmt.executeUpdate(sql);
+		
+		
 		return "signup_success"; //=signup_success.html
   	}
 }
