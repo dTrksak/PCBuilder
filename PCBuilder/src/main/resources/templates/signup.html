@@ -24,7 +24,7 @@
 				    	<p>First Name: <input type="text" placeholder="" th:field="*{firstName}" /></p>
 				    	<p>Last Name: <input type="text" placeholder="" th:field="*{lastName}" /></p>
 					    <label for="psw">Password</label>
-					    <input type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+					    <input type="password" id="psw" name="psw" th:field="*{password}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
 					    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
 					    required class="invalid">
 				    	<p>Password (again) <input type="password" id="passwordAgain" name="passwordAgain" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"/></p>
