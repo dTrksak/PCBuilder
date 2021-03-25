@@ -39,10 +39,13 @@ public class SignupController {
 	
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/pc_build", "root", "admin");
 		Statement stmt = conn.createStatement();
-		String sql = "insert into user (user_id, first_name, last_name, email, password) values ("+10+", '"+input.getFirstName()+"', '"+input.getLastName()+"', '"+input.getEmail()+"', '"+input.getPassword()+"');";
-		System.out.println(sql);
-		stmt.executeUpdate(sql);
+		String nextIDSQL = "select max(user_id) from user;"; //find the next user id to use
+		ResultSet rs = stmt.executeQuery(nextIDSQL);
+		rs.next();
+		int nextID = rs.getInt(1);
 		
+		String sql = "insert into user (user_id, first_name, last_name, email, password) values ("+nextID+1+", '"+input.getFirstName()+"', '"+input.getLastName()+"', '"+input.getEmail()+"', '"+input.getPassword()+"');";
+		stmt.executeUpdate(sql);
 		
 		return "signup_success"; //=signup_success.html
   	}
