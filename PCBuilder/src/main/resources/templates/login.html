@@ -3,20 +3,33 @@
 <head> 
     <title> PC Builder</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<!--/*/ <th:block th:include="/header_footer.html :: header_footer_files">
+	<!--/*/ <th:block th:include="/header_footer.html :: header_footer_files">
         </th:block> /*/-->
 </head>
 <body>
     <header th:insert="/header_footer.html :: header"> </header>
-	<h1> Login </h1>
-	<p>Make sure you have a temporary user created in mysql</p>
-	<p>Successful login will display a success page</p>
-	<p>Unsuccessful login will display a fail page</p>
-    <form action="#" th:action="@{/login}" th:object="${user}" method="post">
-    	<p>Email: <input type="text" placeholder="email@host.com" th:field="*{email}" /></p>
-        <p>Password: <input type="password" placeholder="password" th:field="*{password}" /></p>
-        <p><input type="submit" value="Login" /></p>
-    </form>
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
+	            <div class="col">
+					<h1> Signup Success </h1>
+					<h1> Login </h1>
+					<p>Make sure you have a temporary user created in mysql</p>
+					<p>Successful login will display a success page</p>
+					<p>Unsuccessful login will display a fail page</p>
+				    <form action="#" th:action="@{/login}" th:object="${user}" method="post">
+				    	<p>Email: <input type="text" placeholder="email@host.com" th:field="*{email}" /></p>
+				        <p>Password: <input type="password" placeholder="password" th:field="*{password}" /></p>
+				        <p><input type="submit" value="Login" /></p>
+				    </form>
+		    	</div>
+	   	 	</div>
+    	</div>
+    </main>
     <header th:insert="/header_footer.html :: footer"> </header>
 </body>
 </html>
