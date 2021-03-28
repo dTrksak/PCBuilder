@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>PC2</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
+    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(0,0,0);color: rgb(255,255,255);">
+        <div class="container"><a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="assets/img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">CREATE BUILD</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">MY BUILDS</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="color: rgb(255,255,255);background: #000000;font-family: Oswald, sans-serif;">PART LIST</a></li>
+                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">ACCOUNT</a>
+                        <div class="dropdown-menu" style="color: rgb(255,255,255);background: rgb(0,0,0);"><a class="dropdown-item" href="#" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;"></a><a class="dropdown-item" href="#" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;">LOGIN</a><a class="dropdown-item" href="#" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;">REGISTER</a></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section>
+        <div>
+            <h1 style="text-align: center;color: rgb(255,255,255);background: #000000;">Part List</h1>
+        </div>
+    </section>
+    <section class="d-xl-flex justify-content-xl-center align-items-xl-center" style="margin: 25px;">
+        <div class="container d-lg-flex flex-shrink-1" style="color: rgb(255,255,255);background: #000000;width: 671px;">
+            <div class="row d-lg-flex justify-content-lg-center" style="background: #000000;width: 721.375px;">
+                <div class="col d-lg-flex justify-content-lg-center"><button class="btn btn-primary" type="button" style="background: rgb(0,72,3);">Sort by Name</button></div>
+                <div class="col d-lg-flex justify-content-lg-center"><button class="btn btn-primary" type="button" style="background: rgb(102,3,3);">Sort by Manufacturer</button></div>
+                <div class="col d-lg-flex justify-content-lg-center"><button class="btn btn-primary" type="button" style="background: rgb(69,9,116);">Sort by Price</button></div>
+                <div class="col d-lg-flex justify-content-lg-center"><button class="btn btn-primary" type="button" style="background: rgb(0,46,115);">Sort by Size</button></div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table" id="tbl_body">
+                    <thead style="color: rgb(255,255,255);">
+                        <tr>
+                            <th style="width: 78px;padding-left: 15px;">Add</th>
+                            <th style="width: 277px;">Name</th>
+                            <th>Socket</th>
+                            <th>Form Factor</th>
+                            <th>Max Ram</th>
+                            <th>Memory Slots</th>
+                            <th>Color</th>
+                            <th>Price</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: rgb(255,255,255);" id="tbl_body">
+                        <tr>
+                            <td><button class="btn btn-primary text-center" type="button" style="width: 37.391px;height: 35px;">+</button></td>
+                            <td>Cell 2</td>
+                            <td>Cell 3</td>
+                            <td>Cell 4</td>
+                            <td>Cell 5</td>
+                            <td>Cell 6</td>
+                        </tr>
+                        <tr>
+                            <td><button class="btn btn-primary text-center" type="button" style="width: 37.391px;height: 35px;">+</button></td>
+                            <td>Cell 8</td>
+                            <td>Cell 9</td>
+                            <td>Cell 10</td>
+                            <td>Cell 11</td>
+                            <td>Cell 12</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <script type="text/javascript">
+
+                    function addMoreRows() {
+                        var rowsAdded = document.getElementById('motherboard_id').value;
+
+                        for(var x=0; x<rowsAdded; x++) {
+                            var newRow = document.getElementById('tbl_body').insertRow();
+
+                            var newCell = newRow.insertCell();
+                            newCell.innerHTML="<td><button class='btn btn-primary text-center' type='button' style='width: 37.391px;height: 35px;'>+</button></td>";
+
+                            newCell = newRow.insertCell();
+                            newCell.innerHTML="<td></td>";
+
+                            newCell = newRow.insertCell();
+                            newCell.innerHTML="<td></td>";
+                            
+                            newCell = newRow.insertCell();
+                            newCell.innerHTML="<td></td>";
+
+                            newCell = newRow.insertCell();
+                            newCell.innerHTML="<td></td>";
+
+                            newCell = newRow.insertCell();
+                            newCell.innerHTML="<td></td>";
+
+                            newCell = newRow.insertCell();
+                            newCell.innerHTML="<td></td>";
+                
+                        }
+                    }
+                </script>
+            </div>
+        </div>
+    </section>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
