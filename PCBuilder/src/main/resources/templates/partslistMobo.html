@@ -58,30 +58,16 @@
                         </tr>
                     </thead>
                     <tbody style="color: rgb(255,255,255);" id="tbl_body">
-                        <tr>
-                            <td><button class="btn btn-primary text-center" type="button" style="width: 37.391px;height: 35px;">+</button></td>
-                            <td>Cell 2</td>
-                            <td>Cell 3</td>
-                            <td>Cell 4</td>
-                            <td>Cell 5</td>
-                            <td>Cell 6</td>
-                        </tr>
-                        <tr>
-                            <td><button class="btn btn-primary text-center" type="button" style="width: 37.391px;height: 35px;">+</button></td>
-                            <td>Cell 8</td>
-                            <td>Cell 9</td>
-                            <td>Cell 10</td>
-                            <td>Cell 11</td>
-                            <td>Cell 12</td>
-                        </tr>
+                    
                     </tbody>
                 </table>
                 <script type="text/javascript">
 
                     function addMoreRows() {
-                        var rowsAdded = document.getElementById('motherboard_id').value;
+                        var tablelength = document.getElementById('motherboard').row.length;
+                        var mobo = document.getElementById('motherboard_id');
 
-                        for(var x=0; x<rowsAdded; x++) {
+                        for(var x=0; x<tablelength; x++) {
                             var newRow = document.getElementById('tbl_body').insertRow();
 
                             var newCell = newRow.insertCell();
@@ -106,6 +92,10 @@
                             newCell.innerHTML="<td></td>";
                 
                         }
+                    }
+
+                    function addTotalRows(){
+
                     }
                 </script>
             </div>
