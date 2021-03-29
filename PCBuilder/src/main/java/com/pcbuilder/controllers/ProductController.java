@@ -71,7 +71,7 @@ public class ProductController {
 
 		//System.out.println("/partlist1example?category=" + categoryName);
 		if(product == null || product.isEmpty()) {
-			model.addAttribute("partlist1", null);
+			model.addAttribute("productList", null);
 			model.addAttribute("partList", null);
 		}else {
 			model.addAttribute("productList", product);
