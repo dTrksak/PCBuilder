@@ -18,4 +18,11 @@ public class HomePage {
 	public String index2() {
 		return "index.html";
 	}
+	
+
+	//this can be removed once a homepage has been created
+	@RequestMapping("/index1")
+	public String index1() {
+		return "index1.html";
+	}
 }
