@@ -26,12 +26,13 @@ public class Cpu implements Serializable {
 	@Column(name="core_count")
 	private byte coreCount;
 
+	/* legacy 
 	@Column(name="cpu_name")
 	private String cpuName;
 
 	@Column(name="cpu_speed")
-	private int cpuSpeed;
-
+	private int cpuSpeed;*/
+	
 	@Column(name="integrated_graphics")
 	private String integratedGraphics;
 
@@ -79,6 +80,7 @@ public class Cpu implements Serializable {
 		this.coreCount = coreCount;
 	}
 
+	/* legacy
 	public String getCpuName() {
 		return this.cpuName;
 	}
@@ -93,7 +95,7 @@ public class Cpu implements Serializable {
 
 	public void setCpuSpeed(int cpuSpeed) {
 		this.cpuSpeed = cpuSpeed;
-	}
+	}*/
 
 	public String getIntegratedGraphics() {
 		return this.integratedGraphics;

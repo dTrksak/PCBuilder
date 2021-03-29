@@ -20,6 +20,7 @@ public class HomePage {
 		return "index.html";
 	}
 	
+	//used to test non-mapped templates
 	@RequestMapping("/{page}")
 	public String getPage(@PathVariable String page) {
 		return page + ".html";
