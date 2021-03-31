@@ -11,27 +11,27 @@ import com.pcbuilder.entities.User;
 import com.pcbuilder.repositories.UserRepository;
 
 @Controller
-public class SignupController {
+public class RegisterController {
 
 	@Autowired
 	private UserRepository userRepo;
 	
-	@GetMapping("/signup")
- 	public String signupForm(Model model) {
+	@GetMapping("/register")
+ 	public String registerForm(Model model) {
 	 	 										//adds a th:object="${user}" in login.html
-		model.addAttribute("user", new User());	//th:object="${user}" in login.html is a User entity. 
+		model.addAttribute("user", new User());	//th:object="${user}" in register.html is a User entity. 
 	 											//th:fields="*{email}" is the instance variable in the User entity
-		return "signup"; //=login.html in src/main/resources/templates
+		return "register"; //=register.html in src/main/resources/templates
   	}
 
-	@PostMapping("/signup")
-  	public String signupValidation(@ModelAttribute User input, Model model){
+	@PostMapping("/register")
+  	public String registerValidation(@ModelAttribute User input, Model model){
 		//Find user with email
 		User user = userRepo.findByEmail(input.getEmail());
 		
 		//if has user with same email
 		if(user != null) {
-		  	return "signup_fail"; //=signup_fail.html
+		  	return "register_fail"; //=register_fail.html
 		}
 		
 		userRepo.save(input);
@@ -39,6 +39,6 @@ public class SignupController {
 		model.addAttribute("firstName", input.getFirstName());
 		model.addAttribute("lastName", input.getLastName());
 	
-		return "signup_success"; //=signup_success.html
+		return "register_success"; //=register_success.html
   	}
 }

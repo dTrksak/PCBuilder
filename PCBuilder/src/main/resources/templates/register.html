@@ -1,19 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PC2</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <link rel="stylesheet" href="assets/css/Navigation-Clean.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="/css/signup_password_validation.css" rel="stylesheet">
 </head>
 
 <body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(0,0,0);color: rgb(255,255,255);">
-        <div class="container"><a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="assets/img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="/img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">CREATE BUILD</a></li>
@@ -30,11 +31,41 @@
         <h1 class="text-center" style="margin-bottom: 25px;">Register</h1>
     </section>
     <section>
-        <div class="container" style="width: 276px;">
-            <form style="text-align: left;"><label class="form-label">Username</label><input class="form-control" type="text" style="margin-bottom: 10px;"><label class="form-label">Password</label><input class="form-control" type="text" style="margin-bottom: 10px;"><label class="form-label">Re-enter Password</label><input class="form-control" type="text" style="margin-bottom: 15px;"><button class="btn btn-primary" type="button" style="background: rgb(0,46,115);border-color: rgb(0,46,115);">Submit</button></form>
-        </div>
+        <div class="container" style="width: 750px;">
+    	<div class="row">
+    		<div class="col-lg-6">
+	            <form action="#" th:action="@{/register}" th:object="${user}" method="post" style="text-align: left;">
+		            <label class="form-label">Email</label>
+		            <input class="form-control" type="text" th:field="*{email}" placeholder="email@host.com" style="margin-bottom: 10px;">
+		            <label class="form-label">First Name</label>
+		            <input class="form-control" type="text" th:field="*{firstName}" placeholder="" style="margin-bottom: 10px;">
+		            <label class="form-label">Last Name</label>
+		            <input class="form-control" type="text" th:field="*{lastName}" placeholder="" style="margin-bottom: 10px;">
+		            <label class="form-label">Password</label>
+		            <input class="form-control" type="password" id="psw" name="psw" th:field="*{password}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+						    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
+						    style="margin-bottom: 10px;">
+		            <label class="form-label">Re-enter Password</label>
+		            <input class="form-control" type="password" id="passwordAgain" name="passwordAgain" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="margin-bottom: 15px;">
+		            <button class="btn btn-primary" type="submit" value="Register" style="background: rgb(0,46,115);border-color: rgb(0,46,115);">Submit</button>
+	            </form>
+	            </div>
+	            
+	            <div class="col-lg-1"></div>
+	            <div class="col-lg-4">
+			            <div class="message">
+						  <h3>Password must contain the following:</h3>
+						  <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+						  <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+						  <p id="number" class="invalid">A <b>number</b></p>
+						  <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+						 </div>
+	            </div>
+            </div>
+            </div>
     </section>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/js/signup_password_validation.js"></script>
 </body>
 
 </html>

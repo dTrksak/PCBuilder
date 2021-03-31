@@ -5,15 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PC2</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <link rel="stylesheet" href="css/Navigation-Clean.css">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="/css/Navigation-Clean.css">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 
 <body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
     <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(0,0,0);color: rgb(255,255,255);">
-        <div class="container"><a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <div class="container"><a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="/img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">CREATE BUILD</a></li>
@@ -26,16 +26,19 @@
         </div>
     </nav>
     <section>
-        <h1 class="text-center" style="margin-bottom: 25px;" th:text="'Logged in as ' + ${firstName} + ' ' + ${lastName}"></h1>
+        <h1 class="text-center" style="margin-bottom: 25px;">Register Success</h1>
     </section>
     <section>
-        <div class="container text-center" style="width: 715px;">
-            <form method="get" action="/">
-				<button class="btn btn-primary" type="submit" value="Go to Home" style="text-align: center;background: rgb(102,3,3);border-color: rgb(102,3,3);">Go to Home</button>
-        	</form>
-        </div>
+        <div class="container" style="width: 276px;">
+				    <p th:text="'     Email: ' + ${email}" />
+				    <p th:text="'     First Name: ' + ${firstName}" />
+				    <p th:text="'     Last Name:  ' + ${lastName}" />
+				    <form method="get" action="/login">
+						<button class="btn btn-primary" type="submit" value="Go to Login" style="text-align: center;background: rgb(102,3,3);border-color: rgb(102,3,3);">Go to Login</button>
+				    </form>
+		</div>
     </section>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.pcbuilder.entities.CaseAccessory;
+import com.pcbuilder.entities.Category;
 import com.pcbuilder.entities.Cpu;
 import com.pcbuilder.entities.Motherboard;
 import com.pcbuilder.entities.Product;
@@ -26,7 +27,7 @@ import com.pcbuilder.repositories.MotherboardRepository;
 import com.pcbuilder.repositories.ProductRepository;
 
 @Controller
-@RequestMapping("/partslistMobo")
+@RequestMapping("/product")
 public class ProductController {
 	
 	@Autowired
@@ -78,6 +79,7 @@ public class ProductController {
 			List<?> list = getPartInfo(categoryName);
 			model.addAttribute("partList", list);
 		}
+		
 		
 		return "partslistMobo";
 	}
