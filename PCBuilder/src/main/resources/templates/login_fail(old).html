@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html xmlns:th="https://www.thymeleaf.org">
+<head> 
+    <title> PC Builder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--/*/ <th:block th:include="/header_footer.html :: header_footer_files">
+        </th:block> /*/-->
+</head>
+<body>
+
+    <header th:insert="/header_footer.html :: header"> </header>
+    <main role="main">
+        <div class="jumbotron">
+            <div class="container">
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="row">
+	            <div class="col">
+					<h1>Failed to login</h1>
+					<a href="/login">Go back to login</a>
+				</div>
+			</div>
+		</div>
+	</main>
+    <header th:insert="/header_footer.html :: footer"> </header>
+</body>
+</html>
