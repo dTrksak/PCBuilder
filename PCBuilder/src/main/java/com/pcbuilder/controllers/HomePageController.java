@@ -1,12 +1,12 @@
-package com.pcbuilder.presentation;
+package com.pcbuilder.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class HomePage {
-
+public class HomePageController {
+	
 	@RequestMapping("/")
 	public String index() {
 		//replace "blank.html" with homepage html file name
