@@ -9,7 +9,7 @@ USE pc_build;
 CREATE TABLE product_rating (
    rating_id mediumint UNSIGNED NOT NULL AUTO_INCREMENT,
    user_id mediumint UNSIGNED NOT NULL,
-   procduct_id mediumint UNSIGNED NOT NULL,
+   product_id mediumint UNSIGNED NOT NULL,
    active tinyint(1) NOT NULL DEFAULT 1,
    rating enum ('1', '2', '3', '4', '5') DEFAULT NULL,
    comment text DEFAULT NULL,
@@ -26,7 +26,7 @@ COLLATE utf8_general_ci;
 -- Create foreign key
 --
 ALTER TABLE product_rating
-ADD CONSTRAINT FK_product_rating_procduct_id FOREIGN KEY (procduct_id)
+ADD CONSTRAINT FK_product_rating_product_id FOREIGN KEY (product_id)
 REFERENCES product (product_id);
 
 --
