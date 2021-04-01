@@ -15,6 +15,6 @@ public interface CpuRepository extends JpaRepository<Cpu, Integer>{
 	//List<Cpu> findByCpuSpeed(int cpuSpeed); //legacy
 	List<Cpu> findByIntegratedGraphics(String integratedGraphics);
 	List<Cpu> findBySmt(String smt);
-	List<Cpu> findByTdp(String tdp);
+	List<Cpu> findByTdpWattage(String tdpWattage);
 	
 }

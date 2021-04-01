@@ -34,6 +34,9 @@ public class PcCase implements Serializable {
 
 	@Column(name="side_panel_window")
 	private String sidePanelWindow;
+	
+	@Column(name="form_factor")
+	private String formFactor;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -105,6 +108,14 @@ public class PcCase implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	public String getFormFactor() {
+		return formFactor;
+	}
+
+	public void setFormFactor(String formFactor) {
+		this.formFactor = formFactor;
 	}
 
 }

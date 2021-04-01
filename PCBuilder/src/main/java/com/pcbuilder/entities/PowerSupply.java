@@ -28,7 +28,8 @@ public class PowerSupply implements Serializable {
 
 	private String modular;
 
-	private String wattage;
+	@Column(name="total_wattage")
+	private String totalWattage;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -78,12 +79,12 @@ public class PowerSupply implements Serializable {
 		this.modular = modular;
 	}
 
-	public String getWattage() {
-		return this.wattage;
+	public String getTotalWattage() {
+		return this.totalWattage;
 	}
 
-	public void setWattage(String wattage) {
-		this.wattage = wattage;
+	public void setTotalWattage(String totalWattage) {
+		this.totalWattage = totalWattage;
 	}
 
 	public Product getProduct() {

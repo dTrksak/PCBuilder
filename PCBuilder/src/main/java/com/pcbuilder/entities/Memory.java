@@ -31,6 +31,9 @@ public class Memory implements Serializable {
 	private double pricePerGb;
 
 	private String speed;
+	
+	@Column(name="ram_gen")
+	private String ramGen;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -94,6 +97,14 @@ public class Memory implements Serializable {
 
 	public void setSpeed(String speed) {
 		this.speed = speed;
+	}
+	
+	public String getRamGen() {
+		return this.ramGen;
+	}
+
+	public void setRamGen(String ramGen) {
+		this.ramGen = ramGen;
 	}
 
 	public Product getProduct() {

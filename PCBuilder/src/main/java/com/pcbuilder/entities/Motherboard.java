@@ -28,8 +28,8 @@ public class Motherboard implements Serializable {
 	@Column(name="ram_slots")
 	private byte ramSlots;
 
-	@Column(name="socket_per_cpu")
-	private String socketPerCpu;
+	@Column(name="socket_type")
+	private String socketType;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -80,11 +80,11 @@ public class Motherboard implements Serializable {
 	}
 
 	public String getSocketPerCpu() {
-		return this.socketPerCpu;
+		return this.socketType;
 	}
 
-	public void setSocketPerCpu(String socketPerCpu) {
-		this.socketPerCpu = socketPerCpu;
+	public void setSocketType(String socketType) {
+		this.socketType = socketType;
 	}
 
 	public Product getProduct() {

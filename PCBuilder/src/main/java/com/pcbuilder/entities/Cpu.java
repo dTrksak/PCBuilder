@@ -38,7 +38,13 @@ public class Cpu implements Serializable {
 
 	private String smt;
 
-	private String tdp;
+	@Column(name="tdp_wattage")
+	private int tdpWattage;
+	
+	@Column(name="socket_type")
+	private String socketType;
+	
+	private String mode;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -113,12 +119,20 @@ public class Cpu implements Serializable {
 		this.smt = smt;
 	}
 
-	public String getTdp() {
-		return this.tdp;
+	public int getTdpWattage() {
+		return this.tdpWattage;
 	}
 
-	public void setTdp(String tdp) {
-		this.tdp = tdp;
+	public void setTdpWattage(int tdpWattage) {
+		this.tdpWattage = tdpWattage;
+	}
+	
+	public String getSocketType() {
+		return this.socketType;
+	}
+
+	public void setSocketType(String socketType) {
+		this.socketType = socketType;
 	}
 
 	public Product getProduct() {
@@ -127,6 +141,14 @@ public class Cpu implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	public String getMode() {
+		return mode;
+	}
+
+	public void setMode(String mode) {
+		this.mode = mode;
 	}
 
 }

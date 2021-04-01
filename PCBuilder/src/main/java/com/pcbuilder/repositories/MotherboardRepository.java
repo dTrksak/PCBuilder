@@ -12,5 +12,5 @@ public interface MotherboardRepository extends JpaRepository<Motherboard, Intege
 	List<Motherboard> findByFormFactor(String formFactor);
 	List<Motherboard> findByMaxRam(String maxRam);
 	List<Motherboard> findByRamSlots(byte ramSlots);
-	List<Motherboard> findBySocketPerCpu(String socketPerCpu);
+	List<Motherboard> findBySocketType(String socketType);
 }

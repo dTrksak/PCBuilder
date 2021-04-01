@@ -12,5 +12,5 @@ public interface PowerSupplyRepository extends JpaRepository<PowerSupply, Intege
 	List<PowerSupply> findByEfficiencyRating(String efficiencyRating);
 	List<PowerSupply> findByFormFactor(String formFactor);
 	List<PowerSupply> findByModular(String modular);
-	List<PowerSupply> findByWattage(String wattage);
+	List<PowerSupply> findByTotalWattage(String wattage);
 }

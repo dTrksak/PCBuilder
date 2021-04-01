@@ -29,6 +29,23 @@ public class Build  implements Serializable {
      private Timestamp createdDate;
 	@Column(name="updated_data")
      private Timestamp updatedData;
+	
+	@Column(name="os_type")
+	private String osType;
+	@Column(name="socket_type")
+	private String socketType;
+	@Column(name="form_factor")
+	private String formFactor;
+	@Column(name="ram_gen")
+	private String ramGen;
+	@Column(name="ram_slots")
+	private int ramSlots;
+	@Column(name="total_tdp")
+	private int totalTdp;
+	@Column(name="cpu_tdp")
+	private int cpuTdp;
+	@Column(name="video_card_tdp")
+	private int videoCardTdp;
 
     public Build() {
     }
@@ -68,6 +85,70 @@ public class Build  implements Serializable {
     public void setUpdatedData(Timestamp updatedData) {
         this.updatedData = updatedData;
     }
+
+	public String getOsType() {
+		return osType;
+	}
+
+	public void setOsType(String osType) {
+		this.osType = osType;
+	}
+
+	public String getSocketType() {
+		return socketType;
+	}
+
+	public void setSocketType(String socketType) {
+		this.socketType = socketType;
+	}
+
+	public String getFormFactor() {
+		return formFactor;
+	}
+
+	public void setFormFactor(String formFactor) {
+		this.formFactor = formFactor;
+	}
+
+	public String getRamGen() {
+		return ramGen;
+	}
+
+	public void setRamGen(String ramGen) {
+		this.ramGen = ramGen;
+	}
+
+	public int getRamSlots() {
+		return ramSlots;
+	}
+
+	public void setRamSlots(int ramSlots) {
+		this.ramSlots = ramSlots;
+	}
+
+	public int getTotalTdp() {
+		return totalTdp;
+	}
+
+	public void setTotalTdp(int totalTdp) {
+		this.totalTdp = totalTdp;
+	}
+
+	public int getCpuTdp() {
+		return cpuTdp;
+	}
+
+	public void setCpuTdp(int cpuTdp) {
+		this.cpuTdp = cpuTdp;
+	}
+
+	public int getVideoCardTdp() {
+		return videoCardTdp;
+	}
+
+	public void setVideoCardTdp(int videoCardTdp) {
+		this.videoCardTdp = videoCardTdp;
+	}
 
 }
 

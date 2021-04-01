@@ -32,6 +32,9 @@ public class VideoCard implements Serializable {
 	private String videoInterface;
 
 	private String memory;
+	
+	@Column(name="tdp_wattage")
+	private int tdpWattage;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -103,6 +106,14 @@ public class VideoCard implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	public int getTdpWattage() {
+		return tdpWattage;
+	}
+
+	public void setTdp(int tdpWattage) {
+		this.tdpWattage = tdpWattage;
 	}
 
 }
