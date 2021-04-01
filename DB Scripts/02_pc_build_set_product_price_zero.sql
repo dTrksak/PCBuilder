@@ -1,0 +1,1 @@
+UPDATE product SET product_price=0.0 WHERE product_price IS NULL;
