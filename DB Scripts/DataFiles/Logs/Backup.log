@@ -1,0 +1,18 @@
+﻿===========================================
+Log started at 3/31/2021 8:07:23 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+cpu
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+cpu (1213 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 8:07:23 PM
+===========================================

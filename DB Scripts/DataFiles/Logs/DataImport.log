@@ -1,0 +1,110 @@
+﻿===========================================
+Log started at 3/31/2021 2:52:42 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+Database: pc_build
+Table: memory2
+
+Rows imported: 7151
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 2:52:43 PM
+===========================================
+
+
+===========================================
+Log started at 3/31/2021 3:44:58 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+Database: pc_build
+Table: cpu1
+
+Rows imported: 1213
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 3:44:59 PM
+===========================================
+
+
+===========================================
+Log started at 3/31/2021 5:01:12 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+Database: pc_build
+Table: cpu_socket
+
+Rows imported: 202
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 5:01:12 PM
+===========================================
+
+
+===========================================
+Log started at 3/31/2021 6:14:28 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+Database: pc_build
+Table: product1
+
+Rows imported: 1213
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 6:14:28 PM
+===========================================
+
+
+===========================================
+Log started at 3/31/2021 7:05:26 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+Database: pc_build
+Table: cpu_socket
+
+Rows imported: 202
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 7:05:26 PM
+===========================================
+
+
+===========================================
+Log started at 3/31/2021 7:06:37 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+Database: pc_build
+Table: product1
+
+Rows imported: 1213
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 7:06:37 PM
+===========================================
+
+
+===========================================
+Log started at 3/31/2021 11:09:30 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+Database: pc_build
+Table: pc_case1
+
+Rows imported: 3879
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 3/31/2021 11:09:30 PM
+===========================================
