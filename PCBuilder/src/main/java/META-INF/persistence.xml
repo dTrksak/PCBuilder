@@ -31,6 +31,7 @@
 		<class>com.pcbuilder.entities.VideoCard</class>
 		<class>com.pcbuilder.entities.WiredNetworkCard</class>
 		<class>com.pcbuilder.entities.WirelessNetworkCard</class>
+		<class>com.pcbuilder.entities.ProductRating</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/pc_build"/>
 			<property name="javax.persistence.jdbc.user" value="root"/>
