@@ -2,69 +2,35 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head th:fragment="header_footer_files">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="PC Builder">
-    <meta name="author" content="Group 404">
-    <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico">
-
-    <title>PC Builder</title>
-
-    <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/jumbotron/">
-
-    <!-- Bootstrap core CSS -->
-    <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Custom styles for this template -->
-    <link href="jumbotron.css" rel="stylesheet">
-
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-        <script src="../../assets/js/vendor/popper.min.js"></script>
-        <script src="../../dist/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>PC2</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="css/Navigation-Clean.css">
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
      <div th:fragment="header">
-      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-        <a class="navbar-brand" href="/">
-  			<img src="/images/pcbuilderLogo.png" alt="pcbuilder" height="56" width="42" title="Go to home"/>
-  		</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="/#">Temp</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/#">Temp</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/#">Temp</a>
-            </li>
-            
-            
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="http://example.com" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown01">
-                <a class="dropdown-item" href="#">Action</a>
-                <a class="dropdown-item" href="#">Another action</a>
-                <a class="dropdown-item" href="#">Something else here</a>
-                </div>
-            </li>
-            </ul>
-            
-            <form class="form-inline my-1 my-lg-0" action="/signup">
-            	<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Signup</button>
-            </form>
-            <form class="form-inline my-2 my-lg-0" action="/login">
-            	<button class="btn btn-outline-light my-2 my-sm-0" type="submit">Login</button>
-            </form>
-            
+      <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(0,0,0);color: rgb(255,255,255);">
+        <div class="container">
+        <a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;" onclick="window.location='/'"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="build1" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">CREATE BUILD</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">MY BUILDS</a></li>
+                    <li class="nav-item dropdown">
+                    	<a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="/account1" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">ACCOUNT</a>
+                        <div class="dropdown-menu" style="color: rgb(255,255,255);background: rgb(0,0,0);">
+	                        <a class="dropdown-item" href="#" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;"></a>
+	                        <a class="dropdown-item" href="/login" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;">LOGIN</a>
+	                        <a class="dropdown-item" href="/register" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;">REGISTER</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
         </div>
-        </nav>
+    </nav>
     </div>
 
     <footer class="container">
