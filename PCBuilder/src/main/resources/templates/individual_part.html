@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>PC2</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
+    <link rel="stylesheet" href="css/Navigation-Clean.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
+    <header th:insert="/header_footer.html :: header"> </header>
+    <section class="d-lg-flex justify-content-lg-center align-items-lg-center" style="margin-bottom: 20px;">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead style="color: rgb(255,255,255);">
+                        <tr>
+                            <th>Part Name</th>
+                            <th>Spec 1</th>
+                            <th>Spec 2</th>
+                            <th>Spec 3</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: rgb(255,255,255);">
+                        <tr>
+                            <td>Cell 1</td>
+                            <td>Cell 2</td>
+                            <td>Cell 3</td>
+                            <td>Cell 4</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section class="d-lg-flex justify-content-lg-center align-items-lg-center">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead style="color: rgb(255,255,255);">
+                        <tr>
+                            <th style="width: 119px;">Username</th>
+                            <th>Comment</th>
+                            <th style="width: 104px;">Rating</th>
+                        </tr>
+                    </thead>
+                    <tbody style="color: rgb(255,255,255);">
+                        <tr>
+                            <td>Cell 1</td>
+                            <td>Cell 2</td>
+                            <td>Cell 3</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <section style="padding: 20px;">
+        <div class="container" style="width: 359px;">
+            <form class="d-lg-flex flex-column flex-grow-1 justify-content-lg-center align-items-lg-center" style="text-align: left;"><label class="form-label">Comment</label><input class="form-control" type="text" style="height: 38px;text-align: center;" placeholder="Type your comment here"><label class="form-label" style="margin-top: 15px;">Rating</label><input class="form-control" type="text" style="width: 335px;text-align: center;" placeholder="Enter a value from 1-5"><button class="btn btn-primary" type="button" style="margin: -2px;margin-top: 20px;width: 95.391px;background: rgb(0,46,115);border-color: rgb(0,46,115);border-top-color: rgb(255,;border-right-color: 255,;border-bottom-color: 255);border-left-color: 255,;">Submit</button></form>
+        </div>
+    </section>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+
+</html>
