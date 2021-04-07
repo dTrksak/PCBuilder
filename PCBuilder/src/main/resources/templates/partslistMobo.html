@@ -54,22 +54,21 @@
 					var partList = /*[[${partList}]]*/ "";
 					console.log("Products in varible 'productList'");
 					console.log(productList[0].category.categoryName + " in varible 'partList'");
-					
+
                     function addMoreRows() {
-                        var tablelength = document.getElementById('motherboard').row.length;
-                        var mobo = document.getElementById('motherboard_id');
+                        //var tablelength = document.getElementById('motherboard').row.length;
+                        //var mobo = document.getElementById('motherboard_id');
 
-                        for(var x=0; x<tablelength; x++) {
+                        for(var x=0; x<productList.length; x++) {
                             var newRow = document.getElementById('tbl_body').insertRow();
-
                             var newCell = newRow.insertCell();
                             newCell.innerHTML="<td><button class='btn btn-primary text-center' type='button' style='width: 37.391px;height: 35px;'>+</button></td>";
 
                             newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
+                            newCell.innerHTML="<td>" + productList[x].productName + "</td>";
 
                             newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
+                            newCell.innerHTML="<td>" + productList[x].productPrice + "</td>";
                             
                             newCell = newRow.insertCell();
                             newCell.innerHTML="<td></td>";
@@ -85,10 +84,7 @@
                 
                         }
                     }
-
-                    function addTotalRows(){
-
-                    }
+                    addMoreRows();
                 </script>
             </div>
         </div>

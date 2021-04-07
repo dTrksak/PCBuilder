@@ -104,7 +104,7 @@ public class ProductController {
 	@Autowired
 	private WirelessNetworkCardRepository wirelessNetworkCardRepo;
 	
-	@GetMapping("")  // example url - "/partslistMobo?category=motherboard" or "/partslistMobo?category=cpu+cooler"
+	@GetMapping("")  // example url - "/product?category=motherboard" or "/partslistMobo?category=cpu+cooler"
 	public String getPart(@RequestParam(value="category", required=true) String categoryName, Model model) {
 		List<Product> product = productRepo.findByCategory(categoryRepo.findByCategoryName(categoryName));
 
