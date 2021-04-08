@@ -18,7 +18,7 @@ public class Memory implements Serializable {
 	private int memoryId;
 
 	@Column(name="cas_latency")
-	private byte casLatency;
+	private Byte casLatency;
 
 	private String color;
 
@@ -28,7 +28,7 @@ public class Memory implements Serializable {
 	private String modules;
 
 	@Column(name="price_per_gb")
-	private double pricePerGb;
+	private Double pricePerGb;
 
 	private String speed;
 	
@@ -51,11 +51,11 @@ public class Memory implements Serializable {
 		this.memoryId = memoryId;
 	}
 
-	public byte getCasLatency() {
+	public Byte getCasLatency() {
 		return this.casLatency;
 	}
 
-	public void setCasLatency(byte casLatency) {
+	public void setCasLatency(Byte casLatency) {
 		this.casLatency = casLatency;
 	}
 
@@ -83,11 +83,11 @@ public class Memory implements Serializable {
 		this.modules = modules;
 	}
 
-	public double getPricePerGb() {
+	public Double getPricePerGb() {
 		return this.pricePerGb;
 	}
 
-	public void setPricePerGb(double pricePerGb) {
+	public void setPricePerGb(Double pricePerGb) {
 		this.pricePerGb = pricePerGb;
 	}
 

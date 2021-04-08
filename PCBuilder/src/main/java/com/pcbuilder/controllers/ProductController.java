@@ -99,7 +99,10 @@ public class ProductController {
 	private WirelessNetworkCardRepository wirelessNetworkCardRepo;
 	
 	@GetMapping("")  // example url - "/product?category=motherboard" or "/partslistMobo?category=cpu+cooler"
-	public String getPart(@RequestParam(value="category", required=true) String categoryName, Model model) {
+	public String getPart( Model model,
+			@RequestParam(value="category", required=true) String categoryName,
+			@RequestParam(value="page", required=false, defaultValue = "1") String page, 
+			@RequestParam(value="sortBy", required=false, defaultValue = "productName") String sortBy) {
 		List<Product> product = productRepo.findByCategory(categoryRepo.findByCategoryName(categoryName));
 
 		System.out.println("category=" + categoryName);
@@ -181,53 +184,53 @@ public class ProductController {
             case "case+accessory":
                 return "Case";
             case "case+fan":
-                return "";
+                return "CaseFan";
             case "cpu":
             	return "Cpu";
             case "cpu+cooler":
                 return "CpuCooler";
             case "external+harddrive":
-            	return "";
+            	return "External";
             case "fan+controller":
-            	return "";
+            	return "FanController";
             case "headphone":
-            	return "";
+            	return "Headphone";
             case "internal+harddrive":
-            	return "";
+            	return "Internal";
             case "keyboard":
-            	return "";
+            	return "Keyboard";
             case "memory":
             	return "Memory";
             case "monitor":
-            	return "";
+            	return "Monitor";
             case "motherboard":
             	return "Mobo";
             case "mouse":
-            	return "";
+            	return "Mouse";
             case "optical+drive":
-            	return "";
+            	return "OpticalDrive";
             case "os":
             	return "Os";
             case "pc+case":
-            	return "";
+            	return "PcCase";
             case "power+supply":
             	return "Psu";
             case "software":
-            	return "";
+            	return "Software";
             case "sound+card":
-            	return "";
+            	return "SoundCard";
             case "thermal+paste":
-            	return "";
+            	return "ThermalPaste";
             case "ups":
-            	return "";
+            	return "Ups";
             case "video+card":
-            	return "";
+            	return "VideoCard";
             case "wired+network+card":
-            	return "";
+            	return "WiredNetworkCard";
             case "wireless+network+card":
-            	return "";
+            	return "WirelessNetworkCard";
             default:
-            	return "";
+            	return "none";
         }
 	}
 	
