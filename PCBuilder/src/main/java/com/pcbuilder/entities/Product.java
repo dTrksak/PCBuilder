@@ -25,7 +25,7 @@ public class Product implements Serializable {
 	private String productName;
 
 	@Column(name="product_price")
-	private double productPrice;
+	private Double productPrice;
 
 	//bi-directional many-to-one association to BuildProduct
 	@JsonIgnore
@@ -181,11 +181,11 @@ public class Product implements Serializable {
 		this.productName = productName;
 	}
 
-	public double getProductPrice() {
+	public Double getProductPrice() {
 		return this.productPrice;
 	}
 
-	public void setProductPrice(double productPrice) {
+	public void setProductPrice(Double productPrice) {
 		this.productPrice = productPrice;
 	}
 
