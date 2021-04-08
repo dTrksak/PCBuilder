@@ -18,17 +18,17 @@ public class OpticalDrive implements Serializable {
 	@Column(name="optical_drive_id")
 	private int opticalDriveId;
 
-	private byte bd;
+	private Byte bd;
 
 	@Column(name="bd_write")
 	private String bdWrite;
 
-	private byte cd;
+	private Byte cd;
 
 	@Column(name="cd_write")
 	private String cdWrite;
 
-	private byte dvd;
+	private Byte dvd;
 
 	@Column(name="dvd_write")
 	private String dvdWrite;
@@ -49,11 +49,11 @@ public class OpticalDrive implements Serializable {
 		this.opticalDriveId = opticalDriveId;
 	}
 
-	public byte getBd() {
+	public Byte getBd() {
 		return this.bd;
 	}
 
-	public void setBd(byte bd) {
+	public void setBd(Byte bd) {
 		this.bd = bd;
 	}
 
@@ -65,11 +65,11 @@ public class OpticalDrive implements Serializable {
 		this.bdWrite = bdWrite;
 	}
 
-	public byte getCd() {
+	public Byte getCd() {
 		return this.cd;
 	}
 
-	public void setCd(byte cd) {
+	public void setCd(Byte cd) {
 		this.cd = cd;
 	}
 
@@ -81,11 +81,11 @@ public class OpticalDrive implements Serializable {
 		this.cdWrite = cdWrite;
 	}
 
-	public byte getDvd() {
+	public Byte getDvd() {
 		return this.dvd;
 	}
 
-	public void setDvd(byte dvd) {
+	public void setDvd(Byte dvd) {
 		this.dvd = dvd;
 	}
 
