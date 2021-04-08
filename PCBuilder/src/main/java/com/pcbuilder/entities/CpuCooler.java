@@ -28,6 +28,9 @@ public class CpuCooler implements Serializable {
 
 	@Column(name="radiator_size")
 	private String radiatorSize;
+	
+	@Column(name="socket_type")
+	private String socketType;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -83,6 +86,14 @@ public class CpuCooler implements Serializable {
 
 	public void setProduct(Product product) {
 		this.product = product;
+	}
+
+	public String getSocketType() {
+		return socketType;
+	}
+
+	public void setSocketType(String socketType) {
+		this.socketType = socketType;
 	}
 
 }
