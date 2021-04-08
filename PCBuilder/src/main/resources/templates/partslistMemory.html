@@ -50,49 +50,68 @@
                     </tbody>
                 </table>
                 <script th:inline="javascript">
-					var productList = /*[[${productList}]]*/ "";
-					var partList = /*[[${partList}]]*/ "";
+					var productList = /*[[${productList}]]*/"";
+					var partList = /*[[${partList}]]*/"";
 					console.log("Products in varible 'productList'");
-					console.log(productList[0].category.categoryName + " in varible 'partList'");
-					
-                    function addMoreRows() {
-                        var tablelength = document.getElementById('motherboard').row.length;
-                        var mobo = document.getElementById('motherboard_id');
+					console.log(productList[0].category.categoryName
+							+ " in varible 'partList'");
 
-                        for(var x=0; x<tablelength; x++) {
-                            var newRow = document.getElementById('tbl_body').insertRow();
+					addMoreRows();
 
-                            var newCell = newRow.insertCell();
-                            newCell.innerHTML="<td><button class='btn btn-primary text-center' type='button' style='width: 37.391px;height: 35px;'>+</button></td>";
+					// 1. Create the button
+					var button = document.createElement("button");
+					button.innerHTML = "Do Something";
 
-                            newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
+					// 2. Append somewhere
+					var body = document.getElementById("tbl_body");
+					body.appendChild(button);
 
-                            newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
-                            
-                            newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
+					// 3. Add event handler
+					button.addEventListener("click", function() {
+						alert("did something");
+					});
 
-                            newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
+					function addMoreRows() {
+						//var tablelength = document.getElementById('motherboard').row.length;
+						//var mobo = document.getElementById('motherboard_id');
 
-                            newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
+						for (var x = 0; x < productList.length; x++) {
+							var newRow = document.getElementById('tbl_body')
+									.insertRow();
+							var newCell = newRow.insertCell();
+							newCell.innerHTML = "<td><button class='btn btn-primary text-center' type='button' style='width: 37.391px;height: 35px;'>+</button></td>";
 
-                            newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
+							newCell = newRow.insertCell();
+							newCell.innerHTML = "<td>"
+									+ productList[x].productName + "</td>";
 
-                            newCell = newRow.insertCell();
-                            newCell.innerHTML="<td></td>";
-                
-                        }
-                    }
+							newCell = newRow.insertCell();
+							newCell.innerHTML = "<td>" + partList[x].speed
+									+ "</td>";
 
-                    function addTotalRows(){
+							newCell = newRow.insertCell();
+							newCell.innerHTML = "<td>" + partList[x].modules
+									+ "</td>";
 
-                    }
-                </script>
+							newCell = newRow.insertCell();
+							newCell.innerHTML = "<td>" + partList[x].pricePerGb
+									+ "</td>";
+
+							newCell = newRow.insertCell();
+							newCell.innerHTML = "<td>" + partList[x].color
+									+ "</td>";
+
+							newCell = newRow.insertCell();
+							newCell.innerHTML = "<td>" + partList[x].casLatency
+									+ "</td>";
+
+							newCell = newRow.insertCell();
+							newCell.innerHTML = "<td>"
+									+ productList[x].productPrice + "</td>";
+
+						}
+					}
+				</script>
             </div>
         </div>
     </section>
