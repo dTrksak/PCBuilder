@@ -6,19 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.pcbuilder.entities.CaseAccessory;
-import com.pcbuilder.entities.Category;
-import com.pcbuilder.entities.Cpu;
-import com.pcbuilder.entities.Headphone;
-import com.pcbuilder.entities.InternalHarddrive;
-import com.pcbuilder.entities.Motherboard;
 import com.pcbuilder.entities.Product;
 import com.pcbuilder.repositories.CaseAccessoryRepository;
 import com.pcbuilder.repositories.CaseFanRepository;
@@ -27,6 +17,8 @@ import com.pcbuilder.repositories.CpuCoolerRepository;
 import com.pcbuilder.repositories.CpuRepository;
 import com.pcbuilder.repositories.ExternalHarddriveRepository;
 import com.pcbuilder.repositories.FanControllerRepository;
+import com.pcbuilder.repositories.HeadphonesRepository;
+import com.pcbuilder.repositories.InternalHarddriveRepository;
 import com.pcbuilder.repositories.KeyboardRepository;
 import com.pcbuilder.repositories.MemoryRepository;
 import com.pcbuilder.repositories.MonitorRepository;
@@ -68,9 +60,11 @@ public class ProductController {
 	@Autowired
 	private FanControllerRepository fanControllerRepo;
 	@Autowired
+	private HeadphonesRepository headphoneRepo;
+	@Autowired
+	private InternalHarddriveRepository internalHarddriveRepo;
+	@Autowired
 	private KeyboardRepository keyboardRepo;
-	//headphones
-	//internalharddrive
 	@Autowired
 	private MemoryRepository memoryRepo;
 	@Autowired
@@ -114,8 +108,8 @@ public class ProductController {
 			model.addAttribute("partList", null);
 		}else {
 			model.addAttribute("productList", product);
-			List<?> list = getPartInfo(categoryName);
-			model.addAttribute("partList", list);
+			//List<?> list = getPartInfo(categoryName);
+			model.addAttribute("partList", getPartInfo(categoryName));
 		}
 		
 		categoryName = categoryName.replaceAll(" ", "+");
@@ -138,6 +132,10 @@ public class ProductController {
             	return externalHarddriveRepo.findAll();
             case "fan+controller":
             	return fanControllerRepo.findAll();
+            case "headphone":
+            	return headphoneRepo.findAll();
+            case "internal+harddrive":
+            	return internalHarddriveRepo.findAll();
             case "keyboard":
             	return keyboardRepo.findAll();
             case "memory":
@@ -189,6 +187,10 @@ public class ProductController {
             case "external+harddrive":
             	return "";
             case "fan+controller":
+            	return "";
+            case "headphone":
+            	return "";
+            case "internal+harddrive":
             	return "";
             case "keyboard":
             	return "";
