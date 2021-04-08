@@ -39,7 +39,7 @@ public class Cpu implements Serializable {
 	private String smt;
 
 	@Column(name="tdp_wattage")
-	private int tdpWattage;
+	private Integer tdpWattage;
 	
 	@Column(name="socket_type")
 	private String socketType;
@@ -119,11 +119,11 @@ public class Cpu implements Serializable {
 		this.smt = smt;
 	}
 
-	public int getTdpWattage() {
+	public Integer getTdpWattage() {
 		return this.tdpWattage;
 	}
 
-	public void setTdpWattage(int tdpWattage) {
+	public void setTdpWattage(Integer tdpWattage) {
 		this.tdpWattage = tdpWattage;
 	}
 	

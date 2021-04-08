@@ -9,22 +9,12 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
     <link rel="stylesheet" href="css/Navigation-Clean.css">
     <link rel="stylesheet" href="css/styles.css">
+	<!--/*/ <th:block th:include="/header_footer.html :: header_footer_files">
+        </th:block> /*/-->
 </head>
 
 <body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
-    <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(0,0,0);color: rgb(255,255,255);">
-        <div class="container"><a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navcol-1">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link active" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">CREATE BUILD</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">MY BUILDS</a></li>
-                    <li class="nav-item dropdown"><a class="dropdown-toggle nav-link" aria-expanded="false" data-bs-toggle="dropdown" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">ACCOUNT</a>
-                        <div class="dropdown-menu" style="color: rgb(255,255,255);background: rgb(0,0,0);"><a class="dropdown-item" href="#" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;"></a><a class="dropdown-item" href="#" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;">LOGIN</a><a class="dropdown-item" href="#" style="color: rgb(255,255,255);font-family: Oswald, sans-serif;">REGISTER</a></div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+	<header th:insert="/header_footer.html :: header"> </header>
     <section class="d-lg-flex justify-content-lg-center align-items-lg-center">
         <div class="container d-lg-flex justify-content-lg-center align-items-lg-center" style="background: url(&quot;img/gaming-system-1472951.jpg&quot;);height: 394px;">
             <div class="row text-center d-lg-flex justify-content-lg-center align-items-lg-center">
@@ -32,11 +22,11 @@
                     <h1 style="padding: 10px;">PC Builder</h1>
                     <div class="row">
                         <div class="col">
-                            <h1 style="font-size: 15.880000000000004px;color: rgb(214,214,214);">Create and compare your dream setup</h1>
+                            <h1 style="font-size: 15.880000000000004px;color: rgb(214,214,214);" >Create and compare your dream setup</h1>
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col"><button class="btn btn-primary" type="button" style="color: rgb(255,255,255);background: rgb(0,0,0);border-color: rgb(255,255,255);margin: 18px;">CREATE BUILD</button></div>
+                        <div class="col"><button class="btn btn-primary" type="button" style="color: rgb(255,255,255);background: rgb(0,0,0);border-color: rgb(255,255,255);margin: 18px;" onclick="window.location='build1'">CREATE BUILD</button></div>
                     </div>
                 </div>
             </div>
@@ -80,12 +70,24 @@
             </div>
         </div>
     </section>
-    <footer class="d-xl-flex justify-content-xl-center align-items-xl-center" style="height: 275px;">
-        <div class="container">
+    <footer class="d-xl-flex justify-content-xl-center align-items-xl-center" style="height: 275px;margin-top: 100px;">
+        <div class="container" style="padding-top: 0px;">
             <div class="row">
-                <div class="col-md-4 text-center d-xl-flex flex-column justify-content-xl-center align-items-xl-start"><img src="img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;"></div>
-                <div class="col-md-4 text-center d-lg-flex d-xl-flex flex-column justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-start"><a href="#" style="color: rgb(255,255,255);font-style: normal;margin-bottom: 10px;">Home</a><a href="#" style="color: rgb(255,255,255);font-style: normal;margin-bottom: 10px;">Create Build</a><a href="#" style="color: rgb(255,255,255);font-style: normal;">My Builds</a></div>
-                <div class="col-md-4 d-lg-flex d-xl-flex flex-column justify-content-lg-center align-items-lg-center justify-content-xl-center align-items-xl-start"><a href="#" style="color: rgb(255,255,255);font-style: normal;margin-bottom: 10px;">Manage Account</a><a href="#" style="color: rgb(255,255,255);font-style: normal;margin-bottom: 10px;">Logout</a></div>
+                <div class="col-md-4 text-center d-xl-flex flex-column justify-content-xl-center align-items-lg-center"><img src="img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 75px;">
+                    <p style="font-size: 15px;">PC Builder is designed to help computer enthusiasts of every skillset plan their future builds. With more options available than ever before, we aim to help you make informed decisions&nbsp; you can feel good about.</p>
+                </div>
+                <div class="col-md-4 text-center">
+                    <ul class="nav nav-tabs d-lg-flex flex-column ms-auto justify-content-lg-center align-items-lg-center" style="height: 165px;border-style: none;">
+                        <li class="nav-item"><a class="nav-link " href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;border-style: none;">CREATE BUILD</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;border-style: none;">MY BUILDS</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul class="nav nav-tabs d-lg-flex flex-column ms-auto justify-content-lg-center align-items-lg-center" style="height: 165px;border-style: none;">
+                        <li class="nav-item"><a class="nav-link" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;border-style: none;">MANAGE ACCOUNT</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;border-style: none;">LOGIN/LOGOUT</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
