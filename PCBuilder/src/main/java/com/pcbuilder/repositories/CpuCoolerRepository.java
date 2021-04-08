@@ -7,7 +7,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import com.pcbuilder.entities.CpuCooler;
 
 public interface CpuCoolerRepository extends JpaRepository<CpuCooler, Integer>{
-	
 	CpuCooler findByCpuCoolerId(int cpuCoolerId);
 	List<CpuCooler> findByColor(String color);
 	List<CpuCooler> findByFanRpm(String fanRpm);

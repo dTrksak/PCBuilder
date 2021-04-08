@@ -103,12 +103,14 @@ public class ProductController {
 		List<Product> product = productRepo.findByCategory(categoryRepo.findByCategoryName(categoryName));
 
 		System.out.println("category=" + categoryName);
+		categoryName = categoryName.replaceAll(" ", "+");
 		if(product == null || product.isEmpty()) {
 			model.addAttribute("productList", null);
 			model.addAttribute("partList", null);
 		}else {
 			model.addAttribute("productList", product);
 			//List<?> list = getPartInfo(categoryName);
+			//System.out.println(getPartInfo(categoryName));
 			model.addAttribute("partList", getPartInfo(categoryName));
 		}
 		
