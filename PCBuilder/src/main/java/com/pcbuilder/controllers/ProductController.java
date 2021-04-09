@@ -3,6 +3,9 @@ package com.pcbuilder.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -103,10 +106,11 @@ public class ProductController {
 			@RequestParam(value="category", required=true) String categoryName,
 			@RequestParam(value="page", required=false, defaultValue = "1") String page, 
 			@RequestParam(value="sortBy", required=false, defaultValue = "productName") String sortBy) {
-		List<Product> product = productRepo.findByCategory(categoryRepo.findByCategoryName(categoryName));
-
+		//List<Product> product = productRepo.findByCategory(categoryRepo.findByCategoryName(categoryName));
+		
 		System.out.println("category=" + categoryName);
 		categoryName = categoryName.replaceAll(" ", "+");
+		/*
 		if(product == null || product.isEmpty()) {
 			model.addAttribute("productList", null);
 			model.addAttribute("partList", null);
@@ -115,7 +119,8 @@ public class ProductController {
 			//List<?> list = getPartInfo(categoryName);
 			//System.out.println(getPartInfo(categoryName));
 			model.addAttribute("partList", getPartInfo(categoryName));
-		}
+		}*/
+		model.addAttribute("partList", getPartInfo(categoryName));
 		
 		categoryName = categoryName.replaceAll(" ", "+");
 		System.out.println("partslist" + getProductPage(categoryName));
