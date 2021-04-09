@@ -3,6 +3,7 @@ package com.pcbuilder.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -104,80 +105,71 @@ public class ProductController {
 	@GetMapping("")  // example url - "/product?category=motherboard" or "/partslistMobo?category=cpu+cooler"
 	public String getPart( Model model,
 			@RequestParam(value="category", required=true) String categoryName,
-			@RequestParam(value="page", required=false, defaultValue = "1") String page, 
+			@RequestParam(value="page", required=false, defaultValue = "1") String pageNum, 
 			@RequestParam(value="sortBy", required=false, defaultValue = "productName") String sortBy) {
-		//List<Product> product = productRepo.findByCategory(categoryRepo.findByCategoryName(categoryName));
-		
 		System.out.println("category=" + categoryName);
 		categoryName = categoryName.replaceAll(" ", "+");
-		/*
-		if(product == null || product.isEmpty()) {
-			model.addAttribute("productList", null);
-			model.addAttribute("partList", null);
-		}else {
-			model.addAttribute("productList", product);
-			//List<?> list = getPartInfo(categoryName);
-			//System.out.println(getPartInfo(categoryName));
-			model.addAttribute("partList", getPartInfo(categoryName));
-		}*/
-		model.addAttribute("partList", getPartInfo(categoryName));
+		int page = Integer.valueOf(pageNum);
+		Pageable pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
+		
+		model.addAttribute("partList", getPartInfo(categoryName, pageable));
 		
 		categoryName = categoryName.replaceAll(" ", "+");
 		System.out.println("partslist" + getProductPage(categoryName));
 		return "partslist" + getProductPage(categoryName);
 	}
 
-	public List<?> getPartInfo(String categoryName){
+	public Page<?> getPartInfo(String categoryName, Pageable pageable){
         switch(categoryName.toLowerCase())
         {
             case "case+accessory":
-                return caseAccessoryRepo.findAll();
+                return caseAccessoryRepo.findAll(pageable);
             case "case+fan":
-                return caseFanRepo.findAll();
+                return caseFanRepo.findAll(pageable);
             case "cpu":
-            	return cpuRepo.findAll();
+            	return cpuRepo.findAll(pageable);
             case "cpu+cooler":
-                return cpuCoolerRepo.findAll();
+                return cpuCoolerRepo.findAll(pageable);
             case "external+harddrive":
-            	return externalHarddriveRepo.findAll();
+            	return externalHarddriveRepo.findAll(pageable);
             case "fan+controller":
-            	return fanControllerRepo.findAll();
+            	return fanControllerRepo.findAll(pageable);
             case "headphone":
-            	return headphoneRepo.findAll();
+            	return headphoneRepo.findAll(pageable);
             case "internal+harddrive":
-            	return internalHarddriveRepo.findAll();
+            	return internalHarddriveRepo.findAll(pageable);
             case "keyboard":
-            	return keyboardRepo.findAll();
+            	return keyboardRepo.findAll(pageable);
             case "memory":
-            	return memoryRepo.findAll();
+            	return memoryRepo.findAll(pageable);
             case "monitor":
-            	return monitorRepo.findAll();
+            	return monitorRepo.findAll(pageable);
             case "motherboard":
-            	return motherboardRepo.findAll();
+            	return motherboardRepo.findAll(pageable);
             case "mouse":
-            	return mouseRepo.findAll();
+            	return mouseRepo.findAll(pageable);
             case "optical+drive":
-            	return opticalDriveRepo.findAll();
+            	return opticalDriveRepo.findAll(pageable);
             case "os":
-            	return osRepo.findAll();
+            	return osRepo.findAll(pageable);
             case "pc+case":
-            	return pcCaseRepo.findAll();
+            	return pcCaseRepo.findAll(pageable);
             case "power+supply":
-            	return powerSupplyRepo.findAll();
+            	return powerSupplyRepo.findAll(pageable);
             case "software":
-            	return softwareRepo.findAll();
+            	return softwareRepo.findAll(pageable);
             case "sound+card":
-            	return soundCardRepo.findAll();
+            	return soundCardRepo.findAll(pageable);
             case "thermal+paste":
-            	return thermalPasteRepo.findAll();
+            	return thermalPasteRepo.findAll(pageable);
             case "ups":
-            	return upsRepo.findAll();
+            	return upsRepo.findAll(pageable);
             case "video+card":
-            	return videoCardRepo.findAll();
+            	return videoCardRepo.findAll(pageable);
             case "wired+network+card":
-            	return wiredNetworkCardRepo.findAll();
+            	return wiredNetworkCardRepo.findAll(pageable);
             case "wireless+network+card":
-            	return wirelessNetworkCardRepo.findAll();
+            	return wirelessNetworkCardRepo.findAll(pageable);
             default:
             	return null;
         }
