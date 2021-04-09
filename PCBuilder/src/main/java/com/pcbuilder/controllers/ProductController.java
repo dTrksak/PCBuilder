@@ -106,7 +106,7 @@ public class ProductController {
 	public String getPart( Model model,
 			@RequestParam(value="category", required=true) String categoryName,
 			@RequestParam(value="page", required=false, defaultValue = "1") String pageNum, 
-			@RequestParam(value="sortBy", required=false, defaultValue = "productName") String sortBy) {
+			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy) {
 		System.out.println("category=" + categoryName);
 		categoryName = categoryName.replaceAll(" ", "+");
 		int page = Integer.valueOf(pageNum);
