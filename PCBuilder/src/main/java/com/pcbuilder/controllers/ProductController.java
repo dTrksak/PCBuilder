@@ -112,7 +112,7 @@ public class ProductController {
 		int page = Integer.valueOf(pageNum);
 		Pageable pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
 		
-		model.addAttribute("partList", getPartInfo(categoryName, pageable));
+		model.addAttribute("partList", getPartInfo(categoryName, pageable).toList());
 		
 		categoryName = categoryName.replaceAll(" ", "+");
 		System.out.println("partslist" + getProductPage(categoryName));
