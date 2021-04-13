@@ -131,6 +131,11 @@ public class ProductController {
 		//System.out.println("partslist" + getProductPage(categoryName));
 		return "partslist" + getProductPage(categoryName);
 	}
+	
+	//testing
+	private String buildSocketType = "AM3";
+	private String buildRamGen = "DDR4";
+	private String buildMode = "64-bit";
 
 	public Page<?> getPartInfo(String categoryName, Pageable pageable){
         switch(categoryName.toLowerCase())
