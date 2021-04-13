@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.pcbuilder.entities.Motherboard;
 import com.pcbuilder.entities.Product;
 import com.pcbuilder.repositories.CaseAccessoryRepository;
 import com.pcbuilder.repositories.CaseFanRepository;
@@ -107,7 +108,7 @@ public class ProductController {
 	public String getPart( Model model,
 			@RequestParam(value="category", required=true) String categoryName,
 			@RequestParam(value="page", required=false, defaultValue = "0") String pageNum, 
-			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy, 
+			@RequestParam(value="sortBy", required=false, defaultValue = "color") String sortBy, 
 			@RequestParam(value="sortOrder", required=false, defaultValue = "asc") String sortOrder) {
 		//System.out.println("category=" + categoryName);
 		
@@ -122,6 +123,9 @@ public class ProductController {
 		model.addAttribute("page", page);
 		model.addAttribute("pages", getPartInfo(categoryName, pageable).getTotalPages());
 		model.addAttribute("partList", getPartInfo(categoryName, pageable).toList());
+		
+		Page<Motherboard> m = (Page<Motherboard>) getPartInfo("motherboard", pageable);
+		System.out.println(m.toList().get(0).getProduct());
 		
 		categoryName = categoryName.replaceAll(" ", "+");
 		//System.out.println("partslist" + getProductPage(categoryName));
@@ -154,7 +158,7 @@ public class ProductController {
             case "monitor":
             	return monitorRepo.findAll(pageable);
             case "motherboard":
-            	return motherboardRepo.findAll(pageable);
+            	return motherboardRepo.findByCompatibility(buildSocketType, buildRamGen, pageable); //motherboardRepo.findAll(pageable);
             case "mouse":
             	return mouseRepo.findAll(pageable);
             case "optical+drive":
