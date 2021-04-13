@@ -13,7 +13,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.pcbuilder.entities.Build;
+import com.pcbuilder.entities.Cpu;
+import com.pcbuilder.entities.CpuCooler;
+import com.pcbuilder.entities.Motherboard;
 import com.pcbuilder.entities.Product;
+import com.pcbuilder.entities.VideoCard;
 import com.pcbuilder.repositories.CaseAccessoryRepository;
 import com.pcbuilder.repositories.CaseFanRepository;
 import com.pcbuilder.repositories.CategoryRepository;
@@ -45,10 +50,10 @@ import com.pcbuilder.repositories.WirelessNetworkCardRepository;
  * Handles all things related to Products
  * 
  */
-
+/*
 @Controller
 @RequestMapping("/product")
-public class ProductController {
+public class TestProductController {
 	
 	@Autowired
 	private CaseAccessoryRepository caseAccessoryRepo;
@@ -106,25 +111,17 @@ public class ProductController {
 	@GetMapping("")  // example url - "/product?category=motherboard" or "/partslistMobo?category=cpu+cooler"
 	public String getPart( Model model,
 			@RequestParam(value="category", required=true) String categoryName,
-			@RequestParam(value="page", required=false, defaultValue = "0") String pageNum, 
-			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy, 
-			@RequestParam(value="sortOrder", required=false, defaultValue = "asc") String sortOrder) {
-		//System.out.println("category=" + categoryName);
-		
+			@RequestParam(value="page", required=false, defaultValue = "1") String pageNum, 
+			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy) {
+		System.out.println("category=" + categoryName);
 		categoryName = categoryName.replaceAll(" ", "+");
 		int page = Integer.valueOf(pageNum);
-		Pageable pageable = null;
-		if(sortOrder.equals("asc"))
-			pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
-		if(sortOrder.equals("des"))
-			pageable = PageRequest.of(page, 100, Sort.by(sortBy).descending());
-
-		model.addAttribute("page", page);
-		model.addAttribute("pages", getPartInfo(categoryName, pageable).getTotalPages());
+		Pageable pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
+		
 		model.addAttribute("partList", getPartInfo(categoryName, pageable).toList());
 		
 		categoryName = categoryName.replaceAll(" ", "+");
-		//System.out.println("partslist" + getProductPage(categoryName));
+		System.out.println("partslist" + getProductPage(categoryName));
 		return "partslist" + getProductPage(categoryName);
 	}
 
@@ -249,5 +246,94 @@ public class ProductController {
 			return null;
 		return product;
 	}*/
-}
+	
+	//for manual testing
+/*
+	private String buildSocketType = "AM3";
+	private String buildRamGen = "DDR4";
+	private String buildMode = "64-bit";
+	
+	List<VideoCard> videoCardCompatibility(List<VideoCard> videoCardList, Build build) {
+		for(VideoCard v : videoCardList)
+		{
+			if(v.getTdpWattage()+build.getCpuTdp() > build.getTotalTdp()) {
+				videoCardList.remove(v);
+			}
+		}
+		return videoCardList;
+	}
+	
+	public List<Cpu> cpuCompatibility(Page<Cpu> page) {
+		for(int i = 0; i < page.getSize(); i++)
+		{
+			Cpu c = page.get(i);
+			if((c.getSocketType() != null) && !c.getSocketType().equals(buildSocketType)) { 		//!build.getSocketType().equals("") && !c.getSocketType().equals(build.getSocketType())) {
+				//cpuList.remove(c);
+			}
+			else if(false) {																		//c.getTdpWattage()+build.getVideoCardTdp() > build.getTotalTdp()) {
+				//cpuList.remove(c);
+			}
+			//else if((c.getMode() != null) && !c.getMode().equals(buildMode)) { 					//!build.getMode().equals("") && !c.getMode().equals(build.getMode()))
+			//	cpuList.remove(c);
+			//}
+			
+		}
+		System.out.println(page.getSize());
+		return page;
+	}
+	
+	List<Motherboard> motherboardCompatibility(List<Motherboard> motherboardList) {
+		for(int i = 0; i < motherboardList.size(); i++)
+		{
+			Motherboard m = motherboardList.get(i);
+			if(!m.getSocketType().equals(buildSocketType)) {
+				motherboardList.remove(i);
+				i--;
+			}
+			else if(!m.getRamGen().equals(buildRamGen)) {
+				motherboardList.remove(i);
+				i--;
+			}
+		}
+		return motherboardList;
+	}
+	
+	/*
+	 * what it might look like once the current build can be referenced
+	List<VideoCard> motherboardCompatibility(List<Motherboard> motherboardList, Build build) {
+		for(Motherboard m : motherboardList)
+		{
+			if(build.getSocketType() != null && m.getSocketType() != build.getSocketType()) {
+				motherboardList.remove(m);
+			}
+			else if(build.getRamGen() != null && m.getRamGen() != build.getRamGen()) {
+				motherboardList.remove(m);
+			}
+		}
+	}
+	*/
+	
+//}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

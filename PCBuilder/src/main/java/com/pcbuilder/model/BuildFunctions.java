@@ -1,3 +1,4 @@
+/*
 package com.pcbuilder.model;
 
 import java.util.ArrayList;
@@ -69,3 +70,4 @@ public class BuildFunctions {
 		String mode = cpu.getMode();
 	}
 }
+*/

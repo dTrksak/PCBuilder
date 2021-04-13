@@ -11,7 +11,7 @@ public interface MotherboardRepository extends JpaRepository<Motherboard, Intege
 	Motherboard findByMotherboardId(int motherboardId);
 	List<Motherboard> findByColor(String color);
 	List<Motherboard> findByFormFactor(String formFactor);
-	List<Motherboard> findByMaxRam(String maxRam);
+	List<Motherboard> findByRamGen(String ramGen);
 	List<Motherboard> findByRamSlots(byte ramSlots);
 	List<Motherboard> findBySocketType(String socketType);
 	Motherboard findByProduct(Product product);
