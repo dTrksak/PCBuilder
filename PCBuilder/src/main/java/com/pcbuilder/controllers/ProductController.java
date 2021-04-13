@@ -105,17 +105,25 @@ public class ProductController {
 	@GetMapping("")  // example url - "/product?category=motherboard" or "/partslistMobo?category=cpu+cooler"
 	public String getPart( Model model,
 			@RequestParam(value="category", required=true) String categoryName,
-			@RequestParam(value="page", required=false, defaultValue = "1") String pageNum, 
-			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy) {
-		System.out.println("category=" + categoryName);
+			@RequestParam(value="page", required=false, defaultValue = "0") String pageNum, 
+			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy, 
+			@RequestParam(value="sortOrder", required=false, defaultValue = "asc") String sortOrder) {
+		//System.out.println("category=" + categoryName);
+		
 		categoryName = categoryName.replaceAll(" ", "+");
 		int page = Integer.valueOf(pageNum);
-		Pageable pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
-		
+		Pageable pageable = null;
+		if(sortOrder.equals("asc"))
+			pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
+		if(sortOrder.equals("des"))
+			pageable = PageRequest.of(page, 100, Sort.by(sortBy).descending());
+
+		model.addAttribute("page", page);
+		model.addAttribute("pages", getPartInfo(categoryName, pageable).getTotalPages());
 		model.addAttribute("partList", getPartInfo(categoryName, pageable).toList());
 		
 		categoryName = categoryName.replaceAll(" ", "+");
-		System.out.println("partslist" + getProductPage(categoryName));
+		//System.out.println("partslist" + getProductPage(categoryName));
 		return "partslist" + getProductPage(categoryName);
 	}
 

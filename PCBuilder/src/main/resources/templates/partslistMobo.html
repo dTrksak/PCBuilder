@@ -14,8 +14,7 @@
 <link rel="stylesheet" href="/css/styles.css">
 </head>
 
-<body
-	style="color: rgb(255, 255, 255); font-family: Oswald, sans-serif; background: rgb(0, 0, 0);">
+<body style="color: rgb(255, 255, 255); font-family: Oswald, sans-serif; background: rgb(0, 0, 0);">
 	<header th:insert="/header_footer.html :: header"> </header>
 	<section>
 		<div>
@@ -26,30 +25,9 @@
 	</section>
 	<section
 		class="d-xl-flex justify-content-xl-center align-items-xl-center"
-		style="margin: 25px;">
-		<div class="container d-lg-flex flex-shrink-1"
-			style="color: rgb(255, 255, 255); background: #000000; width: 671px;">
-			<div class="row d-lg-flex justify-content-lg-center"
-				style="background: #000000; width: 721.375px;">
-				<div class="col d-lg-flex justify-content-lg-center">
-					<button class="btn btn-primary" type="button"
-						style="background: rgb(0, 72, 3);">Sort by Name</button>
-				</div>
-				<div class="col d-lg-flex justify-content-lg-center">
-					<button class="btn btn-primary" type="button"
-						style="background: rgb(102, 3, 3);">Sort by Manufacturer</button>
-				</div>
-				<div class="col d-lg-flex justify-content-lg-center">
-					<button class="btn btn-primary" type="button"
-						style="background: rgb(69, 9, 116);">Sort by Price</button>
-				</div>
-				<div class="col d-lg-flex justify-content-lg-center">
-					<button class="btn btn-primary" type="button"
-						style="background: rgb(0, 46, 115);">Sort by Size</button>
-				</div>
-			</div>
-		</div>
+		style="margin: 25px;" th:insert="/pagination.html :: sort-by">
 	</section>
+	<section th:insert="/pagination.html :: page-buttons-top"></section>
 	<section>
 		<div class="container">
 			<div class="table-responsive">
@@ -76,9 +54,6 @@
 					addMoreRows();
 
 					function addMoreRows() {
-						//var tablelength = document.getElementById('motherboard').row.length;
-						//var mobo = document.getElementById('motherboard_id');
-
 						for (var x = 0; x < partList.length; x++) {
 							var newRow = document.getElementById('tbl_body')
 									.insertRow();
@@ -115,10 +90,13 @@
 
 						}
 					}
+					
 				</script>
 			</div>
 		</div>
 	</section>
+	
+	<section th:insert="/pagination.html :: page-buttons-bottom"></section>
 </body>
 
 </html>
