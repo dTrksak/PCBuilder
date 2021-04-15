@@ -22,8 +22,8 @@ public class Motherboard implements Serializable {
 	@Column(name="form_factor")
 	private String formFactor;
 
-	@Column(name="max_ram")
-	private String maxRam;
+	@Column(name="ram_gen")
+	private String ramGen;
 
 	@Column(name="ram_slots")
 	private byte ramSlots;
@@ -63,12 +63,12 @@ public class Motherboard implements Serializable {
 		this.formFactor = formFactor;
 	}
 
-	public String getMaxRam() {
-		return this.maxRam;
+	public String getRamGen() {
+		return this.ramGen;
 	}
 
-	public void setMaxRam(String maxRam) {
-		this.maxRam = maxRam;
+	public void setRamGen(String ramGen) {
+		this.ramGen = ramGen;
 	}
 
 	public byte getRamSlots() {
@@ -79,7 +79,7 @@ public class Motherboard implements Serializable {
 		this.ramSlots = ramSlots;
 	}
 
-	public String getSocketPerCpu() {
+	public String getSocketType() {
 		return this.socketType;
 	}
 

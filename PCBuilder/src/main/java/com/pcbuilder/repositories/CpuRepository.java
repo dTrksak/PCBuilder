@@ -2,7 +2,10 @@ package com.pcbuilder.repositories;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Query;
 
 import com.pcbuilder.entities.Cpu;
 
@@ -17,4 +20,6 @@ public interface CpuRepository extends JpaRepository<Cpu, Integer>{
 	List<Cpu> findBySmt(String smt);
 	List<Cpu> findByTdpWattage(String tdpWattage);
 	
+	@Query("select c from Cpu c where (c.socketType = ?3 or ?3 is null) and (c.tdpWattage + ?1 <= ?2 or ?2 = 0) and (c.mode = ?4 or ?4 is null)")
+	Page<Cpu> findByCompatibility(int videoCardTdp, int totalTdp, String socketType, String mode, Pageable pageable);
 }

@@ -32,7 +32,7 @@ public class InternalHarddrive implements Serializable {
 	private String harddriveInterface;
 
 	@Column(name="price_per_gb")
-	private double pricePerGb;
+	private Double pricePerGb;
 
 	//bi-directional many-to-one association to Product
 	@ManyToOne
@@ -90,11 +90,11 @@ public class InternalHarddrive implements Serializable {
 		this.harddriveInterface = harddriveInterface;
 	}
 
-	public double getPricePerGb() {
+	public Double getPricePerGb() {
 		return this.pricePerGb;
 	}
 
-	public void setPricePerGb(double pricePerGb) {
+	public void setPricePerGb(Double pricePerGb) {
 		this.pricePerGb = pricePerGb;
 	}
 

@@ -3,6 +3,8 @@ package com.pcbuilder.controllers;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -12,6 +14,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.pcbuilder.entities.Motherboard;
 import com.pcbuilder.entities.Product;
 import com.pcbuilder.repositories.CaseAccessoryRepository;
 import com.pcbuilder.repositories.CaseFanRepository;
@@ -44,6 +47,7 @@ import com.pcbuilder.repositories.WirelessNetworkCardRepository;
  * Handles all things related to Products
  * 
  */
+
 @Controller
 @RequestMapping("/product")
 public class ProductController {
@@ -104,80 +108,88 @@ public class ProductController {
 	@GetMapping("")  // example url - "/product?category=motherboard" or "/partslistMobo?category=cpu+cooler"
 	public String getPart( Model model,
 			@RequestParam(value="category", required=true) String categoryName,
-			@RequestParam(value="page", required=false, defaultValue = "1") String page, 
-			@RequestParam(value="sortBy", required=false, defaultValue = "productName") String sortBy) {
-		//List<Product> product = productRepo.findByCategory(categoryRepo.findByCategoryName(categoryName));
-		
-		System.out.println("category=" + categoryName);
-		categoryName = categoryName.replaceAll(" ", "+");
-		/*
-		if(product == null || product.isEmpty()) {
-			model.addAttribute("productList", null);
-			model.addAttribute("partList", null);
-		}else {
-			model.addAttribute("productList", product);
-			//List<?> list = getPartInfo(categoryName);
-			//System.out.println(getPartInfo(categoryName));
-			model.addAttribute("partList", getPartInfo(categoryName));
-		}*/
-		model.addAttribute("partList", getPartInfo(categoryName));
+			@RequestParam(value="page", required=false, defaultValue = "0") String pageNum, 
+			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy, 
+			@RequestParam(value="sortOrder", required=false, defaultValue = "asc") String sortOrder) {
+		//System.out.println("category=" + categoryName);
 		
 		categoryName = categoryName.replaceAll(" ", "+");
-		System.out.println("partslist" + getProductPage(categoryName));
+		int page = Integer.valueOf(pageNum);
+		Pageable pageable = null;
+		if(sortOrder.equals("asc"))
+			pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
+		if(sortOrder.equals("des"))
+			pageable = PageRequest.of(page, 100, Sort.by(sortBy).descending());
+
+		model.addAttribute("page", page);
+		model.addAttribute("pages", getPartInfo(categoryName, pageable).getTotalPages());
+		model.addAttribute("partList", getPartInfo(categoryName, pageable).toList());
+		
+		categoryName = categoryName.replaceAll(" ", "+");
+		//System.out.println("partslist" + getProductPage(categoryName));
 		return "partslist" + getProductPage(categoryName);
 	}
+	
+	//testing
+	private String 	buildSocketType = "AM3";
+	private String 	buildRamGen = "DDR4";
+	private String 	buildMode = "64-bit";
+	private int 	buildTotalTdp = 600;
+	private int 	buildCpuTdp = 250;
+	private int 	buildVideoCardTdp = 300;
+	private String 	buildFormFactor = "ATX";
 
-	public List<?> getPartInfo(String categoryName){
+	public Page<?> getPartInfo(String categoryName, Pageable pageable){
         switch(categoryName.toLowerCase())
         {
             case "case+accessory":
-                return caseAccessoryRepo.findAll();
+                return caseAccessoryRepo.findAll(pageable);
             case "case+fan":
-                return caseFanRepo.findAll();
+                return caseFanRepo.findAll(pageable);
             case "cpu":
-            	return cpuRepo.findAll();
+            	return cpuRepo.findByCompatibility(buildVideoCardTdp, buildTotalTdp, buildSocketType, buildMode, pageable);
             case "cpu+cooler":
-                return cpuCoolerRepo.findAll();
+                return cpuCoolerRepo.findByCompatibility(buildSocketType, pageable);
             case "external+harddrive":
-            	return externalHarddriveRepo.findAll();
+            	return externalHarddriveRepo.findAll(pageable);
             case "fan+controller":
-            	return fanControllerRepo.findAll();
+            	return fanControllerRepo.findAll(pageable);
             case "headphone":
-            	return headphoneRepo.findAll();
+            	return headphoneRepo.findAll(pageable);
             case "internal+harddrive":
-            	return internalHarddriveRepo.findAll();
+            	return internalHarddriveRepo.findAll(pageable);
             case "keyboard":
-            	return keyboardRepo.findAll();
+            	return keyboardRepo.findAll(pageable);
             case "memory":
-            	return memoryRepo.findAll();
+            	return memoryRepo.findByCompatibility(buildRamGen, pageable);
             case "monitor":
-            	return monitorRepo.findAll();
+            	return monitorRepo.findAll(pageable);
             case "motherboard":
-            	return motherboardRepo.findAll();
+            	return motherboardRepo.findByCompatibility(buildSocketType, buildRamGen, buildFormFactor, pageable);
             case "mouse":
-            	return mouseRepo.findAll();
+            	return mouseRepo.findAll(pageable);
             case "optical+drive":
-            	return opticalDriveRepo.findAll();
+            	return opticalDriveRepo.findAll(pageable);
             case "os":
-            	return osRepo.findAll();
+            	return osRepo.findByCompatibility(buildMode, pageable);
             case "pc+case":
-            	return pcCaseRepo.findAll();
+            	return pcCaseRepo.findByCompatibility(buildFormFactor, pageable);
             case "power+supply":
-            	return powerSupplyRepo.findAll();
+            	return powerSupplyRepo.findByCompatibility(buildVideoCardTdp, buildCpuTdp, pageable);
             case "software":
-            	return softwareRepo.findAll();
+            	return softwareRepo.findAll(pageable);
             case "sound+card":
-            	return soundCardRepo.findAll();
+            	return soundCardRepo.findAll(pageable);
             case "thermal+paste":
-            	return thermalPasteRepo.findAll();
+            	return thermalPasteRepo.findAll(pageable);
             case "ups":
-            	return upsRepo.findAll();
+            	return upsRepo.findAll(pageable);
             case "video+card":
-            	return videoCardRepo.findAll();
+            	return videoCardRepo.findByCompatibility(buildCpuTdp, buildTotalTdp, pageable);
             case "wired+network+card":
-            	return wiredNetworkCardRepo.findAll();
+            	return wiredNetworkCardRepo.findAll(pageable);
             case "wireless+network+card":
-            	return wirelessNetworkCardRepo.findAll();
+            	return wirelessNetworkCardRepo.findAll(pageable);
             default:
             	return null;
         }
@@ -249,3 +261,4 @@ public class ProductController {
 		return product;
 	}*/
 }
+
