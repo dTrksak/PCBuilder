@@ -19,8 +19,6 @@ public interface MotherboardRepository extends JpaRepository<Motherboard, Intege
 	List<Motherboard> findBySocketType(String socketType);
 	Motherboard findByProduct(Product product);
 	
-	@Query(	value = "select * from motherboard, product where product.product_id = motherboard.product_id",// where socket_type = ?1 and ram_gen = ?2",
-			countQuery = "select count(*) from motherboard, product where product.product_id = motherboard.product_id",// where socket_type = ?1 and ram_gen = ?2",
-			nativeQuery = true)
-	Page<Motherboard> findByCompatibility(String socketType, String ramGen, Pageable pageable);
+	@Query("select m from Motherboard m where (m.socketType = ?1 or ?1 is null) and (m.ramGen = ?2 or ?2 is null) and (m.formFactor = ?3 or ?3 is null)")
+	Page<Motherboard> findByCompatibility(String socketType, String ramGen, String formFactor, Pageable pageable);
 }
