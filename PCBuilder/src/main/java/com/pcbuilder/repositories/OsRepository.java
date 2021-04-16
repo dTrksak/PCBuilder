@@ -16,6 +16,6 @@ public interface OsRepository extends JpaRepository<Os, Integer>{
 	List<Os> findByMode(String mode);
 	List<Os> findByOsType(String osType);
 	
-	@Query("select o from Os o where o.mode = ?1 or ?1 is null")
+	@Query("select o from Os o where o.mode = ?1 or o.mode = '32/64-bit' or ?1 is null")
 	Page<Os> findByCompatibility(String mode, Pageable pageable);
 }

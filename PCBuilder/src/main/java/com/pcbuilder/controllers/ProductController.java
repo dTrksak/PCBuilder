@@ -131,7 +131,7 @@ public class ProductController {
 	}
 	
 	//testing
-	private String 	buildSocketType = "AM3";
+	private String 	buildSocketType = "AM4";
 	private String 	buildRamGen = "DDR4";
 	private String 	buildMode = "64-bit";
 	private int 	buildTotalTdp = 600;
