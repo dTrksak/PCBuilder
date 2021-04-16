@@ -110,16 +110,19 @@ public class ProductController {
 			@RequestParam(value="category", required=true) String categoryName,
 			@RequestParam(value="page", required=false, defaultValue = "0") String pageNum, 
 			@RequestParam(value="sortBy", required=false, defaultValue = "product.productName") String sortBy, 
-			@RequestParam(value="sortOrder", required=false, defaultValue = "asc") String sortOrder) {
+			@RequestParam(value="sortOrder", required=false, defaultValue = "asc") String sortOrder, 
+			@RequestParam(value="amt", required=false, defaultValue = "100") String amt) {
 		//System.out.println("category=" + categoryName);
 		
 		categoryName = categoryName.replaceAll(" ", "+");
 		int page = Integer.valueOf(pageNum);
+		int pageSize = Integer.valueOf(amt);
+		
 		Pageable pageable = null;
 		if(sortOrder.equals("asc"))
-			pageable = PageRequest.of(page, 100, Sort.by(sortBy).ascending());
+			pageable = PageRequest.of(page, pageSize, Sort.by(sortBy).ascending());
 		if(sortOrder.equals("des"))
-			pageable = PageRequest.of(page, 100, Sort.by(sortBy).descending());
+			pageable = PageRequest.of(page, pageSize, Sort.by(sortBy).descending());
 
 		model.addAttribute("page", page);
 		model.addAttribute("pages", getPartInfo(categoryName, pageable).getTotalPages());

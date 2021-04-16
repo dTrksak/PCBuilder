@@ -4,143 +4,202 @@
 </head>
 
 <body>
-		<div class="container d-lg-flex" style="width: 671px;" th:fragment="sort-by">
-			<select class="form-select form-select-lg" style="width: 300px;" aria-label="Sort By" id="sortByList">
-			  
-			</select>
-			
+	<div class="container d-lg-flex" style="width: 671px;"
+		th:fragment="sort-by">
+		<select class="form-select form-select-lg" style="width: 300px; font-size: 30px; text-align-last:center;"
+			aria-label="Sort By" id="sortByList">
+
+		</select>
+
 		<div style="padding-left: 5px;">
-		  <input type="radio" id="asc" name="sortOrder" value="asc" checked>
-		  <label for="asc">asc</label><br>
-		  <input type="radio" id="des" name="sortOrder" value="des">
-		  <label for="des">des</label><br>
-		  </div>
-		<div style="padding-left: 15px;">
-		  	<button type="button" class="btn btn-light" id="SubmitSort" name="Submit" style="min-width: 100px; max-width: 100px;" onclick="sort()">Sort</button>
+			<input type="radio" id="asc" name="sortOrder" value="asc" checked>
+			<label for="asc">asc</label><br> <input type="radio" id="des"
+				name="sortOrder" value="des"> <label for="des">des</label><br>
 		</div>
-		  
-			
-			<script th:inline="javascript">
-				var partList = /*[[${partList}]]*/ "";
-				var sortByList = document.getElementById("sortByList");
-				addProductSorting();
-				for(key in partList[0]){
-					if(key.match("Id") || key.match("product")){
-						continue;
-					}
-					var option = document.createElement("option");
-					option.text = makeKeyName(key);
-					option.value = key;
-					option.style.fontSize = 20 + "px";
-					sortByList.add(option);
+		<div style="padding-left: 30px;">
+
+			<div class="row">
+				<select class="form-select form-select-sm" style="width: 50px;"
+					aria-label="Items" id="itemPerPage">
+					<option value="100">Items Per Page</option>
+					<option value="1">1</option>
+					<option value="5">5</option>
+					<option value="10">10</option>
+					<option value="25">25</option>
+					<option value="50">50</option>
+					<option value="100">100</option>
+					<option value="custom">Custom Amount</option>
+				</select>
+			</div>
+
+			<div class="row">
+				<input type="number" id="itemPerPageTextfield" style="width: 50px;" value="100" disabled>
+			</div>
+		</div>
+		<div style="padding-left: 30px;">
+			<button type="button" class="btn btn-light" id="SubmitSort"
+				name="Submit" style="min-width: 100px; max-width: 100px;"
+				onclick="sort()">Sort</button>
+		</div>
+
+
+		<script th:inline="javascript">
+			var partList = /*[[${partList}]]*/"";
+			var sortByList = document.getElementById("sortByList");
+			var fontSize = "30px";
+
+			addProductSorting(); //add sorting for productPrice and productName
+			for (key in partList[0]) { //add sorting for part variables
+				if (key.match("Id") || key.match("product")) {
+					continue;
 				}
+				var option = document.createElement("option");
+				option.text = makeKeyName(key);
+				option.value = key;
+				option.style.fontSize = fontSize;
+				option.style.textAlign = "center";
+				sortByList.add(option);
+			}
+
+			var element = document.getElementById('itemPerPage'); //top
+			element.addEventListener('input', function(e) {
+				if (e.target.id !== 'itemPerPage')
+					return;
 				
-				function makeKeyName(key){
-					var words = key.split(/(?=[A-Z])/);
-					var fullWord = "";
-					for(var i in words){
-						fullWord+=words[i] + " ";
-					}
-					fullWord = fullWord.substring(0, fullWord.length-1);
-					return fullWord.replace(fullWord[0], fullWord[0].toUpperCase());
+				var itemPerPageTextfield = document.getElementById('itemPerPageTextfield');
+				if(e.target.value == "custom"){
+					itemPerPageTextfield.removeAttribute("disabled");
+				}else{
+					itemPerPageTextfield.setAttribute("disabled", true);
+					itemPerPageTextfield.value = e.target.value;
 				}
-				function addProductSorting(){
-					var option = document.createElement("option");
-					option.text = "Product Name";
-					option.value = "product.productName";
-					option.style.fontSize = 20 + "px";
-					sortByList.add(option, sortByList[0]);
-					
-					var option2 = document.createElement("option");
-					option2.text = "Product Price";
-					option2.value = "product.productPrice";
-					option2.style.fontSize = 20 + "px";
-					sortByList.add(option2, sortByList[1]);
+			}, false);
+
+			function makeKeyName(key) { //take input "inputTest" and return "Input Test"
+				var words = key.split(/(?=[A-Z])/);
+				var fullWord = "";
+				for ( var i in words) {
+					fullWord += words[i] + " ";
 				}
-				function sort(){
-					var sortOrder = "";
-					if(document.getElementsByName("sortOrder")[0].checked)
-						sortOrder = "asc";
-					else 
-						sortOrder = "des";
-					
-					var url = new URL(window.location.href);
-					var search_params = url.searchParams;
-					
-					search_params.set('sortOrder', sortOrder);
-					search_params.set('sortBy', document.getElementById("sortByList").value);
-					window.location.search = search_params.toString();
+				fullWord = fullWord.substring(0, fullWord.length - 1);
+				return fullWord.replace(fullWord[0], fullWord[0].toUpperCase());
+			}
+			function addProductSorting() { //add sorting for productPrice and productName
+				var option = document.createElement("option");
+				option.text = "Product Name";
+				option.value = "product.productName";
+				option.style.fontSize = fontSize;
+				option.style.textAlign = "center";
+				sortByList.add(option, sortByList[0]);
+
+				var option2 = document.createElement("option");
+				option2.text = "Product Price";
+				option2.value = "product.productPrice";
+				option2.style.fontSize = fontSize;
+				option2.style.textAlign = "center";
+				sortByList.add(option2, sortByList[1]);
+			}
+			function sort() {
+				var sortOrder = "";
+				if (document.getElementsByName("sortOrder")[0].checked)
+					sortOrder = "asc";
+				else
+					sortOrder = "des";
+
+				var itemPerPageTextfield = document.getElementById('itemPerPageTextfield');
+				if(itemPerPageTextfield.value < 0) itemPerPageTextfield.value = 1;
+				if(itemPerPageTextfield.value > 1000) itemPerPageTextfield.value = 1000;
+				if ((itemPerPageTextfield.value % 1) != 1) itemPerPageTextfield.value = Math.floor(itemPerPageTextfield.value);
+				
+				var url = new URL(window.location.href);
+				var search_params = url.searchParams;
+
+				search_params.set('sortOrder', sortOrder);
+				search_params.set('sortBy', document
+						.getElementById("sortByList").value);
+				search_params.set('amt', document
+						.getElementById("itemPerPageTextfield").value);
+				window.location.search = search_params.toString();
+			}
+		</script>
+	</div>
+
+	<div class="d-flex justify-content-center" style="padding-bottom: 5px;"
+		th:fragment="page-buttons-top">
+		<button type="button" class="btn btn-light btn-sm" id="pagePrev"
+			style="min-width: 50; max-width: 50px;" onclick="prevPage()">Prev</button>
+		<input type="number" id="pageInput" name="pageInput" min="0"
+			th:attr="max = ${pages}-1, value = ${page}">
+		<button type="button" class="btn btn-light btn-sm" id="pageNext"
+			style="min-width: 50px; max-width: 50px;" onclick="nextPage()">Next</button>
+	</div>
+
+
+	<div class="d-flex justify-content-center"
+		th:fragment="page-buttons-bottom">
+		<button type="button" class="btn btn-light btn-sm" id="pagePrev2"
+			style="min-width: 50; max-width: 50px;" onclick="prevPage()">Prev</button>
+		<input type="number" id="pageInput2" name="pageInput2" min="0"
+			th:attr="max = ${pages}-1, value = ${page}">
+		<button type="button" class="btn btn-light btn-sm" id="pageNext2"
+			style="min-width: 50px; max-width: 50px;" onclick="nextPage()">Next</button>
+
+		<script th:inline="javascript">
+			/*
+			 *  Pagination
+			 */
+			var curPage = /*[[${page}]]*/"";
+			var pageLimit = /*[[${pages}]]*/"";
+
+			var elem = document.getElementById('pageInput'); //top
+			elem.addEventListener('keypress', function(e) {
+				if (e.keyCode == 13) {
+					validateSetPage(elem.value);
 				}
-			</script>
-		</div>
-		<div class="d-flex justify-content-center" style="padding-bottom: 5px;" th:fragment="page-buttons-top">
-			<button type="button" class="btn btn-light btn-sm" id="pagePrev" style="min-width: 50; max-width: 50px; " onclick="prevPage()">Prev</button>
-		  	<input type="number" id="pageInput" name="pageInput" min="0" th:attr="max = ${pages}-1, value = ${page}">
-			<button type="button" class="btn btn-light btn-sm" id="pageNext" style="min-width: 50px; max-width: 50px;" onclick="nextPage()">Next</button>
-		</div>
-		
-		
-		<div class="d-flex justify-content-center" th:fragment="page-buttons-bottom">
-			<button type="button" class="btn btn-light btn-sm" id="pagePrev2" style="min-width: 50; max-width: 50px; " onclick="prevPage()">Prev</button>
-		  	<input type="number" id="pageInput2" name="pageInput2" min="0" th:attr="max = ${pages}-1, value = ${page}">
-			<button type="button" class="btn btn-light btn-sm" id="pageNext2" style="min-width: 50px; max-width: 50px;" onclick="nextPage()">Next</button>
-		
-			<script th:inline="javascript">
-				/*
-				 *  Pagination
-				 */
-				var curPage = /*[[${page}]]*/ "";
-				var pageLimit = /*[[${pages}]]*/ "";
-		
-				var elem = document.getElementById('pageInput'); //top
-				elem.addEventListener('keypress', function(e) {
-					if (e.keyCode == 13) {
-						validateSetPage(elem.value);
-					}
-				});
-				var elem2 = document.getElementById('pageInput2'); //bottom
-				elem2.addEventListener('keypress', function(e) {
-					if (e.keyCode == 13) {
-						validateSetPage(elem2.value);
-					}
-				});
-		
-				function validateSetPage(value){
-					if (value >= pageLimit) {
-						value = pageLimit - 1;
-					}
-					if (value < 0) {
-						value = 0;
-					}
-					if((value%1) != 1){
-						value = Math.floor(value);
-					}
-					setPage(value);
+			});
+			var elem2 = document.getElementById('pageInput2'); //bottom
+			elem2.addEventListener('keypress', function(e) {
+				if (e.keyCode == 13) {
+					validateSetPage(elem2.value);
 				}
-				function setPage(value) {
-					var url = new URL(window.location.href);
-					var search_params = url.searchParams;
-					search_params.set('page', value);
-					window.location.search = search_params.toString();
+			});
+
+			function validateSetPage(value) {
+				if (value >= pageLimit) {
+					value = pageLimit - 1;
 				}
-		
-				function prevPage() {
-					if (curPage - 1 < 0) {
-						curPage = 0;
-						setPage(curPage);
-					} else {
-						setPage(curPage - 1);
-					}
+				if (value < 0) {
+					value = 0;
 				}
-		
-				function nextPage() {
-					if (curPage + 1 >= pageLimit) {
-						curPage = pageLimit - 1;
-						setPage(curPage);
-					} else {
-						setPage(curPage + 1);
-					}
+				if ((value % 1) != 1) {
+					value = Math.floor(value);
 				}
-			</script>
-		</div>
+				setPage(value);
+			}
+			function setPage(value) {
+				var url = new URL(window.location.href);
+				var search_params = url.searchParams;
+				search_params.set('page', value);
+				window.location.search = search_params.toString();
+			}
+
+			function prevPage() {
+				if (curPage - 1 < 0) {
+					curPage = 0;
+					setPage(curPage);
+				} else {
+					setPage(curPage - 1);
+				}
+			}
+
+			function nextPage() {
+				if (curPage + 1 >= pageLimit) {
+					curPage = pageLimit - 1;
+					setPage(curPage);
+				} else {
+					setPage(curPage + 1);
+				}
+			}
+		</script>
+	</div>
 </body>
