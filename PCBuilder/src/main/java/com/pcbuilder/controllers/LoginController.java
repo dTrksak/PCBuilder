@@ -1,5 +1,7 @@
 package com.pcbuilder.controllers;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,7 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import com.pcbuilder.entities.Build;
 import com.pcbuilder.entities.User;
+import com.pcbuilder.repositories.BuildRepository;
 import com.pcbuilder.repositories.UserRepository;
 
 @Controller
@@ -37,13 +41,12 @@ public class LoginController {
 				//firstName = user.getFirstName(), lastName = user.getLastName
 		  		model.addAttribute("firstName", user.getFirstName());
 		  		model.addAttribute("lastName", user.getLastName());
+		  		model.addAttribute("email", user.getEmail());
 		  		
 		  		//return loginSuccess.html page on the same url /login
-		  		return "login_success"; //=login_success.html
+		  		return "/login/login_success"; //=login_success.html
 			}
 		}
-		return "login_fail"; //=login_fail.html
+		return "/login/login_fail"; //=login_fail.html
   	}
-	
-	
 }

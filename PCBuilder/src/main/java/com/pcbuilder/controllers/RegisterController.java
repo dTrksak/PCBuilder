@@ -31,7 +31,7 @@ public class RegisterController {
 		
 		//if has user with same email
 		if(user != null) {
-		  	return "register_fail"; //=register_fail.html
+		  	return "/register/register_fail"; //=register_fail.html
 		}
 		
 		userRepo.save(input);
@@ -39,6 +39,6 @@ public class RegisterController {
 		model.addAttribute("firstName", input.getFirstName());
 		model.addAttribute("lastName", input.getLastName());
 	
-		return "register_success"; //=register_success.html
+		return "/register/register_success"; //=register_success.html
   	}
 }

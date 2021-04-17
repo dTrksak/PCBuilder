@@ -1,18 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="https://www.thymeleaf.org">
 
-
 <head th:insert="/header_footer.html :: head"></head>
 
 <body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
 	<header th:insert="/header_footer.html :: header"> </header>
-    <section>
-        <h1 class="text-center" style="margin-bottom: 25px;" th:text="'Logged in as ' + ${firstName} + ' ' + ${lastName}"></h1>
-    </section>
+	<h1 class="text-center" style="margin-bottom: 25px;" th:text="'Error-' + ${error}"></h1>
     <section>
         <div class="container text-center" style="width: 715px;">
             <form method="get" action="/">
-				<button class="btn btn-primary" type="submit" value="Go to Home" style="text-align: center;background: rgb(102,3,3);border-color: rgb(102,3,3);">Go to Home</button>
+				<button class="btn btn-primary" type="submit" value="Go to Home" style="text-align: center;background: rgb(102,3,3);border-color: rgb(102,3,3);">Return Home</button>
         	</form>
         </div>
     </section>

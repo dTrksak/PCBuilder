@@ -21,23 +21,16 @@ import com.pcbuilder.repositories.UserRepository;
  * 
  */
 @Controller
-@RequestMapping("/users")
 public class UserController {
 	
 	@Autowired
 	private UserRepository userRepo;
-	
-	@RequestMapping("/hello")
-	public String helloWorld() {
-		return "helloWorld.html";
-	}
-	
-	@GetMapping("/all")
-	@ResponseBody
-	public List<User> list(){
-		return userRepo.findAll();
-	}
 
+	@GetMapping("/account")
+	public String account() {
+		return "account1";
+	}
+	/*
 	@GetMapping("/{firstName}+{lastName}")
 	@ResponseBody
 	public String get(@PathVariable String firstName, @PathVariable String lastName) {
@@ -47,5 +40,5 @@ public class UserController {
 		if(user != null)
 			return user.toString();
 		return "\"" + firstName + " " + lastName + "\" was not found.";
-	}
+	}*/
 }

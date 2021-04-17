@@ -21,8 +21,10 @@ public class HomePageController {
 	}
 	
 	//used to test non-mapped templates
+	//will throw INTERNAL SERVER ERROR if no such page exist
+	/*
 	@RequestMapping("/{page}")
 	public String getPage(@PathVariable String page) {
 		return page + ".html";
-	}
+	}*/
 }
