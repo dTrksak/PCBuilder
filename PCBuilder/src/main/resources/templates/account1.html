@@ -10,16 +10,16 @@
         <div class="container">
             <div class="row">
                 <div class="col-3" style="width: 180px;">
-                    <div style="text-align: center;margin: 5px;"><button class="btn btn-primary" type="button" style="background: rgb(0,72,3);">Change Username</button></div>
-                    <div style="text-align: center;margin: 5px;"><button class="btn btn-primary" type="button" style="background: rgb(0,46,115);">Change Password</button></div>
-                    <div style="text-align: center;"><button class="btn btn-primary" type="button" style="background: rgb(102,3,3);">Delete Account</button></div>
+                    <div style="text-align: center;margin: 5px;"><button class="btn btn-primary" type="button" style="background: rgb(0,72,3);" onclick="changeEmail()">Change Email</button></div>
+                    <div style="text-align: center;margin: 5px;"><button class="btn btn-primary" type="button" style="background: rgb(0,46,115);"onclick="changePassword()">Change Password</button></div>
+                    <div style="text-align: center;"><button class="btn btn-primary" type="button" style="background: rgb(102,3,3);"onclick="deleteAccount()">Delete Account</button></div>
                 </div>
                 <div class="col">
-                    <div class="table-responsive" style="background: #000000;border-color: rgb(255, 255, 255);border-top-color: rgb(255,border-right-color: 255,border-bottom-color: 255);border-left-color: 255,;">
+                    <div class="table-responsive" style="background: #000000;border-color: rgb(255, 255, 255);border-top-color: rgb(255,255, 255); border-bottom-color: (255, 255 ,255); border-left-color: (255, 255,255);">
                         <table class="table">
                             <thead style="color: rgb(255,255,255);">
                                 <tr>
-                                    <th style="width: 145px;">Username</th>
+                                    <th style="width: 145px;">Email</th>
                                     <th style="width: 300px;">Comment</th>
                                     <th style="width: 64px;">Rating</th>
                                     <th>Link to Part</th>
@@ -39,6 +39,17 @@
             </div>
         </div>
     </section>
+    <script th:inline="javascript">
+    	function changeEmail(){
+    		console.log("changeEmail");
+    	}
+    	function changePassword(){
+    		console.log("changePassword");
+    	}
+    	function deleteAccount(){
+    		console.log("deleteAccount");
+    	}
+    </script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 
