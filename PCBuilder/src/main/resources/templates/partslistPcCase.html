@@ -24,15 +24,15 @@
 				<table class="table" id="tbl_body">
 					<thead style="color: rgb(255, 255, 255);">
 						<tr>
-							<th style="width: 78px; padding-left: 15px;">Add</th>
-							<th style="width: 277px;">Name</th>
-							<th>Core Count</th>
-							<th>Core Clock</th>
-							<th>Boost Clock</th>
-							<th>TDP</th>
-							<th>Integrated Graphics</th>
-							<th>SMT</th>
-							<th>Price</th>
+							<th style="width: 78px;padding-left: 15px;">Add</th>
+                            <th style="width: 277px;">Name</th>
+                            <th>Type</th>
+                            <th>Color</th>
+                            <th>Power Supply</th>
+                            <th>Side Panel Window</th>
+                            <th>External Bays</th>
+                            <th>Internal Bays</th>
+                            <th>Price</th>
 						</tr>
 					</thead>
 					<tbody style="color: rgb(255, 255, 255);" id="tbl_body">
@@ -56,27 +56,23 @@
 									+ partList[x].product.productName + "</td>";
 
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].coreCount
+							newCell.innerHTML = "<td>" + partList[x].color
 									+ "</td>";
 
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].coreClock
+							newCell.innerHTML = "<td>" + partList[x].powerSupply
 									+ "</td>";
 
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].boostClock
+							newCell.innerHTML = "<td>" + partList[x].sidePanelWindow
 									+ "</td>";
 
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].tdpWattage
+							newCell.innerHTML = "<td>" + partList[x].externalBays
 									+ "</td>";
 
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].integratedGraphics
-									+ "</td>";
-								
-							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].smt
+							newCell.innerHTML = "<td>" + partList[x].internalBays
 									+ "</td>";
 
 							newCell = newRow.insertCell();
