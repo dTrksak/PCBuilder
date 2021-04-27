@@ -39,12 +39,23 @@
 
 					</tbody>
 				</table>
+				<label id="errorLabel"></label>
 				<script th:inline="javascript">
 					var partList = /*[[${partList}]]*/"";
 
 					addMoreRows();
 
 					function addMoreRows() {
+						var error = document.getElementById('errorLabel');
+						if(partList.length == 0)
+						{
+							error.style.display = "inline";
+							error.innerHTML = 'Other parts in your build are incompatible with all CPUs we have, please reconsider any CPU coolers, motherboards, power supplies, or operating systems you have added to your build.';
+						}
+						else {
+							error.style.display = "none";
+						}
+						
 						for (var x = 0; x < partList.length; x++) {
 							var newRow = document.getElementById('tbl_body')
 									.insertRow();

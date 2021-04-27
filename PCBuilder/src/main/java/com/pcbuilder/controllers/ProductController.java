@@ -134,13 +134,13 @@ public class ProductController {
 	}
 	
 	//testing
-	private String 	buildSocketType = null;//"AM4";
-	private String 	buildRamGen = null;//"DDR4";
-	private String 	buildMode = null;//"64-bit";
-	private int 	buildTotalTdp = 600;
-	private int 	buildCpuTdp = 250;
+	private String 	buildSocketType = "";//"AM4";
+	private String 	buildRamGen = "";//"DDR4";
+	private String 	buildMode = "";//"64-bit";
+	private int 	buildTotalTdp = 1;
+	private int 	buildCpuTdp = 1000;
 	private int 	buildVideoCardTdp = 300;
-	private String 	buildFormFactor = null;//"ATX";
+	private String 	buildFormFactor = "";//"ATX";
 
 	public Page<?> getPartInfo(String categoryName, Pageable pageable){
         switch(categoryName.toLowerCase())
