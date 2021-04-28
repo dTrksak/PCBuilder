@@ -19,7 +19,7 @@ public class HomePageController {
 	public String index2() {
 		return "index.html";
 	}
-	
+
 	//used to test non-mapped templates
 	//will throw INTERNAL SERVER ERROR if no such page exist
 	/*

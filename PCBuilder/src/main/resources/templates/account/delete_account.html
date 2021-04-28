@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+
+<head th:insert="/header_footer.html :: head"></head>
+
+<body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
+	<header th:insert="/header_footer.html :: header"> </header>
+    <section>
+        <h1 class="text-center" style="margin-bottom: 25px;">Delete Account</h1>
+        <p class="text-center">Please enter email and password to DELETE account.</p>
+    </section>
+    <section>
+        <div class="container" style="width: 185px;">
+            <form action="#" th:action="@{/account/delete/submit}" th:object="${user}" method="post" style="text-align: left; ">
+	            <label class="form-label">Email</label>
+	            <input class="form-control" type="text" th:field="*{firstName}" placeholder="email@host.com" style="margin-bottom: 10px;">
+	            <label class="form-label">Password</label>
+	            <input class="form-control" type="password" th:field="*{password}" placeholder="password">
+	            <button class="btn btn-primary" id="delete" disabled type="submit" value="Delete" style="background: rgb(255, 0, 0);border-color: rgb(255,0,0); margin-top: 25px;" >DELETE</button>
+	            <label class="form-label">delete</label>
+	            <input type="checkbox" onchange="document.getElementById('delete').disabled = !this.checked;">
+	        </form>
+        </div>
+    </section>
+    <div th:insert="/header_footer.html :: bootstrap_min"></div>
+</body>
+
+</html>

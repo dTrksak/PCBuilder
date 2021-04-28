@@ -1,4 +1,5 @@
 var myInput = document.getElementById("psw");
+var myInput2 = document.getElementById("passwordAgain");
 var letter = document.getElementById("letter");
 var capital = document.getElementById("capital");
 var number = document.getElementById("number");

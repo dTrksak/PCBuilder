@@ -3,6 +3,7 @@
 
 
 <head th:insert="/header_footer.html :: head"></head>
+    <link rel="stylesheet" th:href="@{/css/signup_password_validation.css}">
 
 <body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
 	<header th:insert="/header_footer.html :: header"> </header>
@@ -13,19 +14,19 @@
         <div class="container" style="width: 750px;">
     	<div class="row">
     		<div class="col-lg-6">
-	            <form action="#" th:action="@{/register}" th:object="${user}" method="post" style="text-align: left;">
+	            <form th:action="@{/register}" th:object="${user}" method="post" style="text-align: left;">
 		            <label class="form-label">Email</label>
-		            <input class="form-control" type="text" th:field="*{email}" placeholder="email@host.com" style="margin-bottom: 10px;">
+		            <input class="form-control" type="text" th:field="*{email}" required="required" placeholder="email@host.com" style="margin-bottom: 10px;">
 		            <label class="form-label">First Name</label>
 		            <input class="form-control" type="text" th:field="*{firstName}" placeholder="" style="margin-bottom: 10px;">
 		            <label class="form-label">Last Name</label>
 		            <input class="form-control" type="text" th:field="*{lastName}" placeholder="" style="margin-bottom: 10px;">
 		            <label class="form-label">Password</label>
-		            <input class="form-control" type="password" id="psw" name="psw" th:field="*{password}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
+		            <input class="form-control" type="password" id="psw" name="psw" required="required" th:field="*{password}" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" 
 						    title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" 
 						    style="margin-bottom: 10px;">
-		            <label class="form-label">Re-enter Password</label>
-		            <input class="form-control" type="password" id="passwordAgain" name="passwordAgain" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="margin-bottom: 15px;">
+		            <!--<label class="form-label">Re-enter Password</label> --->
+		            <!--<input class="form-control" type="password" id="passwordAgain" required="required" name="passwordAgain" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" style="margin-bottom: 15px;"> --->
 		            <button class="btn btn-primary" type="submit" value="Register" style="background: rgb(0,46,115);border-color: rgb(0,46,115);">Submit</button>
 	            </form>
 	            </div>
@@ -43,8 +44,8 @@
             </div>
             </div>
     </section>
-    <script src="/bootstrap/js/bootstrap.min.js"></script>
-    <script src="/js/signup_password_validation.js"></script>
+    <div th:insert="/header_footer.html :: bootstrap_min"></div>
+    <script th:src="@{/js/signup_password_validation.js}"></script>
 </body>
 
 </html>

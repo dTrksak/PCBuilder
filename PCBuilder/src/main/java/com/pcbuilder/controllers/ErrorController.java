@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ErrorController {
 	
+	/*
 	@GetMapping("/error")
 	public String handleError(HttpServletRequest request, Model model) {
 	    Object status = request.getAttribute(RequestDispatcher.ERROR_STATUS_CODE);
@@ -27,5 +28,5 @@ public class ErrorController {
 	        }
 	    }
 	    return "error";
-	}
+	}*/
 }

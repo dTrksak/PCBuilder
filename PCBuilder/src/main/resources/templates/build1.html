@@ -85,6 +85,7 @@
             </div>
         </div>
     </section>
+    <div th:insert="/header_footer.html :: bootstrap_min"></div>
     <script th:inline="javascript">
     	if(sessionStorage.getItem("email") !== null){
     		console.log(sessionStorage.getItem("email"));
@@ -92,7 +93,6 @@
     		//var elem2 = document.getElementById('osId');
     	}
     </script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>

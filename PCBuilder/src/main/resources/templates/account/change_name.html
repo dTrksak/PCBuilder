@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+
+
+<head th:insert="/header_footer.html :: head"></head>
+
+<body style="color: rgb(255,255,255);font-family: Oswald, sans-serif;background: rgb(0,0,0);">
+	<header th:insert="/header_footer.html :: header"> </header>
+    <section>
+        <h1 class="text-center" style="margin-bottom: 25px;">Change Name</h1>
+    </section>
+    <section>
+        <div class="container" style="width: 185px;">
+            <form action="#" th:action="@{/account/name/submit}" th:object="${user}" method="post" style="text-align: left; ">
+	            <label class="form-label">First Name</label>
+	            <input class="form-control" type="text" th:field="*{firstName}">
+	            <label class="form-label">Last Name</label>
+	            <input class="form-control" type="text" th:field="*{lastName}">
+	            <button class="btn btn-primary" type="submit" value="Submit" style="background: rgb(0,46,115);border-color: rgb(0,46,115); margin-top: 25px;" >Change</button>
+	        </form>
+        </div>
+    </section>
+    <div th:insert="/header_footer.html :: bootstrap_min"></div>
+</body>
+
+</html>

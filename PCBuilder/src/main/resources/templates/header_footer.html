@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>PC2</title>
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" th:href="@{/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald">
-    <link rel="stylesheet" href="css/Navigation-Clean.css">
+    <link rel="stylesheet"  th:href="@{/css/Navigation-Clean.css}">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
@@ -14,7 +14,7 @@
      <header th:fragment="header">
       <nav class="navbar navbar-light navbar-expand-md navigation-clean" style="background: rgb(0,0,0);color: rgb(255,255,255);">
         <div class="container">
-        <a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img src="img/a0b23abd86f54c589f8e706e0c3671c8.png" style="width: 125px;height: 125px;" onclick="window.location='/'"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+        <a class="navbar-brand" href="#" style="font-family: Oswald, sans-serif;"><img th:src="@{/img/a0b23abd86f54c589f8e706e0c3671c8.png}" style="width: 125px;height: 125px;" onclick="window.location='/'"></a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="navbar-nav ms-auto" id="navBarUl">
                     <li class="nav-item"><a class="nav-link" href="/build" style="background: #000000;color: rgb(255,255,255);font-family: Oswald, sans-serif;">CREATE BUILD</a></li>
@@ -75,5 +75,9 @@
 	     }
      </script>
     </footer>
+    
+    <div th:fragment="bootstrap_min">
+    	<script th:src="@{/bootstrap/js/bootstrap.min.js}"></script>
+    </div>
 </body>
 </html>
