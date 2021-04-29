@@ -44,15 +44,15 @@
 
 					addMoreRows();
 					function addPartToBuild(partIndex){
-						sessionStorage.setItem("osType", partList[partIndex].osType);
+						sessionStorage.setItem("totalWattage", partList[partIndex].totalWattage);
 						sessionStorage.setItem("buildId", 450101);
-						console.log(sessionStorage.getItem("osType"));
+						console.log(sessionStorage.getItem("totalWattage"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 						$(document).ready(function(){
 				            $.ajax({
-				                url:'/product/osType',
+				                url:'/product/totalWattage',
 				                type:'POST',
-				                data:{'osType': partList[partIndex].osType, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
+				                data:{'totalWattage': partList[partIndex].totalWattage, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

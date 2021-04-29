@@ -130,8 +130,17 @@ public class ProductController {
 	}
 	
 	
-	
-	@PostMapping("/osType")
+	@PostMapping("/totalWattage")
+	public String osType(@RequestParam int totalWattage, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
+		this.build.setTotalTdp(totalWattage);
+		System.out.println(this.build.getTotalTdp());
+		this.build.setUser(null);
+		saveBuild(email, buildId);
+		
+		return "/build1";
+	}
+	@PostMapping("/mode")
 	public String osType(@RequestParam String mode, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setOsType(mode);
@@ -251,7 +260,7 @@ public class ProductController {
             case "monitor":
             	return monitorRepo.findAll(pageable);
             case "motherboard":
-            	System.out.println(build.getSocketType()+" "+build.getRamGen()+" "+build.getFormFactor());
+            	//System.out.println(build.getSocketType()+" "+build.getRamGen()+" "+build.getFormFactor());
             	return motherboardRepo.findByCompatibility(build.getSocketType(), build.getRamGen(), build.getFormFactor(), pageable);
             case "mouse":
             	return mouseRepo.findAll(pageable);
