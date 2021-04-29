@@ -47,6 +47,8 @@
 					
 					function addPartToBuild(partIndex){
 						sessionStorage.setItem("cpuTdp", partList[partIndex].tdpWattage);
+						sessionStorage.setItem("socketType", partList[partIndex].socketType);
+						sessionStorage.setItem("mode", partList[partIndex].mode);
 						console.log(sessionStorage.getItem("cpuTdp"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 								
@@ -54,7 +56,7 @@
 				            $.ajax({
 				                url:'/product/cpuTdp',
 				                type:'POST',
-				                data:{'cpuTdp': partList[partIndex].tdpWattage, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
+				                data:{'cpuTdp': partList[partIndex].tdpWattage, 'socketType': partList[partIndex].socketType, 'mode': partList[partIndex].mode, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

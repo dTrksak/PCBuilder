@@ -85,6 +85,10 @@ public class Build  implements Serializable {
     public void setUpdatedData(Timestamp updatedData) {
         this.updatedData = updatedData;
     }
+    
+    public void setMode(String mode) {
+    	this.mode = mode;
+    }
 
 	public String getMode() {
 		return mode;

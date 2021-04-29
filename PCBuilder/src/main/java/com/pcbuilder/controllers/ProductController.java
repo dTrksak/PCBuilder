@@ -134,7 +134,7 @@ public class ProductController {
 	public String osType(@RequestParam int totalWattage, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setTotalTdp(totalWattage);
-		System.out.println(this.build.getTotalTdp());
+		System.out.println("power supply wattage: "+this.build.getTotalTdp());
 		this.build.setUser(null);
 		saveBuild(email, buildId);
 		
@@ -144,7 +144,7 @@ public class ProductController {
 	public String osType(@RequestParam String mode, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setOsType(mode);
-		System.out.println(this.build.getMode());
+		System.out.println("mode: "+this.build.getMode());
 		this.build.setUser(null);
 		saveBuild(email, buildId);
 		
@@ -154,7 +154,7 @@ public class ProductController {
 	public String videoCardTdp(@RequestParam Integer videoCardTdp, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setVideoCardTdp(videoCardTdp);
-		System.out.println(this.build.getVideoCardTdp());
+		System.out.println("video card tdp: "+this.build.getVideoCardTdp());
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -163,16 +163,18 @@ public class ProductController {
 	public String ramGen(@RequestParam String ramGen, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setRamGen(ramGen);
-		System.out.println(this.build.getRamGen());
+		System.out.println("ram gen: "+this.build.getRamGen());
 		saveBuild(email, buildId);
 
 		return "/build1";
 	}
 	@PostMapping("/ramSlots")
-	public String ramSlots(@RequestParam Integer ramSlots, @RequestParam String email, @RequestParam Integer buildId) {
+	public String ramSlots(@RequestParam String socketType, @RequestParam String ramGen, @RequestParam String formFactor, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
-		this.build.setRamSlots(ramSlots);
-		System.out.println(this.build.getRamSlots());
+		this.build.setSocketType(socketType);
+		this.build.setRamGen(ramGen);
+		this.build.setFormFactor(formFactor);
+		System.out.println("socket type: "+build.getSocketType()+" ram gen:"+build.getRamGen()+" form factor:"+build.getFormFactor());
 		saveBuild(email, buildId);
 		
 		return "/build1";
@@ -181,7 +183,7 @@ public class ProductController {
 	public String formFactor(@RequestParam String formFactor, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setFormFactor(formFactor);
-		System.out.println(this.build.getFormFactor());
+		System.out.println("form factor: "+this.build.getFormFactor());
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -190,17 +192,19 @@ public class ProductController {
 	public String socketType(@RequestParam String socketType, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setSocketType(socketType);
-		System.out.println(this.build.getSocketType());
+		System.out.println("socket type: "+this.build.getSocketType());
 		saveBuild(email, buildId);
 
 		return "/build1";
 	}
 
 	@PostMapping("/cpuTdp")
-	public String cpuTdp(@RequestParam Integer cpuTdp, @RequestParam String email, @RequestParam Integer buildId) {
+	public String cpuTdp(@RequestParam Integer cpuTdp, @RequestParam String socketType, @RequestParam String mode, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setCpuTdp(cpuTdp);
-		System.out.println(this.build.getCpuTdp());
+		this.build.setSocketType(socketType);
+		this.build.setMode(mode);
+		System.out.println("cpu tdp: "+this.build.getCpuTdp()+" socket type: "+this.build.getSocketType()+" mode: "+this.build.getMode());
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -260,7 +264,6 @@ public class ProductController {
             case "monitor":
             	return monitorRepo.findAll(pageable);
             case "motherboard":
-            	//System.out.println(build.getSocketType()+" "+build.getRamGen()+" "+build.getFormFactor());
             	return motherboardRepo.findByCompatibility(build.getSocketType(), build.getRamGen(), build.getFormFactor(), pageable);
             case "mouse":
             	return mouseRepo.findAll(pageable);

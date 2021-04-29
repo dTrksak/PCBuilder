@@ -44,7 +44,9 @@
 
 					addMoreRows();
 					function addPartToBuild(partIndex){
-						sessionStorage.setItem("ramSlots", partList[partIndex].ramSlots);
+						sessionStorage.setItem("ramSlots", partList[partIndex].socketType);
+						sessionStorage.setItem("ramSlots", partList[partIndex].ramGen);
+						sessionStorage.setItem("ramSlots", partList[partIndex].formFactor);
 						sessionStorage.setItem("buildId", 450101);
 						console.log(sessionStorage.getItem("ramSlots"));
 						//document.getElementById("button" + partIndex).setDisabled ?
@@ -52,7 +54,7 @@
 				            $.ajax({
 				                url:'/product/ramSlots',
 				                type:'POST',
-				                data:{'ramSlots': partList[partIndex].ramSlots, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
+				                data:{'socketType': partList[partIndex].socketType, 'ramGen': partList[partIndex].ramGen, 'formFactor': partList[partIndex].formFactor, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }
