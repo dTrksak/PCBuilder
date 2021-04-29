@@ -1,0 +1,125 @@
+﻿===========================================
+Log started at 4/29/2021 11:47:22 AM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+video_card
+
+Objects not included in the script (Tables):
+
+Objects included in the script (Users):
+'mysql.infoschema'@'localhost'
+'mysql.session'@'localhost'
+'mysql.sys'@'localhost'
+'pc_admin'@'%'
+'root'@'localhost'
+Tables with data included in the script:
+video_card (4175 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/29/2021 11:47:23 AM
+===========================================
+
+
+===========================================
+Log started at 4/29/2021 11:49:47 AM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+video_card
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+video_card (4175 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/29/2021 11:49:47 AM
+===========================================
+
+
+===========================================
+Log started at 4/29/2021 12:20:31 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+pc_case
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+pc_case (3879 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/29/2021 12:20:31 PM
+===========================================
+
+
+===========================================
+Log started at 4/29/2021 12:44:48 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+motherboard
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+motherboard (3040 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/29/2021 12:44:48 PM
+===========================================
+
+
+===========================================
+Log started at 4/29/2021 1:09:52 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+cpu_cooler
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+cpu_cooler (1111 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/29/2021 1:09:53 PM
+===========================================
+
+
+===========================================
+Log started at 4/29/2021 1:34:44 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+cpu
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+cpu (1213 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/29/2021 1:34:45 PM
+===========================================

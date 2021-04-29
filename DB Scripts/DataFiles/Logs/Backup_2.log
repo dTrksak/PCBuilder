@@ -1,0 +1,492 @@
+﻿===========================================
+Log started at 4/15/2021 6:17:44 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+build
+build_product
+case_accessory
+case_fan
+category
+cpu
+cpu_cooler
+external_harddrive
+fan_controller
+headphones
+internal_harddrive
+keyboard
+memory
+monitor
+motherboard
+mouse
+optical_drive
+os
+pc_case
+power_supply
+product
+product_rating
+software
+sound_card
+speakers
+thermal_paste
+ups
+user
+video_card
+wired_network_card
+wireless_network_card
+
+Objects included in the script (Users):
+'mysql.infoschema'@'localhost'
+'mysql.session'@'localhost'
+'mysql.sys'@'localhost'
+'pc_admin'@'%'
+'root'@'localhost'
+Tables with data included in the script:
+category (25 rows)
+product (39373 rows)
+wireless_network_card (303 rows)
+wired_network_card (121 rows)
+video_card (4175 rows)
+ups (658 rows)
+thermal_paste (103 rows)
+speakers (195 rows)
+sound_card (71 rows)
+software (143 rows)
+power_supply (2027 rows)
+pc_case (3879 rows)
+os (56 rows)
+optical_drive (217 rows)
+mouse (1948 rows)
+motherboard (3040 rows)
+monitor (2768 rows)
+memory (7151 rows)
+keyboard (2263 rows)
+internal_harddrive (3788 rows)
+headphones (2288 rows)
+fan_controller (36 rows)
+external_harddrive (319 rows)
+cpu_cooler (1111 rows)
+cpu (1213 rows)
+case_fan (1492 rows)
+case_accessory (8 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 6:17:45 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 6:19:19 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+build
+build_product
+case_accessory
+case_fan
+category
+cpu
+cpu_cooler
+external_harddrive
+fan_controller
+headphones
+internal_harddrive
+keyboard
+memory
+monitor
+motherboard
+mouse
+optical_drive
+os
+pc_case
+power_supply
+product
+product_rating
+software
+sound_card
+speakers
+thermal_paste
+ups
+user
+video_card
+wired_network_card
+wireless_network_card
+
+Objects included in the script (Users):
+'mysql.infoschema'@'localhost'
+'mysql.session'@'localhost'
+'mysql.sys'@'localhost'
+'pc_admin'@'%'
+'root'@'localhost'
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 6:19:19 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 6:20:03 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+build
+build_product
+case_accessory
+case_fan
+category
+cpu
+cpu_cooler
+external_harddrive
+fan_controller
+headphones
+internal_harddrive
+keyboard
+memory
+monitor
+motherboard
+mouse
+optical_drive
+os
+pc_case
+power_supply
+product
+product_rating
+software
+sound_card
+speakers
+thermal_paste
+ups
+user
+video_card
+wired_network_card
+wireless_network_card
+
+Objects included in the script (Users):
+'mysql.infoschema'@'localhost'
+'mysql.session'@'localhost'
+'mysql.sys'@'localhost'
+'pc_admin'@'%'
+'root'@'localhost'
+Tables with data included in the script:
+category (25 rows)
+product (39373 rows)
+wireless_network_card (303 rows)
+wired_network_card (121 rows)
+video_card (4175 rows)
+ups (658 rows)
+thermal_paste (103 rows)
+speakers (195 rows)
+sound_card (71 rows)
+software (143 rows)
+power_supply (2027 rows)
+pc_case (3879 rows)
+os (56 rows)
+optical_drive (217 rows)
+mouse (1948 rows)
+motherboard (3040 rows)
+monitor (2768 rows)
+memory (7151 rows)
+keyboard (2263 rows)
+internal_harddrive (3788 rows)
+headphones (2288 rows)
+fan_controller (36 rows)
+external_harddrive (319 rows)
+cpu_cooler (1111 rows)
+cpu (1213 rows)
+case_fan (1492 rows)
+case_accessory (8 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 6:20:03 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 6:22:58 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+build
+build_product
+case_accessory
+case_fan
+category
+cpu
+cpu_cooler
+external_harddrive
+fan_controller
+
+Objects not included in the script (Tables):
+
+Objects included in the script (Users):
+'mysql.infoschema'@'localhost'
+'mysql.session'@'localhost'
+'mysql.sys'@'localhost'
+'pc_admin'@'%'
+'root'@'localhost'
+Tables with data included in the script:
+fan_controller (36 rows)
+external_harddrive (319 rows)
+cpu_cooler (1111 rows)
+cpu (1213 rows)
+category (25 rows)
+case_fan (1492 rows)
+case_accessory (8 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 6:22:59 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 6:58:27 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+headphones
+internal_harddrive
+keyboard
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+keyboard (2263 rows)
+internal_harddrive (3788 rows)
+headphones (2288 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 6:58:27 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 6:59:13 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+memory
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+memory (7151 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 6:59:14 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 7:00:47 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+monitor
+motherboard
+mouse
+optical_drive
+os
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+os (56 rows)
+optical_drive (217 rows)
+mouse (1948 rows)
+motherboard (3040 rows)
+monitor (2768 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 7:00:47 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 7:03:05 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+pc_case
+power_supply
+product_rating
+software
+sound_card
+speakers
+thermal_paste
+ups
+user
+wired_network_card
+wireless_network_card
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+wireless_network_card (303 rows)
+wired_network_card (121 rows)
+ups (658 rows)
+thermal_paste (103 rows)
+speakers (195 rows)
+sound_card (71 rows)
+software (143 rows)
+power_supply (2027 rows)
+pc_case (3879 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 7:03:05 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 7:04:18 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+product
+
+Objects not included in the script (Tables):
+Tables with data included in the script:
+product (39373 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 7:04:18 PM
+===========================================
+
+
+===========================================
+Log started at 4/15/2021 7:04:57 PM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+video_card
+
+Objects not included in the script (Tables):
+
+Objects included in the script (Users):
+'mysql.infoschema'@'localhost'
+'mysql.session'@'localhost'
+'mysql.sys'@'localhost'
+'pc_admin'@'%'
+'root'@'localhost'
+Tables with data included in the script:
+video_card (4175 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/15/2021 7:04:57 PM
+===========================================
+
+
+===========================================
+Log started at 4/26/2021 1:12:17 AM
+===========================================
+Application name: dbForge Studio 2020 for MySQL
+Connection string: User Id=root;Host=localhost;Database=mysql;Character Set=compatibility
+
+Objects included in the script (Tables):
+build
+build_product
+case_accessory
+case_fan
+category
+cpu
+cpu_cooler
+external_harddrive
+fan_controller
+headphones
+internal_harddrive
+keyboard
+memory
+monitor
+motherboard
+mouse
+optical_drive
+os
+pc_case
+power_supply
+product
+product_rating
+software
+sound_card
+speakers
+thermal_paste
+ups
+user
+video_card
+wired_network_card
+wireless_network_card
+
+Objects included in the script (Users):
+'mysql.infoschema'@'localhost'
+'mysql.session'@'localhost'
+'mysql.sys'@'localhost'
+'pc_admin'@'%'
+'root'@'localhost'
+Tables with data included in the script:
+category (25 rows)
+product (39373 rows)
+wireless_network_card (303 rows)
+wired_network_card (121 rows)
+video_card (4175 rows)
+ups (658 rows)
+thermal_paste (103 rows)
+speakers (195 rows)
+sound_card (71 rows)
+software (143 rows)
+power_supply (2027 rows)
+pc_case (3879 rows)
+os (56 rows)
+optical_drive (217 rows)
+mouse (1948 rows)
+motherboard (3040 rows)
+monitor (2768 rows)
+memory (7151 rows)
+keyboard (2263 rows)
+internal_harddrive (3788 rows)
+headphones (2288 rows)
+fan_controller (36 rows)
+external_harddrive (319 rows)
+cpu_cooler (1111 rows)
+cpu (1213 rows)
+case_fan (1492 rows)
+case_accessory (8 rows)
+
+Error count: 0
+Warning count: 0
+===========================================
+Log stopped at 4/26/2021 1:12:19 AM
+===========================================
