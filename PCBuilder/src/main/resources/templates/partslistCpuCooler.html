@@ -42,7 +42,21 @@
 					var partList = /*[[${partList}]]*/"";
 
 					addMoreRows();
-
+					function addPartToBuild(partIndex){
+						sessionStorage.setItem("socketType", partList[partIndex].socketType);
+						console.log(sessionStorage.getItem("socketType"));
+						//document.getElementById("button" + partIndex).setDisabled ?
+						$(document).ready(function(){
+				            $.ajax({
+				                url:'/product/socketType',
+				                type:'POST',
+				                data:{'socketType': partList[partIndex].socketType, 'email': sessionStorage.getItem("email")},
+				                success:function(response){
+									//console.log(response);	
+				                }
+				            });
+				});
+					}
 					function addMoreRows() {
 						var error = document.getElementById('errorLabel');
 						if(partList.length == 0)
@@ -58,7 +72,7 @@
 							var newRow = document.getElementById('tbl_body')
 									.insertRow();
 							var newCell = newRow.insertCell();
-							newCell.innerHTML = "<td><button class='btn btn-primary text-center' type='button' style='width: 37.391px;height: 35px;'>+</button></td>";
+							newCell.innerHTML = "<td><button class='btn btn-primary text-center' onclick='addPartToBuild("+x+")' id='button"+x+"' type='button' style='width: 37.391px;height: 35px;'>+</button></td>";
 
 							newCell = newRow.insertCell();
 							newCell.innerHTML = "<td>"

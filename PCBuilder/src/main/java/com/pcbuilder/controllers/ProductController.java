@@ -1,5 +1,7 @@
 package com.pcbuilder.controllers;
 
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +13,17 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.Mapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.pcbuilder.entities.Build;
 import com.pcbuilder.entities.Motherboard;
 import com.pcbuilder.entities.Product;
+import com.pcbuilder.entities.User;
+import com.pcbuilder.repositories.BuildRepository;
 import com.pcbuilder.repositories.CaseAccessoryRepository;
 import com.pcbuilder.repositories.CaseFanRepository;
 import com.pcbuilder.repositories.CategoryRepository;
@@ -39,6 +47,7 @@ import com.pcbuilder.repositories.SoftwareRepository;
 import com.pcbuilder.repositories.SoundCardRepository;
 import com.pcbuilder.repositories.ThermalPasteRepository;
 import com.pcbuilder.repositories.UpsRepository;
+import com.pcbuilder.repositories.UserRepository;
 import com.pcbuilder.repositories.VideoCardRepository;
 import com.pcbuilder.repositories.WiredNetworkCardRepository;
 import com.pcbuilder.repositories.WirelessNetworkCardRepository;
@@ -104,6 +113,82 @@ public class ProductController {
 	private WiredNetworkCardRepository wiredNetworkCardRepo;
 	@Autowired
 	private WirelessNetworkCardRepository wirelessNetworkCardRepo;
+	@Autowired
+	private BuildRepository buildRepository;
+	@Autowired
+	private UserRepository userRepository;
+	
+	private Build build = new Build();
+	private User user = new User();
+	
+	public void saveBuild(String email) {
+		user = userRepository.findByEmail(email);
+		this.build.setCreatedDate(new Timestamp(System.currentTimeMillis()));
+		this.build.setUpdatedData(new Timestamp(System.currentTimeMillis()));
+		this.build.setUser(user);
+		buildRepository.save(build);
+	}
+	
+	
+	
+	@PostMapping("/osType")
+	public String osType(@RequestParam String osType, @RequestParam String email) {
+		this.build.setOsType(osType);
+		System.out.println(this.build.getOsType());
+		this.build.setUser(null);
+		saveBuild(email);
+		
+		return "/build1";
+	}
+	@PostMapping("/videoCardTdp")
+	public String videoCardTdp(@RequestParam Integer videoCardTdp, @RequestParam String email) {
+		this.build.setVideoCardTdp(videoCardTdp);
+		System.out.println(this.build.getVideoCardTdp());
+		saveBuild(email);
+
+		return "/build1";
+	}
+	@PostMapping("/ramGen")
+	public String ramGen(@RequestParam String ramGen, @RequestParam String email) {
+		this.build.setRamGen(ramGen);
+		System.out.println(this.build.getRamGen());
+		saveBuild(email);
+
+		return "/build1";
+	}
+	@PostMapping("/ramSlots")
+	public String ramSlots(@RequestParam Integer ramSlots, @RequestParam String email) {
+		this.build.setRamSlots(ramSlots);
+		System.out.println(this.build.getRamSlots());
+		saveBuild(email);
+		
+		return "/build1";
+	}
+	@PostMapping("/formFactor")
+	public String formFactor(@RequestParam String formFactor, @RequestParam String email) {
+		this.build.setFormFactor(formFactor);
+		System.out.println(this.build.getFormFactor());
+		saveBuild(email);
+
+		return "/build1";
+	}
+	@PostMapping("/socketType")
+	public String socketType(@RequestParam String socketType, @RequestParam String email) {
+		this.build.setSocketType(socketType);
+		System.out.println(this.build.getSocketType());
+		saveBuild(email);
+
+		return "/build1";
+	}
+
+	@PostMapping("/cpuTdp")
+	public String cpuTdp(@RequestParam Integer cpuTdp, @RequestParam String email) {
+		this.build.setCpuTdp(cpuTdp);
+		System.out.println(this.build.getCpuTdp());
+		saveBuild(email);
+
+		return "/build1";
+	}
 	
 	@GetMapping("")  // example url - "/product?category=motherboard" or "/partslistMobo?category=cpu+cooler"
 	public String getPart( Model model,
@@ -124,6 +209,7 @@ public class ProductController {
 		if(sortOrder.equals("des"))
 			pageable = PageRequest.of(page, pageSize, Sort.by(sortBy).descending());
 
+		model.addAttribute("build", build);
 		model.addAttribute("page", page);
 		model.addAttribute("pages", getPartInfo(categoryName, pageable).getTotalPages());
 		model.addAttribute("partList", getPartInfo(categoryName, pageable).toList());
