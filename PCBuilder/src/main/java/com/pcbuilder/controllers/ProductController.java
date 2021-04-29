@@ -129,12 +129,27 @@ public class ProductController {
 		buildRepository.save(build);
 	}
 	
-	
+	@PostMapping("/clearBuild")
+	public String clearBuild(@RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
+		this.build.setTotalTdp(0);
+		this.build.setMode(null);
+		this.build.setVideoCardTdp(0);
+		this.build.setRamGen(null);
+		this.build.setFormFactor(null);
+		this.build.setSocketType(null);
+		System.out.println("\npower supply wattage: "+this.build.getTotalTdp()+"\nmode: "+this.build.getMode()+"\nvideo card tdp: "+this.build.getVideoCardTdp()+
+				"\nram gen: "+this.build.getRamGen()+"\nsocket type: "+build.getSocketType()+"\nform factor:"+build.getFormFactor()+"\ncpu tdp: "+this.build.getCpuTdp()+"\n");
+		this.build.setUser(null);
+		saveBuild(email, buildId);
+		
+		return "/build1";
+	}
 	@PostMapping("/totalWattage")
-	public String osType(@RequestParam int totalWattage, @RequestParam String email, @RequestParam Integer buildId) {
+	public String totalWattage(@RequestParam int totalWattage, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setTotalTdp(totalWattage);
-		System.out.println("power supply wattage: "+this.build.getTotalTdp());
+		System.out.println("power supply wattage: "+this.build.getTotalTdp()+"\n");
 		this.build.setUser(null);
 		saveBuild(email, buildId);
 		
@@ -143,8 +158,8 @@ public class ProductController {
 	@PostMapping("/mode")
 	public String osType(@RequestParam String mode, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
-		this.build.setOsType(mode);
-		System.out.println("mode: "+this.build.getMode());
+		this.build.setMode(mode);
+		System.out.println("mode: "+this.build.getMode()+"\n");
 		this.build.setUser(null);
 		saveBuild(email, buildId);
 		
@@ -154,7 +169,7 @@ public class ProductController {
 	public String videoCardTdp(@RequestParam Integer videoCardTdp, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setVideoCardTdp(videoCardTdp);
-		System.out.println("video card tdp: "+this.build.getVideoCardTdp());
+		System.out.println("video card tdp: "+this.build.getVideoCardTdp()+"\n");
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -163,7 +178,7 @@ public class ProductController {
 	public String ramGen(@RequestParam String ramGen, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setRamGen(ramGen);
-		System.out.println("ram gen: "+this.build.getRamGen());
+		System.out.println("ram gen: "+this.build.getRamGen()+"\n");
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -174,7 +189,7 @@ public class ProductController {
 		this.build.setSocketType(socketType);
 		this.build.setRamGen(ramGen);
 		this.build.setFormFactor(formFactor);
-		System.out.println("socket type: "+build.getSocketType()+" ram gen:"+build.getRamGen()+" form factor:"+build.getFormFactor());
+		System.out.println("socket type: "+build.getSocketType()+"\nram gen:"+build.getRamGen()+"\nform factor:"+build.getFormFactor()+"\n");
 		saveBuild(email, buildId);
 		
 		return "/build1";
@@ -183,7 +198,7 @@ public class ProductController {
 	public String formFactor(@RequestParam String formFactor, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setFormFactor(formFactor);
-		System.out.println("form factor: "+this.build.getFormFactor());
+		System.out.println("form factor: "+this.build.getFormFactor()+"\n");
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -192,7 +207,7 @@ public class ProductController {
 	public String socketType(@RequestParam String socketType, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setSocketType(socketType);
-		System.out.println("socket type: "+this.build.getSocketType());
+		System.out.println("socket type: "+this.build.getSocketType()+"\n");
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -204,7 +219,7 @@ public class ProductController {
 		this.build.setCpuTdp(cpuTdp);
 		this.build.setSocketType(socketType);
 		this.build.setMode(mode);
-		System.out.println("cpu tdp: "+this.build.getCpuTdp()+" socket type: "+this.build.getSocketType()+" mode: "+this.build.getMode());
+		System.out.println("cpu tdp: "+this.build.getCpuTdp()+"\nsocket type: "+this.build.getSocketType()+"\nmode: "+this.build.getMode());
 		saveBuild(email, buildId);
 
 		return "/build1";
@@ -235,6 +250,7 @@ public class ProductController {
 		
 		categoryName = categoryName.replaceAll(" ", "+");
 		//System.out.println("partslist" + getProductPage(categoryName));
+		
 		return "partslist" + getProductPage(categoryName);
 	}
 
