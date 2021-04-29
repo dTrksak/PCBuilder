@@ -44,16 +44,16 @@
 
 
 					function addPartToBuild(partIndex){
-						sessionStorage.setItem("osType", partList[partIndex].osType);
+						sessionStorage.setItem("mode", partList[partIndex].mode);
 						sessionStorage.setItem("buildId", 450101);
-						console.log(sessionStorage.getItem("osType"));
+						console.log(sessionStorage.getItem("mode"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 					    
 						$(document).ready(function(){
 						            $.ajax({
 						                url:'/product/osType',
 						                type:'POST',
-						                data:{'osType': partList[partIndex].osType, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
+						                data:{'mode': partList[partIndex].mode, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 						                success:function(response){
 											//console.log(response);	
 						                }

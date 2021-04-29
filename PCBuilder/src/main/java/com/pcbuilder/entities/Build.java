@@ -31,7 +31,7 @@ public class Build  implements Serializable {
      private Timestamp updatedData;
 	
 	@Column(name="os_type")
-	private String osType;
+	private String mode;
 	@Column(name="socket_type")
 	private String socketType;
 	@Column(name="form_factor")
@@ -86,12 +86,12 @@ public class Build  implements Serializable {
         this.updatedData = updatedData;
     }
 
-	public String getOsType() {
-		return osType;
+	public String getMode() {
+		return mode;
 	}
 
-	public void setOsType(String osType) {
-		this.osType = osType;
+	public void setOsType(String mode) {
+		this.mode = mode;
 	}
 
 	public String getSocketType() {

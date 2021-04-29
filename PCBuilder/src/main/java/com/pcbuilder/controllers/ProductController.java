@@ -132,10 +132,10 @@ public class ProductController {
 	
 	
 	@PostMapping("/osType")
-	public String osType(@RequestParam String osType, @RequestParam String email, @RequestParam Integer buildId) {
+	public String osType(@RequestParam String mode, @RequestParam String email, @RequestParam Integer buildId) {
 		this.build = buildRepository.findByBuildId(buildId);
-		this.build.setOsType(osType);
-		System.out.println(this.build.getOsType());
+		this.build.setOsType(mode);
+		System.out.println(this.build.getMode());
 		this.build.setUser(null);
 		saveBuild(email, buildId);
 		
@@ -224,15 +224,6 @@ public class ProductController {
 		//System.out.println("partslist" + getProductPage(categoryName));
 		return "partslist" + getProductPage(categoryName);
 	}
-	
-	//testing
-	private String 	buildSocketType = null;//"AM4";
-	private String 	buildRamGen = null;//"DDR4";
-	private String 	buildMode = null;//"64-bit";
-	private int 	buildTotalTdp = 0;
-	private int 	buildCpuTdp = 1000;
-	private int 	buildVideoCardTdp = 300;
-	private String 	buildFormFactor = null;//"ATX";
 
 	public Page<?> getPartInfo(String categoryName, Pageable pageable){
         switch(categoryName.toLowerCase())
@@ -242,9 +233,9 @@ public class ProductController {
             case "case+fan":
                 return caseFanRepo.findAll(pageable);
             case "cpu":
-            	return cpuRepo.findByCompatibility(buildVideoCardTdp, buildTotalTdp, buildSocketType, buildMode, pageable);
+            	return cpuRepo.findByCompatibility(build.getVideoCardTdp(), build.getTotalTdp(), build.getSocketType(), build.getMode(), pageable);
             case "cpu+cooler":
-                return cpuCoolerRepo.findByCompatibility(buildSocketType, pageable);
+                return cpuCoolerRepo.findByCompatibility(build.getSocketType(), pageable);
             case "external+harddrive":
             	return externalHarddriveRepo.findAll(pageable);
             case "fan+controller":
@@ -256,21 +247,22 @@ public class ProductController {
             case "keyboard":
             	return keyboardRepo.findAll(pageable);
             case "memory":
-            	return memoryRepo.findByCompatibility(buildRamGen, pageable);
+            	return memoryRepo.findByCompatibility(build.getRamGen(), pageable);
             case "monitor":
             	return monitorRepo.findAll(pageable);
             case "motherboard":
-            	return motherboardRepo.findByCompatibility(buildSocketType, buildRamGen, buildFormFactor, pageable);
+            	System.out.println(build.getSocketType()+" "+build.getRamGen()+" "+build.getFormFactor());
+            	return motherboardRepo.findByCompatibility(build.getSocketType(), build.getRamGen(), build.getFormFactor(), pageable);
             case "mouse":
             	return mouseRepo.findAll(pageable);
             case "optical+drive":
             	return opticalDriveRepo.findAll(pageable);
             case "os":
-            	return osRepo.findByCompatibility(buildMode, pageable);
+            	return osRepo.findByCompatibility(build.getMode(), pageable);
             case "pc+case":
-            	return pcCaseRepo.findByCompatibility(buildFormFactor, pageable);
+            	return pcCaseRepo.findByCompatibility(build.getFormFactor(), pageable);
             case "power+supply":
-            	return powerSupplyRepo.findByCompatibility(buildVideoCardTdp, buildCpuTdp, pageable);
+            	return powerSupplyRepo.findByCompatibility(build.getVideoCardTdp(), build.getCpuTdp(), pageable);
             case "software":
             	return softwareRepo.findAll(pageable);
             case "sound+card":
@@ -280,7 +272,7 @@ public class ProductController {
             case "ups":
             	return upsRepo.findAll(pageable);
             case "video+card":
-            	return videoCardRepo.findByCompatibility(buildCpuTdp, buildTotalTdp, pageable);
+            	return videoCardRepo.findByCompatibility(build.getCpuTdp(), build.getTotalTdp(), pageable);
             case "wired+network+card":
             	return wiredNetworkCardRepo.findAll(pageable);
             case "wireless+network+card":
