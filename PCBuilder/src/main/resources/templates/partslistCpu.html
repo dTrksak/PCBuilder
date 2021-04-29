@@ -54,7 +54,7 @@
 				            $.ajax({
 				                url:'/product/cpuTdp',
 				                type:'POST',
-				                data:{'cpuTdp': partList[partIndex].tdpWattage, 'email':sessionStorage.getItem("email")},
+				                data:{'cpuTdp': partList[partIndex].tdpWattage, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

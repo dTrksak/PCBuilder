@@ -46,13 +46,14 @@
 					addMoreRows();
 					function addPartToBuild(partIndex){
 						sessionStorage.setItem("osType", partList[partIndex].osType);
+						sessionStorage.setItem("buildId", 450101);
 						console.log(sessionStorage.getItem("osType"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 						$(document).ready(function(){
 				            $.ajax({
 				                url:'/product/osType',
 				                type:'POST',
-				                data:{'osType': partList[partIndex].osType, 'email':sessionStorage.getItem("email")},
+				                data:{'osType': partList[partIndex].osType, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

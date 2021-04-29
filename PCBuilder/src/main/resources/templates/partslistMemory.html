@@ -40,13 +40,14 @@
 					addMoreRows();
 					function addPartToBuild(partIndex){
 						sessionStorage.setItem("ramGen", partList[partIndex].ramGen);
+						sessionStorage.setItem("buildId", 450101);
 						console.log(sessionStorage.getItem("ramGen"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 						$(document).ready(function(){
 				            $.ajax({
 				                url:'/product/ramGen',
 				                type:'POST',
-				                data:{'ramGen': partList[partIndex].ramGen, 'email':sessionStorage.getItem("email")},
+				                data:{'ramGen': partList[partIndex].ramGen, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

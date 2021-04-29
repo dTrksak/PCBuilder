@@ -45,13 +45,14 @@
 					addMoreRows();
 					function addPartToBuild(partIndex){
 						sessionStorage.setItem("videoCardTdp", partList[partIndex].tdpWattage);
+						sessionStorage.setItem("buildId", 450101);
 						console.log(sessionStorage.getItem("videoCardTdp"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 						$(document).ready(function(){
 				            $.ajax({
 				                url:'/product/videoCardTdp',
 				                type:'POST',
-				                data:{'videoCardTdp': partList[partIndex].tdpWattage, 'email':sessionStorage.getItem("email")},
+				                data:{'videoCardTdp': partList[partIndex].tdpWattage, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

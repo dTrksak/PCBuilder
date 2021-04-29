@@ -44,13 +44,14 @@
 					addMoreRows();
 					function addPartToBuild(partIndex){
 						sessionStorage.setItem("socketType", partList[partIndex].socketType);
+						sessionStorage.setItem("buildId", 450101);
 						console.log(sessionStorage.getItem("socketType"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 						$(document).ready(function(){
 				            $.ajax({
 				                url:'/product/socketType',
 				                type:'POST',
-				                data:{'socketType': partList[partIndex].socketType, 'email': sessionStorage.getItem("email")},
+				                data:{'socketType': partList[partIndex].socketType, 'email': sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

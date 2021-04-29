@@ -40,13 +40,14 @@
 					addMoreRows();
 					function addPartToBuild(partIndex){
 						sessionStorage.setItem("formFactor", partList[partIndex].formFactor);
+						sessionStorage.setItem("buildId", 450101);
 						console.log(sessionStorage.getItem("formFactor"));
 						//document.getElementById("button" + partIndex).setDisabled ?
 						$(document).ready(function(){
 				            $.ajax({
 				                url:'/product/formFactor',
 				                type:'POST',
-				                data:{'formFactor': partList[partIndex].formFactor, 'email':sessionStorage.getItem("email")},
+				                data:{'formFactor': partList[partIndex].formFactor, 'email':sessionStorage.getItem("email"), 'buildId':sessionStorage.getItem("buildId")},
 				                success:function(response){
 									//console.log(response);	
 				                }

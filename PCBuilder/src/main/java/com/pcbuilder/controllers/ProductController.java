@@ -121,7 +121,7 @@ public class ProductController {
 	private Build build = new Build();
 	private User user = new User();
 	
-	public void saveBuild(String email) {
+	public void saveBuild(String email, Integer buildId) {
 		user = userRepository.findByEmail(email);
 		this.build.setCreatedDate(new Timestamp(System.currentTimeMillis()));
 		this.build.setUpdatedData(new Timestamp(System.currentTimeMillis()));
@@ -132,60 +132,67 @@ public class ProductController {
 	
 	
 	@PostMapping("/osType")
-	public String osType(@RequestParam String osType, @RequestParam String email) {
+	public String osType(@RequestParam String osType, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setOsType(osType);
 		System.out.println(this.build.getOsType());
 		this.build.setUser(null);
-		saveBuild(email);
+		saveBuild(email, buildId);
 		
 		return "/build1";
 	}
 	@PostMapping("/videoCardTdp")
-	public String videoCardTdp(@RequestParam Integer videoCardTdp, @RequestParam String email) {
+	public String videoCardTdp(@RequestParam Integer videoCardTdp, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setVideoCardTdp(videoCardTdp);
 		System.out.println(this.build.getVideoCardTdp());
-		saveBuild(email);
+		saveBuild(email, buildId);
 
 		return "/build1";
 	}
 	@PostMapping("/ramGen")
-	public String ramGen(@RequestParam String ramGen, @RequestParam String email) {
+	public String ramGen(@RequestParam String ramGen, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setRamGen(ramGen);
 		System.out.println(this.build.getRamGen());
-		saveBuild(email);
+		saveBuild(email, buildId);
 
 		return "/build1";
 	}
 	@PostMapping("/ramSlots")
-	public String ramSlots(@RequestParam Integer ramSlots, @RequestParam String email) {
+	public String ramSlots(@RequestParam Integer ramSlots, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setRamSlots(ramSlots);
 		System.out.println(this.build.getRamSlots());
-		saveBuild(email);
+		saveBuild(email, buildId);
 		
 		return "/build1";
 	}
 	@PostMapping("/formFactor")
-	public String formFactor(@RequestParam String formFactor, @RequestParam String email) {
+	public String formFactor(@RequestParam String formFactor, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setFormFactor(formFactor);
 		System.out.println(this.build.getFormFactor());
-		saveBuild(email);
+		saveBuild(email, buildId);
 
 		return "/build1";
 	}
 	@PostMapping("/socketType")
-	public String socketType(@RequestParam String socketType, @RequestParam String email) {
+	public String socketType(@RequestParam String socketType, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setSocketType(socketType);
 		System.out.println(this.build.getSocketType());
-		saveBuild(email);
+		saveBuild(email, buildId);
 
 		return "/build1";
 	}
 
 	@PostMapping("/cpuTdp")
-	public String cpuTdp(@RequestParam Integer cpuTdp, @RequestParam String email) {
+	public String cpuTdp(@RequestParam Integer cpuTdp, @RequestParam String email, @RequestParam Integer buildId) {
+		this.build = buildRepository.findByBuildId(buildId);
 		this.build.setCpuTdp(cpuTdp);
 		System.out.println(this.build.getCpuTdp());
-		saveBuild(email);
+		saveBuild(email, buildId);
 
 		return "/build1";
 	}
@@ -198,7 +205,6 @@ public class ProductController {
 			@RequestParam(value="sortOrder", required=false, defaultValue = "asc") String sortOrder, 
 			@RequestParam(value="amt", required=false, defaultValue = "100") String amt) {
 		//System.out.println("category=" + categoryName);
-		
 		categoryName = categoryName.replaceAll(" ", "+");
 		int page = Integer.valueOf(pageNum);
 		int pageSize = Integer.valueOf(amt);
