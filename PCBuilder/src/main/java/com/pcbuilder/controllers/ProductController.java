@@ -138,6 +138,7 @@ public class ProductController {
 		this.build.setRamGen(null);
 		this.build.setFormFactor(null);
 		this.build.setSocketType(null);
+		this.build.setCpuTdp(0);
 		System.out.println("\npower supply wattage: "+this.build.getTotalTdp()+"\nmode: "+this.build.getMode()+"\nvideo card tdp: "+this.build.getVideoCardTdp()+
 				"\nram gen: "+this.build.getRamGen()+"\nsocket type: "+build.getSocketType()+"\nform factor:"+build.getFormFactor()+"\ncpu tdp: "+this.build.getCpuTdp()+"\n");
 		this.build.setUser(null);

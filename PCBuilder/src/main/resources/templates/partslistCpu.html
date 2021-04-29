@@ -30,8 +30,8 @@
 							<th>Core Clock</th>
 							<th>Boost Clock</th>
 							<th>TDP</th>
-							<th>Integrated Graphics</th>
-							<th>SMT</th>
+							<th>Socket Type</th>
+							<th>Mode</th>
 							<th>Price</th>
 						</tr>
 					</thead>
@@ -102,11 +102,11 @@
 									+ "</td>";
 
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].integratedGraphics
+							newCell.innerHTML = "<td>" + partList[x].socketType
 									+ "</td>";
 								
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].smt
+							newCell.innerHTML = "<td>" + partList[x].mode
 									+ "</td>";
 
 							newCell = newRow.insertCell();

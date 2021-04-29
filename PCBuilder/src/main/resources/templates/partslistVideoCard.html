@@ -29,7 +29,7 @@
 							<th>Chipset</th>
                             <th>Memory</th>
                             <th>Core Clock</th>
-                            <th>Boost Clock</th>
+                            <th>TDP</th>
                             <th>Color</th>
                             <th>Price</th>
 						</tr>
@@ -93,7 +93,7 @@
 									+ "</td>";
 
 							newCell = newRow.insertCell();
-							newCell.innerHTML = "<td>" + partList[x].boostClock
+							newCell.innerHTML = "<td>" + partList[x].tdpWattage
 									+ "</td>";
 
 							newCell = newRow.insertCell();
